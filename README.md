@@ -1,4 +1,4 @@
-# DayZen
+# DayZen (Turkish language)
 
 ## Purpose
 To create an online platform that helps users organize and optimize their daily lives by tracking their routines.
