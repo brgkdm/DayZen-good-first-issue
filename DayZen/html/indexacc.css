@@ -1,0 +1,152 @@
+/* style.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    background: linear-gradient(45deg, #2c3e50, #3498db);
+    color: #fff;
+    padding: 20px 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 50px;
+    margin-right: 10px;
+}
+
+header h1 {
+    font-size: 2em;
+    font-weight: bold;
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.hero {
+    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('hero-bg.jpg') center/cover no-repeat;
+    padding: 100px 0;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero-content {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.hero-content.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hero h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.btn {
+    display: inline-block;
+    background: #3498db;
+    color: #fff;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: #2980b9;
+    transform: scale(1.05);
+}
+
+.features {
+    padding: 50px 0;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.features.active {
+    opacity: 1;
+}
+
+.feature {
+    margin-bottom: 30px;
+}
+
+.feature img {
+    width: 100px;
+}
+
+footer {
+    background: #383838;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.user {
+    width: 1px;
+    height: 1px;
+    position: fixed;
+    top:15px; /* Sayfanın üstünden 10 piksel mesafede */
+    right: 150px; /* Sayfanın sağından 10 piksel mesafede */
+}
+
+.body-container{
+    font-size: medium;
+    text-align: center;
+    font-size: 20px;
+}
+#devam{
+    font-size: medium;
+    display: inline-block;
+    background: #0e8bff;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: background 0.3s ease;
+    cursor: pointer;
+}
+#devam:hover{
+    background-color: #00ff3c;
+}
+.welcome{
+    text-align: center;
+    color: rgb(0, 0, 255);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 50px;
+    color: #006eff;
+}
