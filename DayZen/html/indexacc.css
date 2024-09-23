@@ -1,4 +1,4 @@
-/* style.css */
+/* indexacc.css */
 
 body {
     font-family: Arial, sans-serif;
@@ -118,8 +118,8 @@ footer {
     width: 1px;
     height: 1px;
     position: fixed;
-    top:15px; /* Sayfanın üstünden 10 piksel mesafede */
-    right: 150px; /* Sayfanın sağından 10 piksel mesafede */
+    top:15px;
+    right: 150px;
 }
 
 .body-container{
