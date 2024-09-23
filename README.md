@@ -1,4 +1,4 @@
-# DayZen (Supports Turkish Language)
+# DayZen (Good First Issue)
 
 ## Purpose
 To create an online platform that helps users organize and optimize their daily lives by tracking their routines.
@@ -34,42 +34,3 @@ Adopting a simple and user-friendly interface that enables users to easily plan 
 
 ## **Important Note**
 - Open to development together. 
-
-#
-
-# DayZen (Türkçe Dilini Destekler)
-
-## Amaç
-Kullanıcıların rutinlerini takip ederek günlük hayatlarını düzenlemelerine ve optimize etmelerine yardımcı olan bir çevrimiçi platform oluşturmak.
-
-## Hedef Kitle
-- Hızlı tempolu ortamlarda çalışan profesyoneller
-- Öğrenciler
-- Evde kalan ebeveynler
-- Sporcular ve yapılandırılmış bir günlük rutini olan herkes
-
-## Değer Önerisi
-**DayZen** kullanıcıların günlük rutinlerini kolayca planlamalarına, takip etmelerine ve analiz etmelerine olanak tanır. Kullanıcı dostu arayüzü, özelleştirilebilir hatırlatıcıları ve ayrıntılı istatistikleri onu diğer benzer platformlardan ayırır.
-
-## Marka Kimliği
-- **Renk Paleti**: Canlı ve motive edici bir renk paleti
-- **Logo**: Modern ve etkili bir logo tasarımı
-- **Slogan**: "Zamanını Ayarla, Gününü Yönet!"
-
-## İçerik
-- Blog yazıları
-- Video içerik
-- Etkileşimli araçlar
-- Günlük rutin ipuçları
-
-## Sunum Stili
-Kullanıcıların günlük rutinlerini kolayca planlamalarını ve takip etmelerini sağlayan basit ve kullanıcı dostu bir arayüz benimsemek.
-#
-![GIF](https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExY2o2ZXl2aTM2cmJ3dTB3bXdyaG9nd2RubnJ1ZXR0a3VhcWh0Z3VpYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/NzCHIWL59H0OMELXAA/giphy.gif)
-- Projeden bazı görüntüler
-#
-## Katkıda Bulunanlar
-- [Berat Gökdemir] - Proje Kurucusu
-
-## **Önemli Not**
-- Birlikte geliştirmeye açığız.
