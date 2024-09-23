@@ -1,63 +1,55 @@
-let rutin = {
-    ad: "Sabah Sporu",
-    zaman: "07:00",
-    tekrar: "Her Gün"
+let routine = {
+    name: "Morning Exercise",
+    time: "07:00",
+    repeat: "Every Day"
 };
 
+let routines = [routine];
 
-let rutinler = [rutin];
+function listRoutines() {
+    let routineList = document.getElementById('routine-list');
+    routineList.innerHTML = '';
 
-
-function rutinleriListele() {
-    let rutinListesi = document.getElementById('rutin-listesi');
-    rutinListesi.innerHTML = '';
-
-    rutinler.forEach(function(rutin, index) {
-        rutinListesi.innerHTML += `
-            <div class="rutin">
-                <h3>${rutin.ad}</h3>
-                <p>Zaman: ${rutin.zaman}</p>
-                <p>Tekrar: ${rutin.tekrar}</p>
-                <button onclick="rutiniSil(${index})">Sil</button>
+    routines.forEach(function(routine, index) {
+        routineList.innerHTML += `
+            <div class="routine">
+                <h3>${routine.name}</h3>
+                <p>Time: ${routine.time}</p>
+                <p>Repeat: ${routine.repeat}</p>
+                <button onclick="deleteRoutine(${index})">Delete</button>
             </div>
         `;
     });
 }
 
+function addRoutine() {
+    let name = document.getElementById('name').value;
+    let time = document.getElementById('time').value;
+    let repeat = document.getElementById('repeat').value;
 
-function rutinEkle() {
-    let ad = document.getElementById('ad').value;
-    let zaman = document.getElementById('zaman').value;
-    let tekrar = document.getElementById('tekrar').value;
-
-    let yeniRutin = {
-        ad: ad,
-        zaman: zaman,
-        tekrar: tekrar
+    let newRoutine = {
+        name: name,
+        time: time,
+        repeat: repeat
     };
 
-    rutinler.push(yeniRutin);
-    rutinleriListele();
+    routines.push(newRoutine);
+    listRoutines();
 }
 
-
-function rutiniSil(index) {
-    rutinler.splice(index, 1);
-    rutinleriListele();
+function deleteRoutine(index) {
+    routines.splice(index, 1);
+    listRoutines();
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    rutinleriListele();
+    listRoutines();
 });
-
-
 
 document.addEventListener("DOMContentLoaded", function() {
     const heroContent = document.querySelector(".hero-content");
     heroContent.classList.add("active");
 });
-
-
 
 document.addEventListener("DOMContentLoaded", function() {
     const heroContent = document.querySelector(".hero-content");
@@ -73,5 +65,3 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
-
-
