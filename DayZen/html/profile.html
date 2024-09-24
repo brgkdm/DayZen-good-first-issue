@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - DayZen</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="logo.png" alt="DayZen Logo">
+                <h1>DayZen</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Dashboard</a></li>
+                    <li><a href="profile.html" class="active">Profile</a></li>
+                    <li><a href="settings.html">Settings</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Profile Completion Section -->
+    <section class="profile-completion">
+        <div class="container">
+            <div class="completion-header">
+                <h3>Complete Your Profile to Get Personalized Recommendations!</h3>
+                <div class="progress-bar">
+                    <div class="progress" id="profile-progress"></div>
+                </div>
+                <p id="progress-percent">Profile Completion: 50%</p>
+            </div>
+
+            <ul class="profile-checklist">
+                <li><input type="checkbox" id="upload-avatar-checkbox"> Upload a Profile Picture</li>
+                <li><input type="checkbox" id="bio-checkbox"> Add a Bio</li>
+                <li><input type="checkbox" id="preferences-checkbox"> Set Your Preferences</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Profile Section -->
+    <section class="profile-section">
+        <div class="container">
+            <h2>Your Profile</h2>
+            <div class="profile-card">
+                <div class="profile-image">
+                    <img src="user-avatar.png" alt="User Avatar">
+                    <input type="file" id="upload-avatar" accept="image/*">
+                    <label for="upload-avatar" class="btn upload-btn">Change Avatar</label>
+                </div>
+                <div class="profile-info">
+                    <h3>John Doe</h3>
+                    <p>Email: johndoe@example.com</p>
+                    <p>Member since: January 2024</p>
+                    <p>Bio: No bio added</p>
+                    <p>Preferences: Not set</p>
+                </div>
+            </div>
+
+            <div class="profile-settings">
+                <h3>Update Your Information</h3>
+                <form id="profile-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" value="John Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" value="johndoe@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="bio">Bio</label>
+                        <textarea id="bio" placeholder="Tell us about yourself..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="preferences">Preferences</label>
+                        <input type="text" id="preferences" placeholder="Enter your preferences">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="Enter new password">
+                    </div>
+                    <button type="submit" class="btn">Save Changes</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 DayZen - All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
