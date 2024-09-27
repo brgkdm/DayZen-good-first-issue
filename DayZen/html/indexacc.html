@@ -30,7 +30,7 @@
 <br>
     <div class="body-container">
         <body class="body1">
-            <h1 class="welcome">Welcome</h1>
+            <h1 class="welcome">Welcome, <span id="user-name"></span>!</h1>
             <h2>We Are Happy to See You Among Us.</h2>
             <h3>Please Continue to Start.</h3>
             <button id="devam">Continue</button>
@@ -58,5 +58,14 @@
             <p>&copy; 2024 DayZen - All Rights Reserved.</p>
         </div>
     </footer>
+
+    <script>
+        var username = localStorage.getItem("username");
+        if (username) {
+            document.getElementById("user-name").textContent = username;
+        } else {
+            document.getElementById("user-name").textContent = "Guest";
+        }
+    </script>
 </body>
 </html>
