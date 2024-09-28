@@ -13,5 +13,5 @@ document.getElementById("registerForm").addEventListener("submit", function(even
     var password = document.getElementById("password").value;
 
 
-    window.location.href = "indexacc.html";
+    window.location.href = "../pages/indexacc.html";
 });
