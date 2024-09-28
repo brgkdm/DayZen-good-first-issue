@@ -14,5 +14,5 @@ document.getElementById("registerForm").addEventListener("submit", function(even
 
     localStorage.setItem("username", username);
 
-    window.location.href = "indexacc.html";
+    window.location.href = "../pages/indexacc.html";
 });
