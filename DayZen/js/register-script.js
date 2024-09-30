@@ -12,6 +12,7 @@ document.getElementById("registerForm").addEventListener("submit", function(even
     var email = document.getElementById("email").value;
     var password = document.getElementById("password").value;
 
+    localStorage.setItem("username", username);
 
     window.location.href = "../pages/indexacc.html";
 });
