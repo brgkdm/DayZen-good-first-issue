@@ -7,11 +7,14 @@ body {
     scroll-behavior: smooth;
 }
 
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
+
+
 
 header {
     background: linear-gradient(45deg, #2c3e50, #3498db);
@@ -122,31 +125,117 @@ footer {
     right: 150px;
 }
 
-.body-container{
+.body-container {
     font-size: medium;
-    text-align: center;
-    font-size: 20px;
+    text-align: center; /* Center text alignment for the body container */
+    font-size: 20px; /* Base font size */
+    display: flex; /* Use flexbox to center content */
+    flex-direction: column;
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Center items horizontally */
+    height: 100vh; /* Full viewport height for centering */
+    margin-top: -70px;
+    
+    
 }
-#devam{
+
+h1.welcome {
+    font-size: 50px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+h2, h3 {
+    margin: 10px 0;
+    color: #333;
+}
+
+#devam {
     font-size: medium;
-    display: inline-block;
-    background: #0e8bff;
+    background-color: #3498db; /* Default button color */
     color: #fff;
     padding: 10px 20px;
-    text-decoration: none;
     border-radius: 25px;
-    transition: background 0.3s ease;
+    border: none;
     cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
 }
-#devam:hover{
-    background-color: #00ff3c;
+
+#devam:hover {
+    background-color: #2980b9; /* Slightly darker shade on hover */
 }
-.welcome{
-    text-align: center;
-    color: rgb(0, 0, 255);
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    text-decoration: underline;
-    font-weight: bold;
-    font-size: 50px;
-    color: #006eff;
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+
+    header {
+        padding: 15px 0;
+    }
+
+    .logo img {
+        width: 40px;
+        margin-right: 5px;
+    }
+
+    header h1 {
+        font-size: 1.5em; /* Smaller heading for mobile */
+    }
+
+    nav ul {
+        padding: 0;
+        text-align: center; /* This keeps them centered */
+    }
+
+    /* Keep items inline */
+    nav ul li {
+        display: inline-block; /* Inline items for mobile too */
+        margin-right: 2px; /* Adjust spacing between items */
+        margin-bottom: 0; /* Remove any bottom margin */
+    }
+
+    /* Last item margin reset */
+    nav ul li:last-child {
+        margin-right: 0; /* Avoid extra space after the last item */
+    }
+
+    /* Adjust anchor links for mobile */
+    nav ul li a {
+        padding: 10px;
+        color: #fff; /* Adjust if needed */
+        text-decoration: none;
+    }
+
+    .hero {
+        padding: 60px 0; /* Less padding for mobile */
+        background-position: center;
+        background-size: cover;
+        
+    }
+
+    .hero h2 {
+        font-size: 2em; /* Smaller heading for mobile */
+        margin-bottom: 10px;
+    }
+
+    .btn {
+        padding: 10px 20px; /* Smaller button padding */
+        font-size: 1em;
+    }
+
+    .features {
+        padding: 30px 0; /* Less padding for mobile */
+    }
+
+    .feature img {
+        width: 80px; /* Smaller icons for mobile */
+    }
+
+    footer {
+        padding: 10px 0;
+    }
+
 }
