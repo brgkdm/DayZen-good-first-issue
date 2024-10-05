@@ -65,3 +65,18 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
+
+const themeIcon = document.getElementById('theme-icon');
+const body = document.body;
+
+themeIcon.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    body.classList.toggle('light-mode');
+
+    // Toggle between sun and moon icons
+    if (body.classList.contains('dark-mode')) {
+        themeIcon.src = 'assets/images/moon.png';  // Change to moon icon for dark mode
+    } else {
+        themeIcon.src = 'assets/images/sun.jpeg';  // Change to sun icon for light mode
+    }
+});

@@ -1,5 +1,4 @@
-/* style.css */
-
+/* Base styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -7,10 +6,10 @@ body {
     scroll-behavior: smooth;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+/* Default Light Mode Styles */
+body.light-mode {
+    background-color: #fff;
+    color: #333;
 }
 
 header {
@@ -70,7 +69,7 @@ nav ul li a {
 .hero h2 {
     font-size: 3em;
     margin-bottom: 20px;
-    color: #333;
+    color: #8b8686;
 }
 
 .btn {
@@ -113,3 +112,32 @@ footer {
     padding: 20px 0;
 }
 
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+}
+
+body.dark-mode header {
+    background: linear-gradient(45deg, #1a1a1a, #2c3e50);
+}
+
+body.dark-mode .hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('hero-bg.jpg') center/cover no-repeat;
+}
+
+body.dark-mode .btn {
+    background: #2980b9;
+}
+
+body.dark-mode footer {
+    background: #111;
+}
+
+/* Theme Toggle Icon Styling */
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
