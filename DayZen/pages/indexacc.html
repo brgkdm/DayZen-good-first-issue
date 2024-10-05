@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DayZen - Daily Routine Tracking</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../css/indexacc.css">
 </head>
 <body>
     <header>
         <div class="container">
             <div class="logo">
-                <img src="logo.png" alt="DayZen Logo">
+                <img src="../assets/images/logo.png" alt="DayZen Logo">
                 <h1>DayZen</h1>
             </div>
             <nav>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="../index.html">Home</a></li>
                     <li><a href="#">About Us</a></li>
                     <li><a href="#">Blog</a></li>
                     <li><a href="#">Communication</a></li>
@@ -23,14 +23,9 @@
             </nav>
         </div>
     </header>
-<br>
-<br>
-<br>
-<br>
-<br>
     <div class="body-container">
         <body class="body1">
-            <h1 class="welcome">Welcome</h1>
+            <h1 class="welcome">Welcome, <span id="user-name"></span>!</h1>
             <h2>We Are Happy to See You Among Us.</h2>
             <h3>Please Continue to Start.</h3>
             <button id="devam">Continue</button>
@@ -58,5 +53,14 @@
             <p>&copy; 2024 DayZen - All Rights Reserved.</p>
         </div>
     </footer>
+
+    <script>
+        var username = localStorage.getItem("username");
+        if (username) {
+            document.getElementById("user-name").textContent = username;
+        } else {
+            document.getElementById("user-name").textContent = "Guest";
+        }
+    </script>
 </body>
 </html>

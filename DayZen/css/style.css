@@ -113,3 +113,75 @@ footer {
     padding: 20px 0;
 }
 
+@media (max-width: 768px) {
+    .container {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+
+    header {
+        padding: 15px 0;
+    }
+
+    .logo img {
+        width: 40px;
+        margin-right: 5px;
+    }
+
+    header h1 {
+        font-size: 1.5em; /* Smaller heading for mobile */
+    }
+
+    nav ul {
+        padding: 0;
+        text-align: center; /* This keeps them centered */
+    }
+
+    /* Keep items inline */
+    nav ul li {
+        display: inline-block; /* Inline items for mobile too */
+        margin-right: 2px; /* Adjust spacing between items */
+        margin-bottom: 0; /* Remove any bottom margin */
+    }
+
+    /* Last item margin reset */
+    nav ul li:last-child {
+        margin-right: 0; /* Avoid extra space after the last item */
+    }
+
+    /* Adjust anchor links for mobile */
+    nav ul li a {
+        padding: 10px;
+        color: #fff; /* Adjust if needed */
+        text-decoration: none;
+    }
+
+    .hero {
+        padding: 60px 0; /* Less padding for mobile */
+        background-position: center;
+        background-size: cover;
+        
+    }
+
+    .hero h2 {
+        font-size: 2em; /* Smaller heading for mobile */
+        margin-bottom: 10px;
+    }
+
+    .btn {
+        padding: 10px 20px; /* Smaller button padding */
+        font-size: 1em;
+    }
+
+    .features {
+        padding: 30px 0; /* Less padding for mobile */
+    }
+
+    .feature img {
+        width: 80px; /* Smaller icons for mobile */
+    }
+
+    footer {
+        padding: 10px 0;
+    }
+}
