@@ -1,22 +1,32 @@
-/* indexacc.css */
-
-body {
-    font-family: Arial, sans-serif;
+/* Add Flexbox to ensure the footer sticks to the bottom */
+html, body {
+    height: 100%;  /* Ensure the body takes the full height */
     margin: 0;
     padding: 0;
-    scroll-behavior: smooth;
+    font-family: Arial, sans-serif;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapper {
+    flex-grow: 1;  /* This allows the wrapper to take up remaining space */
+    display: flex;
+    flex-direction: column;
 }
 
 header {
     background: linear-gradient(45deg, #2c3e50, #3498db);
     color: #fff;
     padding: 20px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 .logo {
@@ -35,99 +45,144 @@ header h1 {
     margin: 0;
 }
 
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
 nav ul {
     list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
 }
 
 nav ul li {
-    display: inline;
     margin-right: 20px;
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
+    font-size: 1.1em;
 }
 
-.hero {
-    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('hero-bg.jpg') center/cover no-repeat;
-    padding: 100px 0;
+.user-icon {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+.user-icon img {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.user-icon a:hover img {
+    border: 2px solid #3498db;
+    transition: border 0.3s ease;
+}
+
+/* Main content and sidebar styling */
+/* Main content and sidebar styling */
+.body-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.sidebar {
+    width: 250px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    position: fixed;
+    right: 20px;
+    top: 200px; /* Changed from 120px to 200px to move the sidebar lower */
     text-align: center;
-    overflow: hidden;
 }
 
-.hero-content {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.hero-content.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.hero h2 {
-    font-size: 3em;
-    margin-bottom: 20px;
+.sidebar h2 {
+    font-size: 1.4em;
     color: #333;
 }
 
-.btn {
+.sidebar p {
+    margin: 10px 0;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.progress-bar {
+    background-color: #e0e0e0;
+    border-radius: 20px;
+    height: 10px;
+    width: 100%;
+    margin: 10px 0;
+    overflow: hidden;
+}
+
+.progress {
+    background-color: #3498db;
+    height: 100%;
+    transition: width 0.3s ease;
+    border-radius: 20px;
+}
+
+.progress-text {
+    font-size: 12px;
+    color: #888;
+    margin-top: 5px;
+}
+
+.sidebar-button {
     display: inline-block;
-    background: #3498db;
+    background: #0e8bff;
     color: #fff;
-    padding: 15px 30px;
+    padding: 10px 20px;
     text-decoration: none;
     border-radius: 25px;
     transition: background 0.3s ease;
+    margin-top: 15px;
+    font-size: 0.9em;
 }
 
-.btn:hover {
-    background: #2980b9;
-    transform: scale(1.05);
+.sidebar-button:hover {
+    background-color: #00b3ff;
 }
 
-.features {
-    padding: 50px 0;
-    text-align: center;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-}
 
-.features.active {
-    opacity: 1;
-}
-
-.feature {
-    margin-bottom: 30px;
-}
-
-.feature img {
-    width: 100px;
-}
-
+/* Footer is fixed to the bottom */
 footer {
     background: #383838;
     color: #fff;
     text-align: center;
     padding: 20px 0;
+    width: 100%;
+    flex-shrink: 0;  /* Keeps footer at the bottom */
 }
 
-.user {
-    width: 1px;
-    height: 1px;
-    position: fixed;
-    top:15px;
-    right: 150px;
-}
-
-.body-container{
-    font-size: medium;
+.welcome {
     text-align: center;
-    font-size: 20px;
+    color: #006eff;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 50px;
 }
-#devam{
+
+#devam {
     font-size: medium;
     display: inline-block;
     background: #0e8bff;
@@ -138,15 +193,7 @@ footer {
     transition: background 0.3s ease;
     cursor: pointer;
 }
-#devam:hover{
-    background-color: #00ff3c;
-}
-.welcome{
-    text-align: center;
-    color: rgb(0, 0, 255);
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    text-decoration: underline;
-    font-weight: bold;
-    font-size: 50px;
-    color: #006eff;
+
+#devam:hover {
+    background-color: #00b3ff;
 }
