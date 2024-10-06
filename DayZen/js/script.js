@@ -55,6 +55,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const heroContent = document.querySelector(".hero-content");
     heroContent.classList.add("active");
 
+    lastScrollPosition = 0;
+    
     window.addEventListener("scroll", function() {
         const featuresSection = document.querySelector(".features");
         const featuresSectionTop = featuresSection.offsetTop;
@@ -63,6 +65,20 @@ document.addEventListener("DOMContentLoaded", function() {
         if (scrollPosition > featuresSectionTop - window.innerHeight / 2) {
             featuresSection.classList.add("active");
         }
+        else {
+            featuresSection.classList.remove("active");
+        }
+    
+        // Check scroll direction
+        if (scrollPosition > lastScrollPosition) {
+            // Scrolling down
+            featuresSection.classList.add("active");
+        } else {
+            // Scrolling up
+            featuresSection.classList.remove("active");
+        }
+    
+        lastScrollPosition = scrollPosition;
     });
 });
 
@@ -75,8 +91,8 @@ themeIcon.addEventListener('click', () => {
 
     // Toggle between sun and moon icons
     if (body.classList.contains('dark-mode')) {
-        themeIcon.src = 'assets/images/moon.png';  // Change to moon icon for dark mode
+        themeIcon.src = 'assets/images/moon_1.png';  // Change to moon icon for dark mode
     } else {
-        themeIcon.src = 'assets/images/sun.jpeg';  // Change to sun icon for light mode
+        themeIcon.src = 'assets/images/sun.png';  // Change to sun icon for light mode
     }
 });

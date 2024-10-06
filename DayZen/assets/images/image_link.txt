@@ -1,0 +1,11 @@
+Sun: <a href="https://www.flaticon.com/free-icons/sun" title="sun icons">Sun icons created by Freepik - Flaticon</a>
+
+Moon: <a href="https://www.flaticon.com/free-icons/moon" title="moon icons">Moon icons created by Freepik - Flaticon</a>
+
+Home : <a href="https://www.flaticon.com/free-icons/house" title="house icons">House icons created by Freepik - Flaticon</a>
+
+About_Us : <a href="https://www.flaticon.com/free-icons/card" title="card icons">Card icons created by Pixel perfect - Flaticon</a>
+
+Blog :<a href="https://www.flaticon.com/free-icons/blog" title="blog icons">Blog icons created by Candy Design - Flaticon</a>
+
+Communication : <a href="https://www.flaticon.com/free-icons/communications" title="communications icons">Communications icons created by Freepik - Flaticon</a>
