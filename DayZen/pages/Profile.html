@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - DayZen</title>
+    <link rel="stylesheet" href="../css/profile.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="../assets/images/logo.png" alt="DayZen Logo">
+                <h1>DayZen</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Communication</a></li>
+                </ul>
+                <!-- User icon -->
+                <div class="user-icon">
+                    <a href="Profile.html">
+                        <img src="../assets/images/user.png" alt="User Icon">
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="profile-container">
+        <h1>Complete Your Profile</h1>
+
+        <!-- Progress Bar -->
+        <div class="progress-bar">
+            <div id="progress"></div>
+        </div>
+        <p id="progress-text">0% Profile Completed</p>
+
+        <!-- Profile Photo Section -->
+        <div class="profile-section">
+            <h2>1. Add a Profile Photo</h2>
+            <input type="file" id="profile-photo-input">
+            <img id="profile-photo" src="" alt="Profile Photo" style="display: none; width: 150px; height: 150px;">
+            <label><input type="checkbox" id="photo-checkbox" disabled> Profile Photo Added</label>
+        </div>
+
+        <!-- Bio Section -->
+        <div class="profile-section">
+            <h2>2. Add a Bio</h2>
+            <textarea id="bio-input" placeholder="Add your bio here..."></textarea>
+            <button id="save-bio">Save Bio</button>
+            <p id="saved-bio" style="display: none;">Bio saved!</p>
+            <label><input type="checkbox" id="bio-checkbox" disabled> Bio Added</label>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 DayZen - All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/profile.js"></script>
+</body>
+</html>
