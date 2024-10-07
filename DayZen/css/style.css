@@ -34,11 +34,11 @@ header h1 {
     margin: 0;
 }
 
-nav ul {
+/* nav ul {
     list-style: none;
-}
+} */
 
-nav ul li {
+/* nav ul li {
     display: inline;
     margin-right: 20px;
 }
@@ -46,7 +46,7 @@ nav ul li {
 nav ul li a {
     color: #fff;
     text-decoration: none;
-}
+} */
 
 .hero {
     background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('hero-bg.jpg') center/cover no-repeat;
