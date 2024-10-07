@@ -30,14 +30,17 @@
         </div>
     </header>
 
-    <div class="profile-container">
-        <h1>Complete Your Profile</h1>
-
-        <!-- Progress Bar -->
+    <!-- Sidebar incentive to complete profile -->
+    <div class="profile-sidebar">
+        <p>Complete your profile to get personalized recommendations!</p>
         <div class="progress-bar">
             <div id="progress"></div>
         </div>
         <p id="progress-text">0% Profile Completed</p>
+    </div>
+
+    <div class="profile-container">
+        <h1>Complete Your Profile</h1>
 
         <!-- Profile Photo Section -->
         <div class="profile-section">
@@ -54,6 +57,26 @@
             <button id="save-bio">Save Bio</button>
             <p id="saved-bio" style="display: none;">Bio saved!</p>
             <label><input type="checkbox" id="bio-checkbox" disabled> Bio Added</label>
+        </div>
+
+        <!-- Preferences Section -->
+        <div class="profile-section">
+            <h2>3. Add Your Preferences</h2>
+            <label for="preferences">What are your interests?</label>
+            <select id="preferences" multiple>
+                <option value="Fitness">Fitness</option>
+                <option value="Technology">Technology</option>
+                <option value="Travel">Travel</option>
+                <option value="Fashion">Fashion</option>
+            </select>
+            <button id="save-preferences">Save Preferences</button>
+            <p id="saved-preferences" style="display: none;">Preferences saved!</p>
+            <label><input type="checkbox" id="preferences-checkbox" disabled> Preferences Added</label>
+        </div>
+
+        <!-- Unlock Features Section -->
+        <div class="profile-incentive">
+            <p>Complete 100% of your profile to unlock exclusive features!</p>
         </div>
     </div>
 
