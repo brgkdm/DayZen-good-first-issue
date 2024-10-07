@@ -3,115 +3,43 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    scroll-behavior: smooth;
 }
 
-/* Default Light Mode Styles */
-body.light-mode {
-    background-color: #fff;
-    color: #333;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
+/* Header Styles */
 header {
     background: linear-gradient(45deg, #2c3e50, #3498db);
     color: #fff;
     padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.logo {
+header .logo {
     display: flex;
     align-items: center;
 }
 
-.logo img {
+header .logo img {
     width: 50px;
     margin-right: 10px;
 }
 
-header h1 {
-    font-size: 2em;
-    font-weight: bold;
-    margin: 0;
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
 }
 
-/* nav ul {
-    list-style: none;
-} */
-
-/* nav ul li {
-    display: inline;
+nav ul li {
     margin-right: 20px;
 }
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-} */
-
-.hero {
-    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('hero-bg.jpg') center/cover no-repeat;
-    padding: 100px 0;
-    text-align: center;
-    overflow: hidden;
-}
-
-.hero-content {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.hero-content.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.hero h2 {
-    font-size: 3em;
-    margin-bottom: 20px;
-    color: #8b8686;
-}
-
-.btn {
-    display: inline-block;
-    background: #3498db;
-    color: #fff;
-    padding: 15px 30px;
-    text-decoration: none;
-    border-radius: 25px;
-    transition: background 0.3s ease;
-}
-
-.btn:hover {
-    background: #2980b9;
-}
-
-.features {
-    padding: 50px 0;
-    text-align: center;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-}
-
-.features.active {
-    opacity: 1;
-}
-
-.feature {
-    margin-bottom: 30px;
-}
-
-.feature img {
-    width: 100px;
-}
-
-footer {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-}
-
 /* Dark Mode Styles */
 body.dark-mode {
     background-color: #1a1a1a;
@@ -133,11 +61,94 @@ body.dark-mode .btn {
 body.dark-mode footer {
     background: #111;
 }
-
-/* Theme Toggle Icon Styling */
+/* Theme Toggle */
 .theme-toggle {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    cursor: pointer;
+    display: flex;
+    align-items: center;
+    cursor: pointer; /* Cursor changes to pointer */
+}
+
+/* Hero Section */
+.hero {
+    background: url('assets/images/hero-bg.jpg') no-repeat center center/cover;
+    color: #fff;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-content h2 {
+    font-size: 2.5em;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Features Section */
+.features {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.features h2 {
+    margin-bottom: 40px;
+}
+
+.feature {
+    margin-bottom: 20px;
+    display: inline-block;
+    width: calc(33.33% - 40px); /* Three columns layout on desktop */
+    margin-right: 20px;
+}
+
+.feature img {
+    max-width: 100%;
+    height: auto;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    nav ul li {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .hero-content h2 {
+        font-size: 1.8em;
+    }
+
+    .feature {
+        width: 100%; /* Stacks the features vertically on mobile */
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 10px;
+    }
 }

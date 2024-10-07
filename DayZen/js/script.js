@@ -44,55 +44,43 @@ function deleteRoutine(index) {
 
 document.addEventListener('DOMContentLoaded', function() {
     listRoutines();
-});
-
-document.addEventListener("DOMContentLoaded", function() {
-    const heroContent = document.querySelector(".hero-content");
-    heroContent.classList.add("active");
-});
-
-document.addEventListener("DOMContentLoaded", function() {
-    const heroContent = document.querySelector(".hero-content");
-    heroContent.classList.add("active");
-
-    lastScrollPosition = 0;
     
+    // Animation for the hero content
+    const heroContent = document.querySelector(".hero-content");
+    heroContent.classList.add("active");
+
+    // Scroll animation for features section
     window.addEventListener("scroll", function() {
         const featuresSection = document.querySelector(".features");
         const featuresSectionTop = featuresSection.offsetTop;
         const scrollPosition = window.scrollY;
-        
+
         if (scrollPosition > featuresSectionTop - window.innerHeight / 2) {
             featuresSection.classList.add("active");
         }
-        else {
-            featuresSection.classList.remove("active");
-        }
-    
-        // Check scroll direction
-        if (scrollPosition > lastScrollPosition) {
-            // Scrolling down
-            featuresSection.classList.add("active");
-        } else {
-            // Scrolling up
-            featuresSection.classList.remove("active");
-        }
-    
-        lastScrollPosition = scrollPosition;
     });
-});
+    // Load saved theme preference
+    const body = document.body;
+    const themeIcon = document.getElementById('theme-icon');
 
-const themeIcon = document.getElementById('theme-icon');
-const body = document.body;
-
-themeIcon.addEventListener('click', () => {
-    body.classList.toggle('dark-mode');
-    body.classList.toggle('light-mode');
-
-    // Toggle between sun and moon icons
-    if (body.classList.contains('dark-mode')) {
-        themeIcon.src = 'assets/images/moon_1.png';  // Change to moon icon for dark mode
-    } else {
-        themeIcon.src = 'assets/images/sun.png';  // Change to sun icon for light mode
+    // Apply saved theme preference
+    if (localStorage.getItem('dark-mode') === 'true') {
+        body.classList.add('dark-mode');
+        themeIcon.src = 'assets/images/moon.png'; // Change to moon icon in dark mode
     }
+
+    // Toggle theme on click
+    themeIcon.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+
+        // Toggle between sun and moon icons
+        if (body.classList.contains('dark-mode')) {
+            themeIcon.src = 'assets/images/moon.png'; // Change to moon icon for dark mode
+            localStorage.setItem('dark-mode', 'true'); // Save preference
+        } else {
+            themeIcon.src = 'assets/images/sun.jpeg'; // Change to sun icon for light mode
+            localStorage.setItem('dark-mode', 'false'); // Save preference
+        }
+    });
+    
 });
