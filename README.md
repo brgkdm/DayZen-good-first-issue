@@ -31,7 +31,7 @@ Adopting a simple and user-friendly interface that enables users to easily plan 
 - (It was previously developed in Turkish. Therefore, the language of the parts of the images from the project is Turkish.)
 #
 ## Contributors
-- [Berat Gökdemir] - Project Founder
+- [Berat] - Project Founder
 
 ## **Important Note**
 - Open to development together. 
