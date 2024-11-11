@@ -3,88 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile - DayZen</title>
+    <title>FitLife Profile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/profile.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="logo">
-                <img src="../assets/images/logo.png" alt="DayZen Logo">
-                <h1>DayZen</h1>
+    <div class="container">
+        <h1>Complete Your FitLife Profile</h1>
+        <form class="profile-section">
+            <div class="profile-photo">
+                <img src="/placeholder.svg?height=150&width=150" alt="Profile Photo" id="profile-img">
+                <label for="photo-upload">Add Profile Photo</label>
+                <input type="file" id="photo-upload" accept="image/*">
             </div>
-            <nav>
-                <ul>
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Communication</a></li>
-                </ul>
-                <!-- User icon -->
-                <div class="user-icon">
-                    <a href="Profile.html">
-                        <img src="../assets/images/user.png" alt="User Icon">
-                    </a>
+            <div class="form-group">
+                <label for="bio">Bio</label>
+                <textarea id="bio" placeholder="Tell us about yourself and your fitness journey..."></textarea>
+            </div>
+            <div class="form-group">
+                <label>Fitness Preferences</label>
+                <div class="preferences">
+                    <div class="preference-item">
+                        <input type="checkbox" id="cardio" name="preferences">
+                        <label for="cardio">Cardio</label>
+                    </div>
+                    <div class="preference-item">
+                        <input type="checkbox" id="strength" name="preferences">
+                        <label for="strength">Strength Training</label>
+                    </div>
+                    <div class="preference-item">
+                        <input type="checkbox" id="yoga" name="preferences">
+                        <label for="yoga">Yoga</label>
+                    </div>
+                    <div class="preference-item">
+                        <input type="checkbox" id="hiit" name="preferences">
+                        <label for="hiit">HIIT</label>
+                    </div>
+                    <div class="preference-item">
+                        <input type="checkbox" id="pilates" name="preferences">
+                        <label for="pilates">Pilates</label>
+                    </div>
+                    <div class="preference-item">
+                        <input type="checkbox" id="cycling" name="preferences">
+                        <label for="cycling">Cycling</label>
+                    </div>
                 </div>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Sidebar incentive to complete profile -->
-    <div class="profile-sidebar">
-        <p>Complete your profile to get personalized recommendations!</p>
-        <div class="progress-bar">
-            <div id="progress"></div>
-        </div>
-        <p id="progress-text">0% Profile Completed</p>
+            </div>
+            <div class="form-group">
+                <label for="fitness-goal">Primary Fitness Goal</label>
+                <select id="fitness-goal">
+                    <option value="">Select your primary goal</option>
+                    <option value="weight-loss">Weight Loss</option>
+                    <option value="muscle-gain">Muscle Gain</option>
+                    <option value="endurance">Improve Endurance</option>
+                    <option value="flexibility">Increase Flexibility</option>
+                    <option value="overall-health">Overall Health</option>
+                </select>
+            </div>
+            <button type="submit" class="save-btn">Save Profile</button>
+        </form>
     </div>
-
-    <div class="profile-container">
-        <h1>Complete Your Profile</h1>
-
-        <!-- Profile Photo Section -->
-        <div class="profile-section">
-            <h2>1. Add a Profile Photo</h2>
-            <input type="file" id="profile-photo-input">
-            <img id="profile-photo" src="" alt="Profile Photo" style="display: none; width: 150px; height: 150px;">
-            <label><input type="checkbox" id="photo-checkbox" disabled> Profile Photo Added</label>
-        </div>
-
-        <!-- Bio Section -->
-        <div class="profile-section">
-            <h2>2. Add a Bio</h2>
-            <textarea id="bio-input" placeholder="Add your bio here..."></textarea>
-            <button id="save-bio">Save Bio</button>
-            <p id="saved-bio" style="display: none;">Bio saved!</p>
-            <label><input type="checkbox" id="bio-checkbox" disabled> Bio Added</label>
-        </div>
-
-        <!-- Preferences Section -->
-        <div class="profile-section">
-            <h2>3. Add Your Preferences</h2>
-            <label for="preferences">What are your interests?</label>
-            <select id="preferences" multiple>
-                <option value="Fitness">Fitness</option>
-                <option value="Technology">Technology</option>
-                <option value="Travel">Travel</option>
-                <option value="Fashion">Fashion</option>
-            </select>
-            <button id="save-preferences">Save Preferences</button>
-            <p id="saved-preferences" style="display: none;">Preferences saved!</p>
-            <label><input type="checkbox" id="preferences-checkbox" disabled> Preferences Added</label>
-        </div>
-
-        <!-- Unlock Features Section -->
-        <div class="profile-incentive">
-            <p>Complete 100% of your profile to unlock exclusive features!</p>
-        </div>
-    </div>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 DayZen - All Rights Reserved.</p>
-        </div>
-    </footer>
 
     <script src="../js/profile.js"></script>
 </body>
