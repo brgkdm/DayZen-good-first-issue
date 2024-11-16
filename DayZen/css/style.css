@@ -6,11 +6,6 @@ body {
     scroll-behavior: smooth;
 }
 
-/* Default Light Mode Styles */
-body.light-mode {
-    background-color: #fff;
-    color: #333;
-}
 
 header {
     background: linear-gradient(45deg, #2c3e50, #3498db);
@@ -34,6 +29,248 @@ header h1 {
     margin: 0;
 }
 
+        /* Base Styling */
+        body {
+            background-color: #101c2e; /* Dark blue background */
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+    /* Default glow effect */
+    .neon-glow {
+        position: relative;
+        animation: neon-glow-animation 1.5s ease-out infinite alternate;
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    /* The glowing neon blue effect */
+    @keyframes neon-glow-animation {
+        0% {
+            box-shadow: 0 0 5px #1e90ff, 0 0 15px #1e90ff, 0 0 30px #1e90ff;
+        }
+        100% {
+            box-shadow: 0 0 10px #1e90ff, 0 0 20px #1e90ff, 0 0 50px #1e90ff;
+        }
+    }
+
+    /* For the feature section itself, styling it in a way it becomes highlighted */
+    .feature {
+        opacity: 0.6;
+        transition: opacity 0.5s ease-in-out;
+    }
+
+    /* Highlighted feature */
+    .feature.highlight {
+        opacity: 1;
+        animation: neon-glow-animation 1.5s ease-out infinite alternate;
+    }
+
+    /* Tooltip styling */
+    .tooltip {
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: #fff;
+        padding: 10px;
+        border-radius: 5px;
+        font-size: 14px;
+        display: none;
+        max-width: 200px;
+        z-index: 9999;
+    }
+
+    /* Position tooltips next to each feature */
+    .tooltip[data-tooltip="1"] {
+        top: 160px;
+        left: 50px;
+    }
+
+    .tooltip[data-tooltip="2"] {
+        top: 160px;
+        left: 350px;
+    }
+
+    .tooltip[data-tooltip="3"] {
+        top: 160px;
+        left: 650px;
+    }
+
+
+
+        h1, h2, h3 {
+            text-shadow: 0 0 5px #19232d, 0 0 10px #1e90ff, 0 0 20px #0b2239; /* Neon blue effect */
+        }
+
+        /* Navbar Styling */
+        nav.navbar {
+            background-color: #1a2b3c; /* Darker blue navbar */
+            padding: 15px 0;
+            border-bottom: 2px solid #1e90ff;
+        }
+
+        nav .navbar-nav {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+        }
+
+        nav .nav-link {
+            color: #fff;
+            font-size: 18px;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #2c3e50;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        nav .nav-link:hover {
+            background-color: #1e90ff;
+            box-shadow: 0 0 10px #1e90ff, 0 0 20px #1e90ff;
+        }
+
+        /* Theme Toggle */
+        .theme-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            box-shadow: 0 0 10px #1e90ff, 0 0 20px #101a25;
+            cursor: pointer;
+        }
+
+        .theme-toggle img {
+            width: 30px;
+            box-shadow: 0 0 10px #1e90ff, 0 0 20px #122130;
+        }
+
+        /* Hero Section Styling */
+        .hero {
+            text-align: center;
+            padding: 80px 0;
+            background: linear-gradient(45deg, #1e90ff, #3498db); /* Blue gradient background */
+        }
+
+        .hero h2 {
+            color: #ffffff;
+            font-size: 36px;
+            text-shadow: 0 0 10px rgb(31, 52, 74), 0 0 20px rgba(52, 152, 219, 1); /* Neon blue glow */
+        }
+
+        .hero p {
+            color: #e0e0e0;
+            font-size: 18px;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+
+        .btn {
+            background-color: #02172c;
+            color: white;
+            padding: 12px 30px;
+            font-size: 18px;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #ffffff;
+            color: #02172c;
+            transform: scale(1.05);
+            box-shadow: 0 0 15px #1a2c3d;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 60px 0;
+            background-color: #1b2b38;
+            text-align: center;
+        }
+
+        .features h2 {
+            color: #e9ecf0;
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+
+        .feature {
+            display: inline-block;
+            margin: 20px;
+            max-width: 300px;
+            transition: transform 0.3s ease;
+        }
+
+        .feature img {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 15px;
+            filter: drop-shadow(0 0 10px #1e90ff);
+        }
+
+        .feature h3 {
+            color: #fff;
+            font-size: 22px;
+            text-shadow: 0 0 5px #1e90ff;
+        }
+
+        .feature p {
+            color: #bbb;
+        }
+
+        .feature:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: #222;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        footer a {
+            color: #1e90ff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Light Theme Overrides */
+        .light-theme {
+            background-color: #ffffff; /* White background for light theme */
+            color: #000;
+        }
+
+        .light-theme nav.navbar {
+            background-color: #f0f0f0; /* Light gray navbar */
+            border-bottom: 2px solid #1e90ff;
+        }
+
+        .light-theme .btn {
+            background-color: #1e90ff;
+            color: white;
+        }
+
+        .light-theme .btn:hover {
+            background-color: #3498db;
+        }
+
+        .light-theme footer {
+            background-color: #f0f0f0;
+            color: #000;
+        }
+    
+
 /* nav ul {
     list-style: none;
 } */
@@ -48,14 +285,8 @@ nav ul li a {
     text-decoration: none;
 } */
 
-.hero {
-    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('hero-bg.jpg') center/cover no-repeat;
-    padding: 100px 0;
-    text-align: center;
-    overflow: hidden;
-}
 
-.hero-content {
+/* .hero-content {
     opacity: 0;
     transform: translateY(50px);
     transition: opacity 0.5s ease, transform 0.5s ease;
@@ -74,7 +305,7 @@ nav ul li a {
 
 .btn {
     display: inline-block;
-    background: #3498db;
+    background-color: #121f29;
     color: #fff;
     padding: 15px 30px;
     text-decoration: none;
@@ -110,7 +341,7 @@ footer {
     color: #fff;
     text-align: center;
     padding: 20px 0;
-}
+} */
 
 /* Dark Mode Styles */
 body.dark-mode {
