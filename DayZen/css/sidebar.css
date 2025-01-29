@@ -70,3 +70,9 @@
       margin-left: 200px;
     }
   }
+
+  @media (width>991px) {
+    .sidebar-toggle{
+      display: none;
+    }
+  }
