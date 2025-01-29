@@ -227,7 +227,6 @@ header h1 {
         .feature:hover {
             transform: translateY(-10px);
         }
-
         /* Footer Styling */
         footer {
             background-color: #222;
@@ -371,4 +370,11 @@ body.dark-mode footer {
     top: 20px;
     right: 20px;
     cursor: pointer;
+}
+
+
+@media (width<992px) {
+    nav.navbar{
+        display: none;
+    }
 }

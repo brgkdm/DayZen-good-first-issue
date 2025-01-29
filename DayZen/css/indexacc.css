@@ -21,12 +21,15 @@ header {
     background: linear-gradient(45deg, #2c3e50, #3498db);
     color: #fff;
     padding: 20px 0;
+    width: 100%;
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
     padding: 0 20px;
+    display: flex;
+    justify-content: space-around;
 }
 
 .logo {
@@ -46,6 +49,7 @@ header h1 {
 }
 
 nav {
+    width: 60vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -57,6 +61,8 @@ nav ul {
     margin: 0;
     padding: 0;
     display: flex;
+    justify-content: space-around;
+    width: 80%;
 }
 
 nav ul li {
@@ -67,14 +73,40 @@ nav ul li a {
     color: #fff;
     text-decoration: none;
     font-size: 1.1em;
+    position: relative;
 }
-
+@keyframes underline-anime {
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 100%;
+    }
+}
+nav ul li a:hover::before{
+    /* display: block; */
+    position: absolute;
+    width: 100%;
+    content: '';
+    bottom: -10px;
+    border: 2px solid white;
+    animation-name: underline-anime;
+    animation-duration: 0.3s;
+    animation-delay: 0.2s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: backwards;
+}
 .user-icon {
     margin-left: auto;
+    border: 1px solid white;
+    border-radius: 50%;
+    padding: 5px 7px;
     display: flex;
     align-items: center;
 }
-
+.user-icon:hover{
+    border: 1px solid black;
+}
 .user-icon img {
     width: 25px;
     height: 25px;
@@ -82,10 +114,10 @@ nav ul li a {
     cursor: pointer;
 }
 
-.user-icon a:hover img {
+/* .user-icon a:hover img {
     border: 2px solid #3498db;
     transition: border 0.3s ease;
-}
+} */
 
 /* Main content and sidebar styling */
 /* Main content and sidebar styling */

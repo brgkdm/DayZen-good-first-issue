@@ -39,7 +39,11 @@ h1 {
 }
 
 .profile-photo {
-    text-align: center;
+    /* text-align: center; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 30px;
 }
 
 .profile-photo img {
@@ -51,7 +55,9 @@ h1 {
 }
 
 .profile-photo label {
-    display: inline-block;
+    /* display: inline-block; */
+    vertical-align: middle;
+    height: 50px;
     margin-top: 1rem;
     padding: 0.5rem 1rem;
     background-color: var(--primary-color);
@@ -106,7 +112,9 @@ textarea {
     align-items: center;
     gap: 0.5rem;
 }
-
+.preference-item label{
+    margin-bottom: 0px;
+}
 .save-btn {
     display: block;
     width: 100%;
