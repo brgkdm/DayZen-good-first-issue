@@ -1,0 +1,70 @@
+header {
+    background: linear-gradient(45deg, #2c3e50, #3498db);
+    color: #fff;
+    padding: 0px 0px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+}
+
+.logo img {
+    width: 50px;
+    margin-right: 10px;
+}
+
+header h1 {
+    font-size: 2em;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Navbar Styling */
+nav.navbar {
+    background-color: #1a2b3c; /* Darker blue navbar */
+    padding: 15px 0;
+    border-bottom: 2px solid #1e90ff;
+}
+.navbar-toggler-icon {
+    background-color: #fff;
+    border-radius: 7px;
+}
+
+nav .navbar-nav {
+    display: flex;
+    justify-content: end;
+    width: 100%;
+}
+
+nav .nav-item {
+    padding-right: 20px;
+}
+
+nav .nav-link {
+    color: #fff;
+    font-size: 18px;
+    padding: 10px 20px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+nav .nav-link:hover {
+    background-color: #1e90ff;
+    box-shadow: 0 0 10px #1e90ff, 0 0 20px #1e90ff;
+    border-radius: 15px;
+}
+
+nav .nav-img{
+    height: 20px;
+    padding-right: 10px;
+}
+
+@media (max-width: 768px) {
+    .logo {
+        margin-bottom: 10px;
+        justify-content: center;
+    }
+}
