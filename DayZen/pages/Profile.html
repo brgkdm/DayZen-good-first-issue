@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FitLife Profile</title>
+    <title>DayZen Profile</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/profile.css">
 </head>
 <body>
     <div class="container">
-        <h1>Complete Your FitLife Profile</h1>
+        <h1>Complete Your DayZen Profile</h1>
         <form class="profile-section">
             <div class="profile-photo">
                 <!-- <img src="/placeholder.svg?height=150&width=150" alt="Profile Photo" id="profile-img"> -->
-                <img src="/DayZen-good-first-issue/DayZen/assets/images/user.png" width="150" height="150" alt="Profile Photo" id="profile-img">
+                <img src="../assets/images/user.png" width="150" height="150" alt="Profile Photo" id="profile-img">
 
                 <label for="photo-upload">Add Profile Photo</label>
                 <input type="file" id="photo-upload" accept="image/*">
@@ -62,7 +62,12 @@
                     <option value="overall-health">Overall Health</option>
                 </select>
             </div>
-            <button type="submit" class="save-btn">Save Profile</button>
+            
+            <!-- Updated CTA buttons -->
+            <div class="profile-cta-container">
+                <button type="submit" class="cta-button primary-cta">Save Profile</button>
+                <a href="new-project.html" class="cta-button secondary-cta">Start Your First Project</a>
+            </div>
         </form>
     </div>
 
