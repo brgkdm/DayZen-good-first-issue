@@ -115,26 +115,66 @@ textarea {
 .preference-item label{
     margin-bottom: 0px;
 }
-.save-btn {
-    display: block;
-    width: 100%;
-    padding: 1rem;
-    background-color: var(--primary-color);
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+
+/* New CTA Buttons Styling */
+.profile-cta-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
 }
 
-.save-btn:hover {
-    background-color: var(--secondary-color);
+.cta-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 300px;
+    padding: 15px 25px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: none;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.cta-button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.primary-cta {
+    background: linear-gradient(45deg, #2ecc71, #27ae60);
+}
+
+.primary-cta:hover {
+    background: linear-gradient(45deg, #27ae60, #2ecc71);
+}
+
+.secondary-cta {
+    background: linear-gradient(45deg, #3498db, #2980b9);
+}
+
+.secondary-cta:hover {
+    background: linear-gradient(45deg, #2980b9, #3498db);
 }
 
 @media (max-width: 600px) {
     .container {
         padding: 1rem;
+    }
+    
+    .cta-button {
+        max-width: 100%;
     }
 }

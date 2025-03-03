@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start New Project - DayZen</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/new-project.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="../assets/images/logo.png" alt="DayZen Logo">
+                <h1>DayZen</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Communication</a></li>
+                </ul>
+                <div class="user-icon">
+                    <a href="Profile.html">
+                        <img src="../assets/images/user.png" alt="User Icon">
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container main-container">
+        <h1>Start Your First Project</h1>
+        <p class="subtitle">Create a new routine to track your daily activities</p>
+
+        <div class="project-form">
+            <div class="form-group">
+                <label for="project-name">Project Name</label>
+                <input type="text" id="project-name" placeholder="e.g., Morning Workout Routine">
+            </div>
+
+            <div class="form-group">
+                <label for="project-description">Description</label>
+                <textarea id="project-description" placeholder="Describe your routine..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Project Type</label>
+                <div class="project-types">
+                    <div class="project-type-card">
+                        <img src="../assets/images/productivity.png" alt="Fitness">
+                        <h3>Fitness</h3>
+                        <p>Track your workouts and physical activities</p>
+                    </div>
+                    <div class="project-type-card">
+                        <img src="../assets/images/planning.png" alt="Study">
+                        <h3>Study</h3>
+                        <p>Organize your learning and study sessions</p>
+                    </div>
+                    <div class="project-type-card">
+                        <img src="../assets/images/reward.png" alt="Work">
+                        <h3>Work</h3>
+                        <p>Manage your professional tasks and goals</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Clear CTA buttons -->
+            <div class="project-cta-container">
+                <button type="button" class="cta-button primary-cta">Create Project</button>
+                <a href="indexacc.html" class="cta-button secondary-cta">Back to Dashboard</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 DayZen - All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/new-project.js"></script>
+</body>
+</html> 

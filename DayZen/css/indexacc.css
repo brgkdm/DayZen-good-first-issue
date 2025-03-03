@@ -214,18 +214,71 @@ footer {
     font-size: 50px;
 }
 
-#devam {
-    font-size: medium;
-    display: inline-block;
-    background: #0e8bff;
-    color: #fff;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 25px;
-    transition: background 0.3s ease;
-    cursor: pointer;
+/* CTA Buttons Styling */
+.cta-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 30px;
 }
 
-#devam:hover {
-    background-color: #00b3ff;
+.cta-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    padding: 15px 25px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.cta-button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cta-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.primary-cta {
+    background: linear-gradient(45deg, #2ecc71, #27ae60);
+    border: 2px solid #27ae60;
+}
+
+.primary-cta:hover {
+    background: linear-gradient(45deg, #27ae60, #2ecc71);
+}
+
+.secondary-cta {
+    background: linear-gradient(45deg, #3498db, #2980b9);
+    border: 2px solid #2980b9;
+}
+
+.secondary-cta:hover {
+    background: linear-gradient(45deg, #2980b9, #3498db);
+}
+
+.tertiary-cta {
+    background: linear-gradient(45deg, #9b59b6, #8e44ad);
+    border: 2px solid #8e44ad;
+}
+
+.tertiary-cta:hover {
+    background: linear-gradient(45deg, #8e44ad, #9b59b6);
 }
