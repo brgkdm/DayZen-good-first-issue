@@ -1,0 +1,159 @@
+/* Onboarding Tour Styles */
+.tour-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.tour-step {
+    background-color: white;
+    border-radius: 8px;
+    padding: 25px;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10000;
+    display: none;
+}
+
+.tour-step h3 {
+    margin-top: 0;
+    color: #007bff;
+    font-size: 1.5rem;
+}
+
+.tour-step p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.tour-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.tour-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    z-index: 10001;
+    position: relative;
+}
+
+.tour-btn.next {
+    background-color: #007bff;
+    color: white;
+}
+
+.tour-btn.next:hover {
+    background-color: #0056b3;
+}
+
+.tour-btn.skip {
+    background-color: #f8f9fa;
+    color: #6c757d;
+}
+
+.tour-btn.skip:hover {
+    background-color: #e2e6ea;
+}
+
+.tour-highlight {
+    position: relative;
+    z-index: 1000;
+    box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.5);
+    border-radius: 4px;
+    transition: box-shadow 0.3s ease;
+}
+
+/* Tooltip styles */
+.tour-tooltip {
+    position: absolute;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    max-width: 250px;
+    z-index: 10001;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.tour-tooltip:after {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width: 8px;
+}
+
+.tour-tooltip.top:after {
+    border-color: #007bff transparent transparent transparent;
+    top: 100%;
+    left: 50%;
+    margin-left: -8px;
+}
+
+.tour-tooltip.bottom:after {
+    border-color: transparent transparent #007bff transparent;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -8px;
+}
+
+.tour-tooltip.left:after {
+    border-color: transparent transparent transparent #007bff;
+    top: 50%;
+    left: 100%;
+    margin-top: -8px;
+}
+
+.tour-tooltip.right:after {
+    border-color: transparent #007bff transparent transparent;
+    top: 50%;
+    right: 100%;
+    margin-top: -8px;
+}
+
+/* Fix for the Take Tour button */
+#take-tour-btn {
+    position: relative;
+    z-index: 100;
+    display: inline-block;
+    margin: 5px;
+}
+
+/* Ensure only one tour step is visible at a time */
+.tour-step.active {
+    display: block !important;
+}
+
+/* Hide all other tour steps */
+.tour-step:not(.active) {
+    display: none !important;
+}
+
+/* Fix for the dashboard tour */
+body.tour-active {
+    overflow: hidden;
+}
+
+/* Make sure the tour overlay is on top of everything */
+.tour-overlay.active {
+    display: flex !important;
+} 
