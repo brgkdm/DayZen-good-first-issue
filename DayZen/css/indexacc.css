@@ -282,3 +282,20 @@ footer {
 .tertiary-cta:hover {
     background: linear-gradient(45deg, #8e44ad, #9b59b6);
 }
+
+/* Tour Button Styles */
+.tour-button {
+    background-color: transparent;
+    color: #007bff;
+    border: 1px solid #007bff;
+    border-radius: 4px;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tour-button:hover {
+    background-color: #007bff;
+    color: white;
+}
