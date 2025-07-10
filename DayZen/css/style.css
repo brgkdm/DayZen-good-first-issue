@@ -28,6 +28,7 @@ header h1 {
     font-size: 2em;
     font-weight: bold;
     margin: 0;
+    padding-left:-110px;
 }
 
 /* Default glow effect */
@@ -90,7 +91,7 @@ header h1 {
 }
 
 h1, h2, h3 {
-    text-shadow: 0 0 5px #19232d, 0 0 10px #1e90ff, 0 0 20px #0b2239; /* Neon blue effect */
+    /* text-shadow: 0 0 5px #19232d, 0 0 10px #1e90ff, 0 0 20px #0b2239; Neon blue effect */
 }
 
 /* Navbar Styling */
@@ -111,26 +112,26 @@ nav .navbar-nav {
 }
 
 nav .nav-item {
-    padding-right: 20px;
+    padding-right: 10px;
 }
 
 nav .nav-link {
     color: #fff;
     font-size: 18px;
-    padding: 10px 20px;
+    padding: 10px 30px;
     font-weight: bold;
     transition: all 0.3s ease;
 }
 
 nav .nav-link:hover {
     background-color: #1e90ff;
-    box-shadow: 0 0 10px #1e90ff, 0 0 20px #1e90ff;
-    border-radius: 15px;
+    box-shadow: 0 0 5px #1e90ff, 0 0 10px #1e90ff;
+    border-radius: 10px;
 }
 
 nav .nav-img{
     height: 20px;
-    padding-right: 10px;
+    padding-right: 5px;
 }
 
 /* Hero Section Styling */
