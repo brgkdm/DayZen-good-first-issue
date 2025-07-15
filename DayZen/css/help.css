@@ -2,36 +2,34 @@
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-size: 20px;
     width: 50px;
     height: 50px;
-    font-size: 25px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     z-index: 1000;
 }
 
-.help-btn:hover {
-    background-color: #0056b3;
-}
-
 .help-center {
-    display: none;
     position: fixed;
-    bottom: 80px;
+    bottom: 90px;
     right: 20px;
-    width: 290px;
-    height: 260px;
-    color: #000;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    z-index: 999;
-    overflow: hidden;
+    width: 250px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    display: none;
+    color: #fff;
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
 }
 
 .help-center.active {
@@ -40,98 +38,75 @@
 
 .help-center h4 {
     margin-top: 0;
+    font-size: 18px;
 }
 
 .help-center ul {
-    list-style-type: none;
-    padding-left: 0;
+    padding-left: 18px;
 }
 
 .help-center ul li {
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
-.faq-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin-top: 50px;
+.help-center ul li a {
+    color: #fff;
+    text-decoration: underline;
 }
 
-.faq-section h4 {
-    margin-bottom: 20px;
+.cancel-btn {
+    margin-top: 10px;
+    padding: 6px 12px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
 }
 
-.cancel-btn{
-    background-color: #02172c;
-    color: white;
-    font-size: 16px;
-    border-radius: 35px;
-    padding: 5px 10px;
-    text-decoration: none;
-    transition: all 0.3s ease;
+
+
+.help-center {
+    color: #ffffff; 
 }
 
-/* Estilos gerais para o accordion */
-.accordion {
-    width: 100%;
+.help-center ul li a {
+    color: #ffffff; 
+    font-weight: 500;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.5); 
+    transition: color 0.2s ease;
+}
+
+.help-center ul li a:hover {
+    color: #ffd700; 
+}
+
+.cancel-btn {
+    color: #ffffff;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+}
+
+
+.accordion-button {
+    background-color: #1e293b !important;
+    color: #fff !important;             
+    font-weight: 500;
+    border: none;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #0f172a !important; 
+    color: #ffd700 !important;           
+}
+
+.accordion-button:focus {
+    box-shadow: none;
 }
 
 .accordion-item {
     border: none;
-}
-
-.accordion-header {
-    background-color: #007bff;
-    color: white;
-    border-radius: 5px;
-}
-
-.accordion-button {
-    background-color: #007bff;
-    color: white;
-    font-weight: bold;
-    padding: 15px;
-    border: none;
-    outline: none;
-    transition: background-color 0.3s;
-}
-
-.accordion-button:hover,
-.accordion-button:focus {
-    background-color: #0056b3;
-    color: white;
-}
-
-.accordion-button:not(.collapsed) {
-    background-color: #0056b3;
-    color: white;
-    box-shadow: none;
-}
-
-.accordion-body {
-    background-color: #f8f9fa;
-    padding: 15px;
-    border-radius: 5px;
-    font-size: 16px;
-    color: #333;
-    line-height: 1.5;
-}
-
-/* Footer Styling */
-footer {
-    background-color: #222;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-}
-
-footer a {
-    color: #1e90ff;
-    text-decoration: none;
-}
-
-footer a:hover {
-    text-decoration: underline;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    overflow: hidden;
 }
