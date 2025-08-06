@@ -1,3 +1,5 @@
+
+
 let routine = {
     name: "Morning Exercise",
     time: "07:00",
@@ -9,7 +11,9 @@ let routine = {
 let routines = [routine];
 
 function listRoutines() {
-    let routineList = document.getElementById('routine-list');
+     let routineList = document.getElementById('routine-list');
+     listRoutines();
+   
     routineList.innerHTML = '';
 
     routines.forEach(function(routine, index) {
@@ -101,63 +105,65 @@ themeIcon.addEventListener('click', () => {
     }
 });
 
-window.onload = function () {
-    // Select all tour steps and the overlay
-    const tourSteps = document.querySelectorAll('.tour-step');
-    const tourOverlay = document.getElementById('tourOverlay');
-    let currentStep = 0; // Track which step we're on
+// window.onload = function () {
+//     // Select all tour steps and the overlay
+//     const tourSteps = document.querySelectorAll('.tour-step');
+//     const tourOverlay = document.getElementById('tourOverlay');
+//     let currentStep = 0; // Track which step we're on
 
-    // Show the tour overlay
-    tourOverlay.style.display = 'flex';
+//     // Show the tour overlay
+//     tourOverlay.style.display = 'flex';
 
-    // Function to show the current step
-    function showStep(step) {
-        // Hide all steps
-        tourSteps.forEach((stepElement, index) => {
-            stepElement.style.display = index === step ? 'block' : 'none';
-        });
-    }
+//     // Function to show the current step
+//     function showStep(step) {
+//         // Hide all steps
+//         tourSteps.forEach((stepElement, index) => {
+//             stepElement.style.display = index === step ? 'block' : 'none';
+//         });
+//     }
 
-    // Show the first step
-    showStep(currentStep);
+    // // Show the first step
+    // showStep(currentStep);
 
-    // Function to go to the next step
-    function nextStep() {
-        currentStep++;
-        if (currentStep < tourSteps.length) {
-            showStep(currentStep);
-        } else {
-            endTour(); // End the tour if we are at the last step
-        }
-    }
+    // // Function to go to the next step
+    // function nextStep() {
+    //     currentStep++;
+    //     if (currentStep < tourSteps.length) {
+    //         showStep(currentStep);
+    //     } else {
+    //         endTour(); // End the tour if we are at the last step
+    //     }
+    // }
 
-    // Function to end the tour
-    function endTour() {
-        tourOverlay.style.display = 'none'; // Hide the tour overlay
-    }
+    // // Function to end the tour
+    // function endTour() {
+    //     tourOverlay.style.display = 'none'; // Hide the tour overlay
+    // }
 
-    // Function to skip the tour and redirect to the home page
-    function skipTour() {
-        tourOverlay.style.display = 'none'; // Hide the tour overlay
+    // // Function to skip the tour and redirect to the home page
+    // function skipTour() {
+    //     tourOverlay.style.display = 'none'; // Hide the tour overlay
         
-    }
+    // }
 
-    // Event listeners for the buttons
-    document.getElementById('nextStep1').addEventListener('click', nextStep);
-    document.getElementById('nextStep2').addEventListener('click', nextStep);
-    document.getElementById('nextStep3').addEventListener('click', nextStep);
-    document.getElementById('endTour').addEventListener('click', endTour);
+//     // Event listeners for the buttons
+//     document.getElementById('nextStep1').addEventListener('click', nextStep);
+//     document.getElementById('nextStep2').addEventListener('click', nextStep);
+//     document.getElementById('nextStep3').addEventListener('click', nextStep);
+//     document.getElementById('endTour').addEventListener('click', endTour);
 
-    // Skip tour button for all steps
-    document.querySelectorAll('#skipTour').forEach(button => {
-        button.addEventListener('click', skipTour);
-    });
+//     // Skip tour button for all steps
+//     document.querySelectorAll('#skipTour').forEach(button => {
+//         button.addEventListener('click', skipTour);
+//     });
 
-    // Go to Profile Setup Button
-    document.getElementById('goToProfile').addEventListener('click', function () {
-        window.location.href = 'pages/Profile.html'; // Redirect to the actual profile setup page (change URL as needed)
-    });
-};
+//     // Go to Profile Setup Button
+//     document.getElementById('goToProfile').addEventListener('click', function () {
+//         window.location.href = 'pages/Profile.html'; // Redirect to the actual profile setup page (change URL as needed)
+//     });
+// };
 
 
     
+
+
