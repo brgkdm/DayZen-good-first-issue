@@ -1,8 +1,14 @@
+body{
+     padding-top: 80px; 
+}
 header {
+    display: flex;
     background: linear-gradient(45deg, #2c3e50, #3498db);
     color: #fff;
     padding: 0px 0px;
+  
 }
+
 
 .logo {
     display: flex;
@@ -27,7 +33,9 @@ nav.navbar {
     background-color: #1a2b3c; /* Darker blue navbar */
     padding: 15px 0;
     border-bottom: 2px solid #1e90ff;
+   
 }
+
 .navbar-toggler-icon {
     background-color: #fff;
     border-radius: 7px;

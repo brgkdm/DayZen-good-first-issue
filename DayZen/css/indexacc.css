@@ -22,6 +22,8 @@ header {
     color: #fff;
     padding: 20px 0;
     width: 100%;
+    position: sticky;
+    top: 0;
 }
 
 .container {
@@ -208,10 +210,16 @@ footer {
 .welcome {
     text-align: center;
     color: #006eff;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: "Libertinus Sans", sans-serif;
     text-decoration: underline;
     font-weight: bold;
-    font-size: 50px;
+    font-size: 2rem;
+}
+
+.navbar-items{
+    display: flex;
+    margin-top: 6vh;
+    
 }
 
 /* CTA Buttons Styling */
@@ -286,16 +294,19 @@ footer {
 /* Tour Button Styles */
 .tour-button {
     background-color: transparent;
-    color: #007bff;
-    border: 1px solid #007bff;
+    color: #f2f8ff;
+    border: 1px solid #d3e8ff;
     border-radius: 4px;
     padding: 5px 10px;
-    font-size: 14px;
+    font-size: 1.2rem;
     cursor: pointer;
     transition: all 0.3s ease;
+    position: absolute;
+    top: -3vh;
 }
 
 .tour-button:hover {
     background-color: #007bff;
     color: white;
+    transform: scale(1.1);
 }

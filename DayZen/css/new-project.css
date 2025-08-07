@@ -60,6 +60,7 @@ header .container {
 nav {
     display: flex;
     align-items: center;
+    position: relative;
 }
 
 nav ul {
@@ -308,14 +309,16 @@ footer {
 /* Tour Button Styles */
 .tour-button {
     background-color: transparent;
-    color: #007bff;
-    border: 1px solid #007bff;
+    color: #ffffff;
+    border: 1px solid #ffffff;
     border-radius: 4px;
     padding: 5px 10px;
     font-size: 14px;
     cursor: pointer;
     transition: all 0.3s ease;
     margin-left: 10px;
+    position: absolute;
+    
 }
 
 .tour-button:hover {

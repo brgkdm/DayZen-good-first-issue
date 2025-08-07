@@ -13,3 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+document.getElementById("back-btn").addEventListener("click",()=>{
+    window.location.href = "indexacc.html";
+});

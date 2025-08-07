@@ -7,11 +7,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/profile.css">
     <link rel="stylesheet" href="../css/onboarding.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intro.js/8.3.2/introjs.min.css" integrity="sha512-LG7l1tbF72DGUqBESsGCnS8DdKqrLT3lmONMnSfkvZGWKIwUznlBPQUHYh0q1OEf67CDzXJ0/kARmPv4vTCVmw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Font Awesome CDN (latest version as of now) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 </head>
 <body>
     <div class="container">
+        <span id="back-btn"><i class="fa-solid fa-arrow-left"></i></span>
         <div class="header-container">
-            <h1>Complete Your DayZen Profile</h1>
+            <h1 style="margin-left: 6vw;">Complete Your DayZen Profile</h1>
             <button id="take-tour-btn" class="tour-button">Take Tour</button>
         </div>
         <form class="profile-section">
@@ -26,8 +31,8 @@
                 <label for="bio">Bio</label>
                 <textarea id="bio" placeholder="Tell us about yourself and your fitness journey..."></textarea>
             </div>
-            <div class="form-group">
-                <label>Fitness Preferences</label>
+            <div class="form-group" id="select-preference">
+                <label style="font-weight: 600;">Fitness Preferences</label>
                 <div class="preferences">
                     <div class="preference-item">
                         <input type="checkbox" id="cardio" name="preferences">
@@ -55,8 +60,8 @@
                     </div>
                 </div>
             </div>
-            <div class="form-group">
-                <label for="fitness-goal">Primary Fitness Goal</label>
+            <div class="form-group" id="fitness-goal">
+                <label for="fitness-goal" style="font-weight: 700;">Primary Fitness Goal</label>
                 <select id="fitness-goal">
                     <option value="">Select your primary goal</option>
                     <option value="weight-loss">Weight Loss</option>
@@ -75,7 +80,14 @@
         </form>
     </div>
 
-    <script src="../js/profile.js"></script>
-    <script src="../js/onboarding-profile.js"></script>
+    
+
+    
+
+    
 </body>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/8.3.2/intro.min.js" integrity="sha512-5ykRz1AkSpATwLO5fFqJb7Y5kprfzu/q9PbRVSOspLcn2Tm7m6vZIAyoUA4a5GFNRIlxM43kHXmYEphfz3eOWA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+ <script src="../js/profile.js"></script>
+    
+ <script src="../js/onboarding-profile.js"></script>
 </html>
