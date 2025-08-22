@@ -58,6 +58,35 @@ button {
     transition: all 0.3s ease;
 }
 
+.password-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-wrapper input {
+    width: 100%;
+    padding-right: 45px;
+    box-sizing: border-box;
+}
+
+.toggle-icon {
+    position: absolute;
+    right: 10px;
+    top: 32%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.toggle-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+
 button {
     background-color: #3498db;
     color: #fff;
@@ -67,4 +96,16 @@ button {
 button:hover {
     background-color: #2980b9;
     transform: scale(1.05);
+}
+
+.sign-instead{
+    text-align: center;
+}
+.sign-instead a{
+    text-decoration: none;
+    color: #3498db;
+}
+.sign-instead a:hover{
+    text-decoration: underline;
+    color: #2980b9;
 }

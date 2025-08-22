@@ -17,3 +17,24 @@ document.addEventListener('DOMContentLoaded', function() {
 document.getElementById("back-btn").addEventListener("click",()=>{
     window.location.href = "indexacc.html";
 });
+
+const logoutBtn = document.querySelector('.log-out-btn');
+const logoutPrompt = document.querySelector('.log-out-prompt');
+const yesBtn = document.querySelector('.yes-btn');
+const noBtn = document.querySelector('.no-btn');
+
+logoutBtn.addEventListener('click', () => {
+    logoutBtn.style.display = "none";
+
+    logoutPrompt.style.display = "block";
+});
+
+noBtn.addEventListener('click', () => {
+    logoutBtn.style.display = "block";
+
+    logoutPrompt.style.display = "none";
+});
+
+yesBtn.addEventListener('click', () => {
+    window.location.href = "../pages/login.html";
+});
