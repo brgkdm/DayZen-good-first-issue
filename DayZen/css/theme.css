@@ -1,0 +1,102 @@
+/* =========================
+   LIGHT MODE (default)
+   ========================= */
+body.light-mode {
+    background-color: #ffffff;
+    color: #212529; /* Bootstrap default text */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Navbar in light mode */
+body.light-mode .navbar {
+    background-color: #f8f9fa; /* light gray */
+    color: #212529;
+}
+body.light-mode .navbar .nav-link {
+    color: #212529;
+}
+body.light-mode .navbar .nav-link:hover {
+    color: #0d6efd; /* bootstrap primary blue */
+}
+
+/* Hero Section */
+body.light-mode .hero {
+    background: linear-gradient(135deg, #e8f0ff, #ffffff);
+    color: #212529;
+}
+
+/* Footer */
+body.light-mode footer {
+    background-color: #f8f9fa;
+    color: #212529;
+}
+
+
+/* =========================
+   DARK MODE
+   ========================= */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Navbar in dark mode */
+body.dark-mode .navbar {
+    background-color: #1f1f1f;
+    color: #e0e0e0;
+}
+body.dark-mode .navbar .nav-link {
+    color: #e0e0e0;
+}
+body.dark-mode .navbar .nav-link:hover {
+    color: #0dcaf0; /* Bootstrap cyan accent */
+}
+
+/* Hero Section */
+body.dark-mode .hero {
+    background: linear-gradient(135deg, #1c1c1c, #2a2a2a);
+    color: #e0e0e0;
+}
+
+/* Footer */
+body.dark-mode footer {
+    background-color: #1f1f1f;
+    color: #aaa;
+}
+
+/* Buttons adjust automatically (Bootstrap dark theme support) */
+body.dark-mode .btn-primary {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+/* =========================
+   NAVBAR (Light Mode)
+   ========================= */
+body.light-mode .navbar {
+    background-color: #f8f9fa !important; /* light gray */
+}
+
+body.light-mode .navbar .nav-link {
+    color: #212529 !important;
+}
+
+body.light-mode .navbar .nav-link:hover {
+    color: #0d6efd !important; /* bootstrap primary blue */
+}
+
+/* =========================
+   NAVBAR (Dark Mode)
+   ========================= */
+body.dark-mode .navbar {
+    background-color: #1f1f1f !important; /* dark gray */
+}
+
+body.dark-mode .navbar .nav-link {
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .navbar .nav-link:hover {
+    color: #0dcaf0 !important; /* bootstrap cyan */
+}
