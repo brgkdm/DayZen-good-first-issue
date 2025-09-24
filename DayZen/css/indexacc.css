@@ -310,3 +310,21 @@ footer {
     color: white;
     transform: scale(1.1);
 }
+
+.theme-toggle {
+    margin-left: 1rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.theme-toggle img {
+    width: 28px;
+    height: 28px;
+    transition: transform 0.3s ease;
+}
+
+.theme-toggle img:hover {
+    transform: rotate(20deg) scale(1.1);
+}
+
