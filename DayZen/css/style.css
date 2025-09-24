@@ -123,10 +123,13 @@ nav .nav-link {
     transition: all 0.3s ease;
 }
 
+/* Simple but classy hover effect */
 nav .nav-link:hover {
-    background-color: #1e90ff;
-    box-shadow: 0 0 5px #1e90ff, 0 0 10px #1e90ff;
+    box-shadow: 0 0 5px #ffffff, 0 0 5px #1e90ff;
+    box-shadow: inset 0 0 5px #ffffff, inset 0 0 0 3px #1e90ff;
+    border-color: #1e90ff;
     border-radius: 10px;
+    color: white;
 }
 
 nav .nav-img{
@@ -138,7 +141,7 @@ nav .nav-img{
 .hero {
     text-align: center;
     padding: 80px 0;
-    background: linear-gradient(45deg, #1e90ff, #0f5192); /* Blue gradient background */
+    background: linear-gradient(45deg, #569fe9, #0f5192); /* Blue gradient background */
 }
 
 .hero h2 {
@@ -168,7 +171,7 @@ nav .nav-img{
     background-color: #ffffff;
     color: #02172c;
     transform: scale(1.05);
-    box-shadow: 0 0 15px #1a2c3d;
+    box-shadow: 0 0 15px #0a2238;
 }
 
 /* Features Section */
@@ -298,3 +301,23 @@ body.dark-mode footer {
         right: 60px;
     }
 }
+
+/* Animation added for theme icon */
+#theme-icon {
+    animation-name: rotate360;
+    animation-timing-function: linear;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-delay: 1s;
+}
+
+@keyframes rotate360 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
