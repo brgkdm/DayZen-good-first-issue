@@ -17,6 +17,24 @@ header {
 .logo {
     display: flex;
     align-items: center;
+    position: relative;
+}
+
+.mb-0 {
+    position: absolute;
+    top: 5px;
+    left: 60px;
+    z-index: 100;
+    text-shadow: 0 0 20px rgb(155, 150, 150);
+}
+
+.reflect {
+    position: absolute;
+    top: 12px;
+    left: 65px;
+    color: rgb(0, 0, 0);
+    background-color: transparent;
+    text-shadow: 0 0 20px rgb(0, 0, 0);
 }
 
 .logo img {
@@ -144,6 +162,10 @@ nav .nav-img{
     background: linear-gradient(45deg, #569fe9, #0f5192); /* Blue gradient background */
 }
 
+.hero-content {
+    margin-top: 20px;
+}
+
 .hero h2 {
     color: #ffffff;
     font-size: 36px;
@@ -212,7 +234,9 @@ nav .nav-img{
 }
 
 .feature:hover {
-    transform: translateY(-10px);
+    /* transform: translateY(-10px); */
+    transform: scale(1.1);
+    text-shadow: 0 0 10px #1e90ff;
 }
 
 /* Footer Styling */
