@@ -32,3 +32,29 @@ Adopting a simple and user-friendly interface that enables users to easily plan 
 
 ## **Important Note**
 - Open to development together. 
+
+## 📂 Project Structure
+
+The project is organized into clear directories to keep code maintainable and easy to navigate:
+
+
+### 📁 Folder Details
+
+- **assets/images/** → Stores all image files (icons, logos, backgrounds, etc.).  
+- **css/** → Contains all project stylesheets (`.css` files).  
+- **js/** → Contains JavaScript files that handle functionality and interactivity.  
+- **pages/** → Contains additional HTML pages (e.g., about, contact, dashboard).  
+- **index.html** → Main landing page of the project.  
+
+### 📂 Assets - Images
+
+Images are grouped into logical sub folders for clarity:
+
+- **logos/** → Branding images (e.g., project logos, variations).  
+- **icons/** → Small UI elements (e.g., sun, moon, user).  
+- **illustrations/** → Larger images or graphics used in pages (about, blog, planning, etc.).  
+- **misc/** → Other supporting files like `image_link.txt`.  
+
+
+### 📝 Notes
+- Keeping stylesheets, scripts, images, and pages in separate folders ensures scalability and easy collaboration.  
