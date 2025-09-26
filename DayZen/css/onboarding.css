@@ -137,13 +137,28 @@
 }
 
 /* Fix for the Take Tour button */
+/* Take tour button style updated */
 #take-tour-btn {
   position: relative;
   z-index: 100;
   display: inline-block;
   margin: 7px;
-  left: 60px;
+  left: 72px;
+  background-color:#055fbe;
+  color: white;
+  transition: all 0.3s ease;  
+  font-weight: 500;
 }
+
+/* Take tour button hover animation updated (accordingly position is adjusted)*/
+#take-tour-btn:hover {
+  transform: scale(1.0);
+  border: 1px solid;
+  color: #007bff;
+  background-color: #15395f;
+  box-shadow: 0 0 10px #606a74;
+}
+
 
 /* Ensure only one tour step is visible at a time */
 .tour-step.active {
