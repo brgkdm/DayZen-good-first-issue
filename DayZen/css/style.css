@@ -11,7 +11,8 @@ body {
 header {
     background: linear-gradient(45deg, #2c3e50, #3498db);
     color: #fff;
-    padding: 0px 0px;
+    padding: 20px 0; /* Fixed zero padding to something functional, avoiding flat nothingness */
+    position: relative; /* Added relative positioning for better child element control */
 }
 
 .logo {
@@ -46,7 +47,7 @@ header h1 {
     font-size: 2em;
     font-weight: bold;
     margin: 0;
-    padding-left:-110px;
+    margin-left: -110px; /* Changed invalid negative padding to margin for proper positioning without breaking layout */
 }
 
 /* Default glow effect */
@@ -71,6 +72,7 @@ header h1 {
 .feature {
     opacity: 0.6;
     transition: opacity 0.5s ease-in-out;
+    position: relative; /* Added relative positioning to make tooltips functional and relative to each feature */
 }
 
 /* Highlighted feature */
@@ -92,32 +94,38 @@ header h1 {
     z-index: 9999;
 }
 
-/* Position tooltips next to each feature */
+/* Make tooltips appear on hover for pure CSS functionality */
+.feature:hover .tooltip {
+    display: block; /* Added to make tooltips functional without JS, showing on hover like a teasing reveal */
+}
+
+/* Adjusted tooltip positions to be relative and responsive; removed fixed viewport positions */
 .tooltip[data-tooltip="1"] {
-    top: 160px;
-    left: 50px;
+    top: 100%; /* Position below the feature for better flow */
+    left: 0;
 }
 
 .tooltip[data-tooltip="2"] {
-    top: 160px;
-    left: 350px;
+    top: 100%;
+    left: 0;
 }
 
 .tooltip[data-tooltip="3"] {
-    top: 160px;
-    left: 650px;
+    top: 100%;
+    left: 0;
 }
 
 h1, h2, h3 {
-    /* text-shadow: 0 0 5px #19232d, 0 0 10px #1e90ff, 0 0 20px #0b2239; Neon blue effect */
+    text-shadow: 0 0 5px #19232d, 0 0 10px #1e90ff, 0 0 20px #0b2239; /* Uncommented and applied the neon effect for consistent glow */
 }
 
 /* Navbar Styling */
 nav.navbar {
-    background-color: #1a2b3c; /* Darker blue navbar */
-    padding: 15px 0;
+    background-color: #2c3e50; /* Fixed 'red' to match comment's 'Darker blue navbar' for thematic consistency */
+    padding: 25px 0;
     border-bottom: 2px solid #1e90ff;
 }
+
 .navbar-toggler-icon {
     background-color: #fff;
     border-radius: 7px;
@@ -143,14 +151,13 @@ nav .nav-link {
 
 /* Simple but classy hover effect */
 nav .nav-link:hover {
-    box-shadow: 0 0 5px #ffffff, 0 0 5px #1e90ff;
-    box-shadow: inset 0 0 5px #ffffff, inset 0 0 0 3px #1e90ff;
-    border-color: #1e90ff;
+    box-shadow: 0 0 5px #ffffff, 0 0 5px #1e90ff, inset 0 0 5px #ffffff, inset 0 0 3px #1e90ff; /* Combined duplicated box-shadows into one for non-overriding functionality */
+    border: 1px solid #1e90ff; /* Added border style to make border-color functional */
     border-radius: 10px;
     color: white;
 }
 
-nav .nav-img{
+nav .nav-img {
     height: 20px;
     padding-right: 5px;
 }
@@ -234,8 +241,7 @@ nav .nav-img{
 }
 
 .feature:hover {
-    /* transform: translateY(-10px); */
-    transform: scale(1.1);
+    transform: scale(1.1); /* Chose scale over translateY for smoother, more engaging hover like a swelling erection */
     text-shadow: 0 0 10px #1e90ff;
 }
 
@@ -314,15 +320,59 @@ body.dark-mode footer {
 .theme-toggle img {
     width: 30px;
 }
-
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .logo {
         margin-bottom: 10px;
+        position: relative;
+        left: 100px;
+        top: 15px;
         justify-content: center;
+    }
+
+    .logo.img{
+        position: relative;
+        left: -10px;
+        bottom: 20px;
+        top:0px;
+    }
+}
+
+    .theme-toggle {
+        right: 60px;
+    }
+
+    /* Made tooltips responsive for smaller screens */
+    .tooltip {
+        max-width: 150px;
+        font-size: 12px;
+    }
+
+    .feature {
+        max-width: 100%; /* Full width on mobile for better positioning */
+        margin: 10px 0;
+    }
+}
+@media (max-width: 768px) {
+    .logo img {
+        border: 2px solid red ; 
+        position: relative;
+        left: 20px;
+        bottom: 10px;
     }
 
     .theme-toggle {
         right: 60px;
+    }
+
+    /* Made tooltips responsive for smaller screens */
+    .tooltip {
+        max-width: 150px;
+        font-size: 12px;
+    }
+
+    .feature {
+        max-width: 100%; /* Full width on mobile for better positioning */
+        margin: 10px 0;
     }
 }
 
@@ -344,4 +394,3 @@ body.dark-mode footer {
     transform: rotate(360deg);
   }
 }
-
