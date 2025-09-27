@@ -328,7 +328,7 @@ body.dark-mode footer {
         top: 15px;
         justify-content: center;
     }
-
+    /* position of the image on the minimum width size  */
     .logo.img{
         position: relative;
         left: -10px;
@@ -351,7 +351,7 @@ body.dark-mode footer {
         max-width: 100%; /* Full width on mobile for better positioning */
         margin: 10px 0;
     }
-}
+
 @media (max-width: 768px) {
     .logo img {
         border: 2px solid red ; 
