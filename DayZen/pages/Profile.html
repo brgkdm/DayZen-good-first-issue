@@ -4,90 +4,223 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DayZen Profile</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/profile.css">
     <link rel="stylesheet" href="../css/onboarding.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intro.js/8.3.2/introjs.min.css" integrity="sha512-LG7l1tbF72DGUqBESsGCnS8DdKqrLT3lmONMnSfkvZGWKIwUznlBPQUHYh0q1OEf67CDzXJ0/kARmPv4vTCVmw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- Font Awesome CDN (latest version as of now) -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
     <div class="container">
         <span id="back-btn"><i class="fa-solid fa-arrow-left"></i></span>
+        
         <div class="header-container">
             <h1 style="margin-left: 6vw;">Complete Your DayZen Profile</h1>
-            <button id="take-tour-btn" class="tour-button">Take Tour</button>
+            <button id="take-tour-btn" class="tour-button">
+                <i class="fa-solid fa-route"></i> Take Tour
+            </button>
         </div>
-        <form class="profile-section">
-            <div class="profile-photo">
-                <!-- <img src="/placeholder.svg?height=150&width=150" alt="Profile Photo" id="profile-img"> -->
-                <img src="../assets/images/icons/user.png" width="150" height="150" alt="Profile Photo" id="profile-img">
 
-                <label for="photo-upload">Add Profile Photo</label>
+        <form class="profile-section">
+            <!-- Profile Photo Section with Enhanced UI -->
+            <div class="profile-photo">
+                <div class="image-container">
+                    <img src="../assets/images/icons/user.png" width="150" height="150" alt="Profile Photo" id="profile-img">
+                    <div class="image-overlay">
+                        <i class="fa-solid fa-camera"></i>
+                    </div>
+                </div>
+                <label for="photo-upload" class="upload-label">
+                    <i class="fa-solid fa-upload"></i> Add Profile Photo
+                </label>
                 <input type="file" id="photo-upload" accept="image/*">
+                <p class="helper-text">JPG, PNG or GIF (max. 5MB)</p>
             </div>
+
+            <!-- Bio Section with Character Counter -->
             <div class="form-group">
-                <label for="bio">Bio</label>
-                <textarea id="bio" placeholder="Tell us about yourself and your fitness journey..."></textarea>
+                <label for="bio">
+                    <i class="fa-solid fa-pen-to-square"></i> Bio
+                </label>
+                <div class="textarea-wrapper">
+                    <textarea id="bio" placeholder="Tell us about yourself and your fitness journey..." maxlength="500"></textarea>
+                    <span class="char-counter">Max 500 characters</span>
+                </div>
             </div>
+
+            <!-- Fitness Preferences with Icons -->
             <div class="form-group" id="select-preference">
-                <label style="font-weight: 600;">Fitness Preferences</label>
+                <label style="font-weight: 600;">
+                    <i class="fa-solid fa-dumbbell"></i> Fitness Preferences
+                </label>
+                <p class="section-subtitle">Select all that interest you</p>
                 <div class="preferences">
                     <div class="preference-item">
                         <input type="checkbox" id="cardio" name="preferences">
-                        <label for="cardio">Cardio</label>
+                        <label for="cardio">
+                            <i class="fa-solid fa-heart-pulse"></i> Cardio
+                        </label>
                     </div>
                     <div class="preference-item">
                         <input type="checkbox" id="strength" name="preferences">
-                        <label for="strength">Strength Training</label>
+                        <label for="strength">
+                            <i class="fa-solid fa-dumbbell"></i> Strength Training
+                        </label>
                     </div>
                     <div class="preference-item">
                         <input type="checkbox" id="yoga" name="preferences">
-                        <label for="yoga">Yoga</label>
+                        <label for="yoga">
+                            <i class="fa-solid fa-spa"></i> Yoga
+                        </label>
                     </div>
                     <div class="preference-item">
                         <input type="checkbox" id="hiit" name="preferences">
-                        <label for="hiit">HIIT</label>
+                        <label for="hiit">
+                            <i class="fa-solid fa-fire-flame-curved"></i> HIIT
+                        </label>
                     </div>
                     <div class="preference-item">
                         <input type="checkbox" id="pilates" name="preferences">
-                        <label for="pilates">Pilates</label>
+                        <label for="pilates">
+                            <i class="fa-solid fa-person-walking"></i> Pilates
+                        </label>
                     </div>
                     <div class="preference-item">
                         <input type="checkbox" id="cycling" name="preferences">
-                        <label for="cycling">Cycling</label>
+                        <label for="cycling">
+                            <i class="fa-solid fa-bicycle"></i> Cycling
+                        </label>
+                    </div>
+                    <div class="preference-item">
+                        <input type="checkbox" id="swimming" name="preferences">
+                        <label for="swimming">
+                            <i class="fa-solid fa-person-swimming"></i> Swimming
+                        </label>
+                    </div>
+                    <div class="preference-item">
+                        <input type="checkbox" id="running" name="preferences">
+                        <label for="running">
+                            <i class="fa-solid fa-person-running"></i> Running
+                        </label>
                     </div>
                 </div>
             </div>
-            <div class="form-group" id="fitness-goal">
-                <label for="fitness-goal" style="font-weight: 700;">Primary Fitness Goal</label>
-                <select id="fitness-goal">
-                    <option value="">Select your primary goal</option>
-                    <option value="weight-loss">Weight Loss</option>
-                    <option value="muscle-gain">Muscle Gain</option>
-                    <option value="endurance">Improve Endurance</option>
-                    <option value="flexibility">Increase Flexibility</option>
-                    <option value="overall-health">Overall Health</option>
-                </select>
+
+            <!-- Fitness Goal with Custom Select -->
+            <div class="form-group" id="fitness-goal-group">
+                <label for="fitness-goal" style="font-weight: 700;">
+                    <i class="fa-solid fa-bullseye"></i> Primary Fitness Goal
+                </label>
+                <div class="select-wrapper">
+                    <select id="fitness-goal" required>
+                        <option value="">Select your primary goal</option>
+                        <option value="weight-loss">🔥 Weight Loss</option>
+                        <option value="muscle-gain">💪 Muscle Gain</option>
+                        <option value="endurance">🏃 Improve Endurance</option>
+                        <option value="flexibility">🧘 Increase Flexibility</option>
+                        <option value="overall-health">❤️ Overall Health</option>
+                        <option value="stress-relief">😌 Stress Relief</option>
+                    </select>
+                    <i class="fa-solid fa-chevron-down select-arrow"></i>
+                </div>
+            </div>
+
+            <!-- Experience Level (New Addition) -->
+            <div class="form-group">
+                <label for="experience-level">
+                    <i class="fa-solid fa-star"></i> Experience Level
+                </label>
+                <div class="experience-levels">
+                    <div class="experience-item">
+                        <input type="radio" id="beginner" name="experience" value="beginner">
+                        <label for="beginner">
+                            <i class="fa-solid fa-seedling"></i>
+                            <span class="exp-title">Beginner</span>
+                            <span class="exp-desc">Just starting out</span>
+                        </label>
+                    </div>
+                    <div class="experience-item">
+                        <input type="radio" id="intermediate" name="experience" value="intermediate">
+                        <label for="intermediate">
+                            <i class="fa-solid fa-chart-line"></i>
+                            <span class="exp-title">Intermediate</span>
+                            <span class="exp-desc">Regular workouts</span>
+                        </label>
+                    </div>
+                    <div class="experience-item">
+                        <input type="radio" id="advanced" name="experience" value="advanced">
+                        <label for="advanced">
+                            <i class="fa-solid fa-trophy"></i>
+                            <span class="exp-title">Advanced</span>
+                            <span class="exp-desc">Experienced athlete</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Weekly Availability -->
+            <div class="form-group">
+                <label for="availability">
+                    <i class="fa-solid fa-calendar-days"></i> Weekly Availability
+                </label>
+                <p class="section-subtitle">How many days per week can you dedicate to fitness?</p>
+                <div class="availability-slider">
+                    <input type="range" id="availability" name="availability" min="1" max="7" value="3" class="slider">
+                    <div class="slider-labels">
+                        <span>1 day</span>
+                        <span>3-4 days</span>
+                        <span>7 days</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Time Preference -->
+            <div class="form-group">
+                <label>
+                    <i class="fa-solid fa-clock"></i> Preferred Workout Time
+                </label>
+                <div class="time-preference">
+                    <div class="time-item">
+                        <input type="radio" id="morning" name="time" value="morning">
+                        <label for="morning">
+                            <i class="fa-solid fa-sunrise"></i>
+                            <span>Morning</span>
+                            <small>5am - 11am</small>
+                        </label>
+                    </div>
+                    <div class="time-item">
+                        <input type="radio" id="afternoon" name="time" value="afternoon">
+                        <label for="afternoon">
+                            <i class="fa-solid fa-sun"></i>
+                            <span>Afternoon</span>
+                            <small>12pm - 5pm</small>
+                        </label>
+                    </div>
+                    <div class="time-item">
+                        <input type="radio" id="evening" name="time" value="evening">
+                        <label for="evening">
+                            <i class="fa-solid fa-moon"></i>
+                            <span>Evening</span>
+                            <small>6pm - 11pm</small>
+                        </label>
+                    </div>
+                </div>
             </div>
             
-            <!-- Updated CTA buttons -->
+            <!-- Updated CTA buttons with icons -->
             <div class="profile-cta-container">
-                <button type="submit" class="cta-button primary-cta">Save Profile</button>
-                <a href="new-project.html" class="cta-button secondary-cta">Start Your First Project</a>
+                <button type="submit" class="cta-button primary-cta">
+                    <i class="fa-solid fa-floppy-disk"></i> Save Profile
+                </button>
+                <a href="new-project.html" class="cta-button secondary-cta">
+                    <i class="fa-solid fa-rocket"></i> Start Your First Project
+                </a>
             </div>
         </form>
     </div>
 
-    
-
-    
-
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/8.3.2/intro.min.js" integrity="sha512-5ykRz1AkSpATwLO5fFqJb7Y5kprfzu/q9PbRVSOspLcn2Tm7m6vZIAyoUA4a5GFNRIlxM43kHXmYEphfz3eOWA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="../js/profile.js"></script>
+    <script src="../js/onboarding-profile.js"></script>
 </body>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/8.3.2/intro.min.js" integrity="sha512-5ykRz1AkSpATwLO5fFqJb7Y5kprfzu/q9PbRVSOspLcn2Tm7m6vZIAyoUA4a5GFNRIlxM43kHXmYEphfz3eOWA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
- <script src="../js/profile.js"></script>
-    
- <script src="../js/onboarding-profile.js"></script>
 </html>
