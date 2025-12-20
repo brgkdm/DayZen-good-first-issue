@@ -8,20 +8,20 @@ document.addEventListener('DOMContentLoaded', function() {
     let savedTheme = localStorage.getItem('dayzen_theme') || 'light';
     if (savedTheme === 'dark') {
         body.classList.add('dark-mode');
-        themeIcon.src = '../assets/images/moon_1.png';
+        themeIcon.src = '../assets/images/icons/moon_1.png';
     } else {
         body.classList.add('light-mode');
-        themeIcon.src = '../assets/images/sun.png';
+        themeIcon.src = '../assets/images/icons/sun.png';
     }
 
     themeIcon.addEventListener('click', function() {
         if (body.classList.contains('dark-mode')) {
             body.classList.replace('dark-mode', 'light-mode');
-            themeIcon.src = '../assets/images/sun.png';
+            themeIcon.src = '../assets/images/icons/sun.png';
             localStorage.setItem('dayzen_theme', 'light');
         } else {
             body.classList.replace('light-mode', 'dark-mode');
-            themeIcon.src = '../assets/images/moon_1.png';
+            themeIcon.src = '../assets/images/icons/moon_1.png';
             localStorage.setItem('dayzen_theme', 'dark');
         }
     });
