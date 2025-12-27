@@ -20,7 +20,7 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: 
+    background-image:
         radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
         radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
     animation: backgroundFloat 20s ease-in-out infinite;
@@ -29,8 +29,15 @@ body::before {
 }
 
 @keyframes backgroundFloat {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
 }
 
 .container {
@@ -39,7 +46,7 @@ body::before {
     background: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(20px);
     border-radius: 30px;
-    box-shadow: 
+    box-shadow:
         0 30px 90px rgba(0, 0, 0, 0.2),
         0 0 0 1px rgba(255, 255, 255, 0.5) inset;
     padding: 50px;
@@ -53,6 +60,7 @@ body::before {
         opacity: 0;
         transform: translateY(40px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -110,8 +118,15 @@ h1 {
 }
 
 @keyframes gradientShift {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
 }
 
 .tour-button {
@@ -173,8 +188,13 @@ h1 {
 }
 
 @keyframes shimmer {
-    0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-    100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+    0% {
+        transform: translateX(-100%) translateY(-100%) rotate(45deg);
+    }
+
+    100% {
+        transform: translateX(100%) translateY(100%) rotate(45deg);
+    }
 }
 
 .profile-photo:hover {
@@ -195,7 +215,7 @@ h1 {
     border-radius: 50%;
     object-fit: cover;
     border: 6px solid white;
-    box-shadow: 
+    box-shadow:
         0 15px 40px rgba(0, 0, 0, 0.2),
         0 0 0 2px rgba(102, 126, 234, 0.2);
     transition: all 0.4s ease;
@@ -205,7 +225,7 @@ h1 {
 
 .image-container:hover #profile-img {
     transform: scale(1.08);
-    box-shadow: 
+    box-shadow:
         0 20px 50px rgba(0, 0, 0, 0.3),
         0 0 0 4px rgba(102, 126, 234, 0.4);
 }
@@ -278,25 +298,43 @@ h1 {
     animation: fadeIn 0.6s ease-out backwards;
 }
 
-.form-group:nth-child(2) { animation-delay: 0.1s; }
-.form-group:nth-child(3) { animation-delay: 0.2s; }
-.form-group:nth-child(4) { animation-delay: 0.3s; }
-.form-group:nth-child(5) { animation-delay: 0.4s; }
-.form-group:nth-child(6) { animation-delay: 0.5s; }
-.form-group:nth-child(7) { animation-delay: 0.6s; }
+.form-group:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.form-group:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.form-group:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+.form-group:nth-child(5) {
+    animation-delay: 0.4s;
+}
+
+.form-group:nth-child(6) {
+    animation-delay: 0.5s;
+}
+
+.form-group:nth-child(7) {
+    animation-delay: 0.6s;
+}
 
 @keyframes fadeIn {
     from {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-.form-group > label {
+.form-group>label {
     font-size: 17px;
     font-weight: 600;
     color: #333;
@@ -305,7 +343,7 @@ h1 {
     gap: 10px;
 }
 
-.form-group > label i {
+.form-group>label i {
     color: #667eea;
     font-size: 20px;
 }
@@ -409,7 +447,7 @@ h1 {
     font-size: 18px;
 }
 
-.preference-item input[type="checkbox"]:checked ~ label {
+.preference-item input[type="checkbox"]:checked~label {
     color: #667eea;
     font-weight: 600;
 }
@@ -503,18 +541,18 @@ h1 {
     font-weight: 400;
 }
 
-.experience-item input[type="radio"]:checked + label {
+.experience-item input[type="radio"]:checked+label {
     border-color: #667eea;
     background: linear-gradient(135deg, rgba(102, 126, 234, 0.15) 0%, rgba(118, 75, 162, 0.15) 100%);
     box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
 }
 
-.experience-item input[type="radio"]:checked + label i {
+.experience-item input[type="radio"]:checked+label i {
     transform: scale(1.2);
     color: #764ba2;
 }
 
-.experience-item input[type="radio"]:checked + label .exp-title {
+.experience-item input[type="radio"]:checked+label .exp-title {
     color: #667eea;
 }
 
@@ -636,18 +674,18 @@ h1 {
     font-weight: 400;
 }
 
-.time-item input[type="radio"]:checked + label {
+.time-item input[type="radio"]:checked+label {
     border-color: #667eea;
     background: linear-gradient(135deg, rgba(102, 126, 234, 0.15) 0%, rgba(118, 75, 162, 0.15) 100%);
     box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
 }
 
-.time-item input[type="radio"]:checked + label i {
+.time-item input[type="radio"]:checked+label i {
     transform: scale(1.2);
     color: #764ba2;
 }
 
-.time-item input[type="radio"]:checked + label span {
+.time-item input[type="radio"]:checked+label span {
     color: #667eea;
 }
 
@@ -785,7 +823,7 @@ h1 {
         height: 120px;
     }
 
-    .form-group > label {
+    .form-group>label {
         font-size: 16px;
     }
 
