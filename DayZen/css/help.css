@@ -32,6 +32,43 @@
     transition: all 0.3s ease-in-out;
 }
 
+/* Light Theme Overrides for Help Section */
+.light-theme .help-center {
+    background: rgba(240, 240, 240, 0.95);
+    color: #222;
+    border: 1px solid #d0d0d0;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.10);
+}
+
+.light-theme .help-center h4 {
+    color: #1e293b;
+}
+
+.light-theme .help-center ul li a {
+    color: #1e90ff;
+    text-shadow: none;
+}
+
+.light-theme .help-center ul li a:hover {
+    color: #0f5192;
+}
+
+.light-theme .cancel-btn {
+    color: #1e293b;
+    background-color: #e0e7ef;
+    text-shadow: none;
+}
+
+.light-theme .accordion-button {
+    background-color: #f0f4fa !important;
+    color: #1e293b !important;
+}
+
+.light-theme .accordion-button:not(.collapsed) {
+    background-color: #e0e7ef !important;
+    color: #1e90ff !important;
+}
+
 .help-center.active {
     display: block;
 }
@@ -68,18 +105,18 @@
 
 
 .help-center {
-    color: #ffffff; 
+    color: #ffffff;
 }
 
 .help-center ul li a {
-    color: #ffffff; 
+    color: #ffffff;
     font-weight: 500;
-    text-shadow: 0 0 2px rgba(0, 0, 0, 0.5); 
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
     transition: color 0.2s ease;
 }
 
 .help-center ul li a:hover {
-    color: #ffd700; 
+    color: #ffd700;
 }
 
 .cancel-btn {
@@ -90,14 +127,14 @@
 
 .accordion-button {
     background-color: #1e293b !important;
-    color: #fff !important;             
+    color: #fff !important;
     font-weight: 500;
     border: none;
 }
 
 .accordion-button:not(.collapsed) {
-    background-color: #0f172a !important; 
-    color: #ffd700 !important;           
+    background-color: #0f172a !important;
+    color: #ffd700 !important;
 }
 
 .accordion-button:focus {
