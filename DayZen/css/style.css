@@ -173,18 +173,16 @@ nav .nav-img {
     margin-top: 20px;
 }
 
-.hero h2 {
-    color: #ffffff;
-    font-size: 36px;
-    text-shadow: 0 0 10px rgb(31, 52, 74), 0 0 20px rgba(52, 152, 219, 1); /* Neon blue glow */
+/* Improve hero section text readability */
+.hero-content h2 {
+  color: #1f2937; /* dark gray for strong contrast */
+  text-shadow: none; /* remove heavy shadow for clarity */
 }
 
-.hero p {
-    color: #e0e0e0;
-    font-size: 18px;
-    max-width: 600px;
-    margin: 20px auto;
+.hero-content p {
+  color: #4b5563; /* softer gray, still highly readable */
 }
+
 
 .hero .btn {
     background-color: #02172c;
