@@ -1,112 +1,182 @@
+/* --- Floating Help Button --- */
 .help-btn {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: #1e293b;
+    border: 1px solid rgba(255, 255, 255, 0.1);
     color: #fff;
-    font-size: 20px;
-    width: 50px;
-    height: 50px;
+    font-size: 24px;
+    width: 56px;
+    height: 56px;
     border-radius: 50%;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
     cursor: pointer;
     z-index: 1000;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
 }
 
+.help-btn:hover {
+    background: #1e90ff;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 15px 30px rgba(30, 144, 255, 0.4);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* --- Help Center Panel --- */
 .help-center {
     position: fixed;
     bottom: 90px;
     right: 20px;
-    width: 250px;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
-    border-radius: 12px;
-    padding: 15px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    width: 300px;
+    background: rgba(15, 23, 42, 0.85);
+    /* Premium Dark Slate */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    /* Subtle "good" border */
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
     display: none;
-    color: #fff;
+    color: #f1f5f9;
     z-index: 1000;
-    transition: all 0.3s ease-in-out;
+    backdrop-filter: blur(12px);
+    /* Frosted glass effect */
+    transition: all 0.3s ease;
 }
 
 .help-center.active {
     display: block;
+    animation: helpFadeIn 0.3s ease-out;
+}
+
+@keyframes helpFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .help-center h4 {
-    margin-top: 0;
-    font-size: 18px;
+    margin: 0 0 15px 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #fff;
 }
 
-.help-center ul {
-    padding-left: 18px;
-}
-
-.help-center ul li {
+/* --- Accordion Styles --- */
+.accordion-item {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     margin-bottom: 8px;
+    border-radius: 8px !important;
+    overflow: hidden;
 }
-
-.help-center ul li a {
-    color: #fff;
-    text-decoration: underline;
-}
-
-.cancel-btn {
-    margin-top: 10px;
-    padding: 6px 12px;
-    background-color: rgba(255, 255, 255, 0.2);
-    border: none;
-    border-radius: 6px;
-    color: #fff;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-
-
-.help-center {
-    color: #ffffff; 
-}
-
-.help-center ul li a {
-    color: #ffffff; 
-    font-weight: 500;
-    text-shadow: 0 0 2px rgba(0, 0, 0, 0.5); 
-    transition: color 0.2s ease;
-}
-
-.help-center ul li a:hover {
-    color: #ffd700; 
-}
-
-.cancel-btn {
-    color: #ffffff;
-    text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
-}
-
 
 .accordion-button {
-    background-color: #1e293b !important;
-    color: #fff !important;             
+    background: transparent !important;
+    color: #e2e8f0 !important;
+    font-size: 14px;
     font-weight: 500;
-    border: none;
+    padding: 12px 15px;
+    box-shadow: none !important;
 }
 
 .accordion-button:not(.collapsed) {
-    background-color: #0f172a !important; 
-    color: #ffd700 !important;           
+    background: rgba(30, 144, 255, 0.1) !important;
+    color: #38bdf8 !important;
 }
 
-.accordion-button:focus {
-    box-shadow: none;
+/* --- List & Links --- */
+.help-center ul {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
 }
 
-.accordion-item {
-    border: none;
-    margin-bottom: 8px;
-    border-radius: 6px;
-    overflow: hidden;
+.help-center ul li {
+    margin-bottom: 10px;
+}
+
+.help-center ul li a {
+    color: #38bdf8;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.help-center ul li a:hover {
+    color: #7dd3fc;
+    padding-left: 5px;
+}
+
+/* --- Action Buttons --- */
+.cancel-btn {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: #cbd5e1;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.2s;
+}
+
+.cancel-btn:hover {
+    background: rgba(239, 68, 68, 0.15);
+    color: #f87171;
+    border-color: rgba(239, 68, 68, 0.2);
+}
+
+/* --- Light Theme Overrides --- */
+.light-theme .help-btn {
+    background: #ffffff;
+    color: #1e90ff;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.light-theme .help-center {
+    background: rgba(255, 255, 255, 0.9);
+    color: #334155;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    /* The "good" border for light mode */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.light-theme .help-center h4 {
+    color: #1e293b;
+}
+
+.light-theme .accordion-item {
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.light-theme .accordion-button {
+    color: #475569 !important;
+}
+
+.light-theme .help-center ul li a {
+    color: #1e90ff;
+}
+
+.light-theme .cancel-btn {
+    background: #f1f5f9;
+    color: #64748b;
+    border: 1px solid #e2e8f0;
 }

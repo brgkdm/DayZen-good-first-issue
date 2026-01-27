@@ -78,7 +78,11 @@
             </div>
         </div>
     </div> <!-- Closing wrapper div -->
-    
+    <section id="routine-section">
+    <h2>Your Routines</h2>
+    <div id="routine-list"></div>
+    </section>
+
     <footer>
         <div class="container">
             <p>&copy; 2024 DayZen - All Rights Reserved.</p>
@@ -95,6 +99,57 @@
         </script>
     <script src="../js/onboarding-dashboard.js"></script>
     <script src="../js/acc-theme-toggle.js"></script>
+    <script>
+        let routine = {
+  name: "Morning Exercise",
+  time: "07:00",
+  repeat: "Every Day",
+};
+
+let routines = [routine];
+
+function listRoutines() {
+  let routineList = document.getElementById("routine-list");
+
+  //   routineList.innerHTML = "";
+
+  routines.forEach(function (routine, index) {
+    routineList.innerHTML += `
+            <div class="routine">
+                <h3>${routine.name}</h3>
+                <p>Time: ${routine.time}</p>
+                <p>Repeat: ${routine.repeat}</p>
+                <button onclick="deleteRoutine(${index})">Delete</button>
+            </div>
+        `;
+  });
+}
+
+function addRoutine() {
+  let name = document.getElementById("name").value;
+  let time = document.getElementById("time").value;
+  let repeat = document.getElementById("repeat").value;
+
+  let newRoutine = {
+    name: name,
+    time: time,
+    repeat: repeat,
+  };
+
+  routines.push(newRoutine);
+  listRoutines();
+}
+
+function deleteRoutine(index) {
+  routines.splice(index, 1);
+  listRoutines();
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  listRoutines();
+});
+
+    </script>
     
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/8.3.2/intro.min.js" integrity="sha512-5ykRz1AkSpATwLO5fFqJb7Y5kprfzu/q9PbRVSOspLcn2Tm7m6vZIAyoUA4a5GFNRIlxM43kHXmYEphfz3eOWA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

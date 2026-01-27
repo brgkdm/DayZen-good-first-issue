@@ -1,6 +1,7 @@
 /* Base Styling */
 body {
-    background-color: #101c2e; /* Dark blue background */
+    background-color: #101c2e;
+    /* Dark blue background */
     color: #fff;
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -11,8 +12,10 @@ body {
 header {
     background: linear-gradient(45deg, #2c3e50, #3498db);
     color: #fff;
-    padding: 20px 0; /* Fixed zero padding to something functional, avoiding flat nothingness */
-    position: relative; /* Added relative positioning for better child element control */
+    padding: 20px 0;
+    /* Fixed zero padding to something functional, avoiding flat nothingness */
+    position: relative;
+    /* Added relative positioning for better child element control */
 }
 
 .logo {
@@ -47,7 +50,8 @@ header h1 {
     font-size: 2em;
     font-weight: bold;
     margin: 0;
-    margin-left: -110px; /* Changed invalid negative padding to margin for proper positioning without breaking layout */
+    margin-left: -110px;
+    /* Changed invalid negative padding to margin for proper positioning without breaking layout */
 }
 
 /* Default glow effect */
@@ -63,6 +67,7 @@ header h1 {
     0% {
         box-shadow: 0 0 5px #1e90ff, 0 0 15px #1e90ff, 0 0 30px #1e90ff;
     }
+
     100% {
         box-shadow: 0 0 10px #1e90ff, 0 0 20px #1e90ff, 0 0 50px #1e90ff;
     }
@@ -72,7 +77,8 @@ header h1 {
 .feature {
     opacity: 0.6;
     transition: opacity 0.5s ease-in-out;
-    position: relative; /* Added relative positioning to make tooltips functional and relative to each feature */
+    position: relative;
+    /* Added relative positioning to make tooltips functional and relative to each feature */
 }
 
 /* Highlighted feature */
@@ -96,12 +102,14 @@ header h1 {
 
 /* Make tooltips appear on hover for pure CSS functionality */
 .feature:hover .tooltip {
-    display: block; /* Added to make tooltips functional without JS, showing on hover like a teasing reveal */
+    display: block;
+    /* Added to make tooltips functional without JS, showing on hover like a teasing reveal */
 }
 
 /* Adjusted tooltip positions to be relative and responsive; removed fixed viewport positions */
 .tooltip[data-tooltip="1"] {
-    top: 100%; /* Position below the feature for better flow */
+    top: 100%;
+    /* Position below the feature for better flow */
     left: 0;
 }
 
@@ -115,13 +123,17 @@ header h1 {
     left: 0;
 }
 
-h1, h2, h3 {
-    text-shadow: 0 0 5px #19232d, 0 0 10px #1e90ff, 0 0 20px #0b2239; /* Uncommented and applied the neon effect for consistent glow */
+h1,
+h2,
+h3 {
+    text-shadow: 0 0 5px #19232d, 0 0 10px #1e90ff, 0 0 20px #0b2239;
+    /* Uncommented and applied the neon effect for consistent glow */
 }
 
 /* Navbar Styling */
 nav.navbar {
-    background-color: #2c3e50; /* Fixed 'red' to match comment's 'Darker blue navbar' for thematic consistency */
+    background-color: #2c3e50;
+    /* Fixed 'red' to match comment's 'Darker blue navbar' for thematic consistency */
     padding: 25px 0;
     border-bottom: 2px solid #1e90ff;
 }
@@ -151,8 +163,10 @@ nav .nav-link {
 
 /* Simple but classy hover effect */
 nav .nav-link:hover {
-    box-shadow: 0 0 5px #ffffff, 0 0 5px #1e90ff, inset 0 0 5px #ffffff, inset 0 0 3px #1e90ff; /* Combined duplicated box-shadows into one for non-overriding functionality */
-    border: 1px solid #1e90ff; /* Added border style to make border-color functional */
+    box-shadow: 0 0 5px #ffffff, 0 0 5px #1e90ff, inset 0 0 5px #ffffff, inset 0 0 3px #1e90ff;
+    /* Combined duplicated box-shadows into one for non-overriding functionality */
+    border: 1px solid #1e90ff;
+    /* Added border style to make border-color functional */
     border-radius: 10px;
     color: white;
 }
@@ -166,7 +180,8 @@ nav .nav-img {
 .hero {
     text-align: center;
     padding: 80px 0;
-    background: linear-gradient(45deg, #569fe9, #0f5192); /* Blue gradient background */
+    background: linear-gradient(45deg, #569fe9, #0f5192);
+    /* Blue gradient background */
 }
 
 .hero-content {
@@ -239,7 +254,8 @@ nav .nav-img {
 }
 
 .feature:hover {
-    transform: scale(1.1); /* Chose scale over translateY for smoother, more engaging hover like a swelling erection */
+    transform: scale(1.1);
+    /* Chose scale over translateY for smoother, more engaging hover like a swelling erection */
     text-shadow: 0 0 10px #1e90ff;
 }
 
@@ -262,12 +278,14 @@ footer a:hover {
 
 /* Light Theme Overrides */
 .light-theme {
-    background-color: #ffffff; /* White background for light theme */
+    background-color: #ffffff;
+    /* White background for light theme */
     color: #000;
 }
 
 .light-theme nav.navbar {
-    background-color: #f0f0f0; /* Light gray navbar */
+    background-color: #f0f0f0;
+    /* Light gray navbar */
     border-bottom: 2px solid #1e90ff;
 }
 
@@ -307,6 +325,10 @@ body.dark-mode footer {
     background: #111;
 }
 
+body.dark-mode #contact {
+    color: #000;
+}
+
 /* Theme Toggle */
 .theme-toggle {
     position: absolute;
@@ -318,6 +340,7 @@ body.dark-mode footer {
 .theme-toggle img {
     width: 30px;
 }
+
 @media (max-width: 900px) {
     .logo {
         margin-bottom: 10px;
@@ -326,33 +349,35 @@ body.dark-mode footer {
         top: 15px;
         justify-content: center;
     }
+
     /* position of the image on the minimum width size  */
-    .logo.img{
+    .logo.img {
         position: relative;
         left: -10px;
         bottom: 20px;
-        top:0px;
+        top: 0px;
     }
 }
 
-    .theme-toggle {
-        right: 60px;
-    }
+.theme-toggle {
+    right: 60px;
+}
 
-    /* Made tooltips responsive for smaller screens */
-    .tooltip {
-        max-width: 150px;
-        font-size: 12px;
-    }
+/* Made tooltips responsive for smaller screens */
+.tooltip {
+    max-width: 150px;
+    font-size: 12px;
+}
 
-    .feature {
-        max-width: 100%; /* Full width on mobile for better positioning */
-        margin: 10px 0;
-    }
+.feature {
+    max-width: 100%;
+    /* Full width on mobile for better positioning */
+    margin: 10px 0;
+}
 
 @media (max-width: 768px) {
     .logo img {
-        border: 2px solid red ; 
+        border: 2px solid red;
         position: relative;
         left: 20px;
         bottom: 10px;
@@ -369,7 +394,8 @@ body.dark-mode footer {
     }
 
     .feature {
-        max-width: 100%; /* Full width on mobile for better positioning */
+        max-width: 100%;
+        /* Full width on mobile for better positioning */
         margin: 10px 0;
     }
 }
@@ -385,10 +411,11 @@ body.dark-mode footer {
 }
 
 @keyframes rotate360 {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
