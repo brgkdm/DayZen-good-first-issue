@@ -230,7 +230,7 @@
       </div>
     </section>
 
-    <div id="routine-list"></div>
+    <!-- <div id="routine-list"></div> -->
 
     <footer>
       <div class="container">
@@ -262,4 +262,13 @@
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
   ></script>
+  <script>
+  const isAuthenticated = localStorage.getItem("username");
+
+if (!isAuthenticated) {
+  const routineList = document.getElementById("routine-list");
+  if (routineList) routineList.remove();
+}
+  </script>
+
 </html>
