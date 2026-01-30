@@ -1,3 +1,4 @@
+// -------------------- ROUTINE DATA --------------------
 let routine = {
   name: "Morning Exercise",
   time: "07:00",
@@ -6,151 +7,96 @@ let routine = {
 
 let routines = [routine];
 
+// -------------------- LIST ROUTINES --------------------
 function listRoutines() {
-  let routineList = document.getElementById("routine-list");
+  const routineList = document.getElementById("routine-list");
 
-  //   routineList.innerHTML = "";
+  // Prevent error if element doesn't exist on this page
+  if (!routineList) return;
+
+  routineList.innerHTML = "";
 
   routines.forEach(function (routine, index) {
     routineList.innerHTML += `
-            <div class="routine">
-                <h3>${routine.name}</h3>
-                <p>Time: ${routine.time}</p>
-                <p>Repeat: ${routine.repeat}</p>
-                <button onclick="deleteRoutine(${index})">Delete</button>
-            </div>
-        `;
+      <div class="routine">
+        <h3>${routine.name}</h3>
+        <p>Time: ${routine.time}</p>
+        <p>Repeat: ${routine.repeat}</p>
+        <button onclick="deleteRoutine(${index})">Delete</button>
+      </div>
+    `;
   });
 }
 
+// -------------------- ADD ROUTINE --------------------
 function addRoutine() {
-  let name = document.getElementById("name").value;
-  let time = document.getElementById("time").value;
-  let repeat = document.getElementById("repeat").value;
+  const nameInput = document.getElementById("name");
+  const timeInput = document.getElementById("time");
+  const repeatInput = document.getElementById("repeat");
+
+  // Safety check
+  if (!nameInput || !timeInput || !repeatInput) return;
 
   let newRoutine = {
-    name: name,
-    time: time,
-    repeat: repeat,
+    name: nameInput.value,
+    time: timeInput.value,
+    repeat: repeatInput.value,
   };
 
   routines.push(newRoutine);
   listRoutines();
 }
 
+// -------------------- DELETE ROUTINE --------------------
 function deleteRoutine(index) {
   routines.splice(index, 1);
   listRoutines();
 }
 
+// -------------------- DOM CONTENT LOADED --------------------
 document.addEventListener("DOMContentLoaded", function () {
+  // Load routines safely
   listRoutines();
-});
 
-document.addEventListener("DOMContentLoaded", function () {
+  // Hero animation (safe)
   const heroContent = document.querySelector(".hero-content");
-  heroContent.classList.add("active");
-});
+  if (heroContent) {
+    heroContent.classList.add("active");
+  }
 
-document.addEventListener("DOMContentLoaded", function () {
-  const heroContent = document.querySelector(".hero-content");
-  heroContent.classList.add("active");
+  // Scroll animation (safe)
+  let lastScrollPosition = 0;
+  const featuresSection = document.querySelector(".features");
 
-  lastScrollPosition = 0;
+  if (featuresSection) {
+    window.addEventListener("scroll", function () {
+      const featuresTop = featuresSection.offsetTop;
+      const scrollPosition = window.scrollY;
 
-  window.addEventListener("scroll", function () {
-    const featuresSection = document.querySelector(".features");
-    const featuresSectionTop = featuresSection.offsetTop;
-    const scrollPosition = window.scrollY;
+      if (scrollPosition > featuresTop - window.innerHeight / 2) {
+        featuresSection.classList.add("active");
+      } else {
+        featuresSection.classList.remove("active");
+      }
 
-    if (scrollPosition > featuresSectionTop - window.innerHeight / 2) {
-      featuresSection.classList.add("active");
-    } else {
-      featuresSection.classList.remove("active");
-    }
-
-    // Check scroll direction
-    if (scrollPosition > lastScrollPosition) {
-      // Scrolling down
-      featuresSection.classList.add("active");
-    } else {
-      // Scrolling up
-      featuresSection.classList.remove("active");
-    }
-
-    lastScrollPosition = scrollPosition;
-  });
-});
-
-const themeIcon = document.getElementById("theme-icon");
-const body = document.body;
-
-themeIcon.addEventListener("click", () => {
-  body.classList.toggle("dark-mode");
-  body.classList.toggle("light-mode");
-
-  // Toggle between sun and moon icons
-  if (body.classList.contains("dark-mode")) {
-    themeIcon.src = "assets/images/moon_1.png"; // Change to moon icon for dark mode
-  } else {
-    themeIcon.src = "assets/images/sun.png"; // Change to sun icon for light mode
+      lastScrollPosition = scrollPosition;
+    });
   }
 });
 
-// window.onload = function () {
-//     // Select all tour steps and the overlay
-//     const tourSteps = document.querySelectorAll('.tour-step');
-//     const tourOverlay = document.getElementById('tourOverlay');
-//     let currentStep = 0; // Track which step we're on
+// -------------------- THEME TOGGLE --------------------
+const themeIcon = document.getElementById("theme-icon");
+const body = document.body;
 
-//     // Show the tour overlay
-//     tourOverlay.style.display = 'flex';
+if (themeIcon) {
+  themeIcon.addEventListener("click", function () {
+    body.classList.toggle("dark-mode");
+    body.classList.toggle("light-mode");
 
-//     // Function to show the current step
-//     function showStep(step) {
-//         // Hide all steps
-//         tourSteps.forEach((stepElement, index) => {
-//             stepElement.style.display = index === step ? 'block' : 'none';
-//         });
-//     }
-
-// // Show the first step
-// showStep(currentStep);
-
-// // Function to go to the next step
-// function nextStep() {
-//     currentStep++;
-//     if (currentStep < tourSteps.length) {
-//         showStep(currentStep);
-//     } else {
-//         endTour(); // End the tour if we are at the last step
-//     }
-// }
-
-// // Function to end the tour
-// function endTour() {
-//     tourOverlay.style.display = 'none'; // Hide the tour overlay
-// }
-
-// // Function to skip the tour and redirect to the home page
-// function skipTour() {
-//     tourOverlay.style.display = 'none'; // Hide the tour overlay
-
-// }
-
-//     // Event listeners for the buttons
-//     document.getElementById('nextStep1').addEventListener('click', nextStep);
-//     document.getElementById('nextStep2').addEventListener('click', nextStep);
-//     document.getElementById('nextStep3').addEventListener('click', nextStep);
-//     document.getElementById('endTour').addEventListener('click', endTour);
-
-//     // Skip tour button for all steps
-//     document.querySelectorAll('#skipTour').forEach(button => {
-//         button.addEventListener('click', skipTour);
-//     });
-
-//     // Go to Profile Setup Button
-//     document.getElementById('goToProfile').addEventListener('click', function () {
-//         window.location.href = 'pages/Profile.html'; // Redirect to the actual profile setup page (change URL as needed)
-//     });
-// };
+    if (body.classList.contains("dark-mode")) {
+      themeIcon.src = "assets/images/moon_1.png";
+    } else {
+      themeIcon.src = "assets/images/sun.png";
+    }
+  });
+}
