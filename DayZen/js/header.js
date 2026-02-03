@@ -7,8 +7,8 @@ document.addEventListener("DOMContentLoaded", function () {
             <nav class="navbar navbar-expand-lg" role="navigation">
                 <div class="container">
                     <a class="logo" href="/">
-                        <img src="/assets/images/logoWhite.png" alt="DayZen Logo" class="logo img">
-                        <h1 class="ms-2 mb-0">DayZen</h1>
+                        <img src="/assets/images/logoWhite.png" alt="DayZen Logo" class="logo-img">
+                        <h1 class="brand-name">DayZen</h1>
                     </a>
 
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav_items">

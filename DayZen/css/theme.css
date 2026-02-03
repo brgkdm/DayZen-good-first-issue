@@ -19,6 +19,7 @@ body.light-mode .navbar .nav-link:hover {
     color: #0d6efd; /* bootstrap primary blue */
 }
 
+
 /* Hero Section */
 body.light-mode .hero {
     background: linear-gradient(135deg, #e8f0ff, #ffffff);
