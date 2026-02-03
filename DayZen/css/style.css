@@ -18,41 +18,28 @@ header {
     /* Added relative positioning for better child element control */
 }
 
+/* the logo and brand name container styling */
 .logo {
     display: flex;
     align-items: center;
-    position: relative;
+    justify-content: start;
+    gap: 0;
+    /* background-color: firebrick; */
 }
-
-.mb-0 {
-    position: absolute;
-    top: 5px;
-    left: 60px;
-    z-index: 100;
-    text-shadow: 0 0 20px rgb(155, 150, 150);
-}
-
-.reflect {
-    position: absolute;
-    top: 12px;
-    left: 65px;
-    color: rgb(0, 0, 0);
-    background-color: transparent;
-    text-shadow: 0 0 20px rgb(0, 0, 0);
-}
-
-.logo img {
+/* the logo image styling */
+.logo-img {
+    height: 50px;
     width: 50px;
-    margin-right: 10px;
+    aspect-ratio: 1/1;
 }
 
-header h1 {
-    font-size: 2em;
-    font-weight: bold;
-    margin: 0;
-    margin-left: -110px;
-    /* Changed invalid negative padding to margin for proper positioning without breaking layout */
-}
+
+
+
+
+
+
+
 
 /* Default glow effect */
 .neon-glow {
