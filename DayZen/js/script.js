@@ -9,7 +9,7 @@ let routines = [routine];
 function listRoutines() {
   let routineList = document.getElementById("routine-list");
 
-  //   routineList.innerHTML = "";
+    // routineList.innerHTML = "";
 
   routines.forEach(function (routine, index) {
     routineList.innerHTML += `
@@ -82,20 +82,25 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-const themeIcon = document.getElementById("theme-icon");
-const body = document.body;
+// const themeIcon = document.getElementById("theme-icon");
+// const body = document.body;
 
-themeIcon.addEventListener("click", () => {
-  body.classList.toggle("dark-mode");
-  body.classList.toggle("light-mode");
+// themeIcon.addEventListener("click", () => {
+//   console.log("A runs");
+//   body.classList.toggle("dark-mode");
+//   body.classList.toggle("light-mode");
+//   console.log(body.classList);
 
-  // Toggle between sun and moon icons
-  if (body.classList.contains("dark-mode")) {
-    themeIcon.src = "assets/images/moon_1.png"; // Change to moon icon for dark mode
-  } else {
-    themeIcon.src = "assets/images/sun.png"; // Change to sun icon for light mode
-  }
-});
+//   // Toggle between sun and moon icons
+//   if (body.classList.contains("dark-mode")) {
+//     console.log("turn dark");
+//     // themeIcon.src = "assets/images/moon_1.png"; // Change to moon icon for dark mode
+//   } else {
+//     console.log("turn light");
+//     // themeIcon.src = "assets/images/sun.png"; // Change to sun icon for light mode
+//   }
+//   console.log("end");
+// });
 
 // window.onload = function () {
 //     // Select all tour steps and the overlay
