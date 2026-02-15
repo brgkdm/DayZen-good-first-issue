@@ -26,14 +26,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Toggle theme on click
     themeIcon.addEventListener('click', function() {
+        body.classList.toggle("dark-mode");
+        body.classList.toggle("light-mode"); 
         if (body.classList.contains('dark-mode')) {
-            body.classList.replace('dark-mode', 'light-mode');
-            themeIcon.src = basePath + 'assets/images/icons/sun.png';  // Path to sun icon
-            localStorage.setItem('dayzen_theme', 'light');
-        } else {
-            body.classList.replace('light-mode', 'dark-mode');
-            themeIcon.src = basePath + 'assets/images/icons/moon_1.png';  // Path to moon icon
+            themeIcon.src = basePath + 'assets/images/icons/moon_1.png';  // Path to sun icon
             localStorage.setItem('dayzen_theme', 'dark');
+        } else {
+            themeIcon.src = basePath + 'assets/images/icons/sun.png';  // Path to moon icon
+             localStorage.setItem('dayzen_theme', 'light');
         }
 
         // Log the icon path after toggle
