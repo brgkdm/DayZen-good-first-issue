@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/help.css" />
     <link rel="stylesheet" href="css/onboarding.css" />
     <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/footer.css" />
     <!-- <link rel="stylesheet" href="css/about.css"> -->
     <link rel="stylesheet" href="css/about.css" />
 
@@ -232,7 +233,7 @@
 
     <!-- <div id="routine-list"></div> -->
 
-    <footer>
+    <footer class="footer" style="background-color: #1e90ff">
       <div class="container">
         <p>&copy; 2024 DayZen - All Rights Reserved.</p>
         <p>
@@ -263,12 +264,11 @@
     referrerpolicy="no-referrer"
   ></script>
   <script>
-  const isAuthenticated = localStorage.getItem("username");
+    const isAuthenticated = localStorage.getItem("username");
 
-if (!isAuthenticated) {
-  const routineList = document.getElementById("routine-list");
-  if (routineList) routineList.remove();
-}
+    if (!isAuthenticated) {
+      const routineList = document.getElementById("routine-list");
+      if (routineList) routineList.remove();
+    }
   </script>
-
 </html>
