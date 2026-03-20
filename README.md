@@ -57,4 +57,23 @@ Images are grouped into logical sub folders for clarity:
 
 
 ### 📝 Notes
-- Keeping stylesheets, scripts, images, and pages in separate folders ensures scalability and easy collaboration.  
+- Keeping stylesheets, scripts, images, and pages in separate folders ensures scalability and easy collaboration. 
+
+
+## 🚀 How to Run the Project
+
+1. Clone the repository:
+   ```bash
+   git clone <repo-link>
+2. Navigate to the project folder:
+    ```bash
+     cd DayZen-good-first-issue
+3. Open index.html in your browser
+
+🔧Optional
+Use Live Server in VS Code for a better development experience:
+
+-Install the Live Server extension
+-Right-click on index.html
+-Click on "Open with Live Server" or "Go Live"
+-This will automatically reload the page whenever you make changes.
