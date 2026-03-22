@@ -1,7 +1,7 @@
 # DayZen (Good First Issue)
 
 ## Purpose
-To create an online platform that helps users organize and optimize their daily lives by tracking their routine.
+To create an online platform that helps users organize and optimize their daily lives by tracking their daily routines efficiently
 
 ## 🎯 Target Audience
 - Students
@@ -78,3 +78,7 @@ Use Live Server in VS Code for a better development experience:
 -Right-click on index.html
 -Click on "Open with Live Server" or "Go Live"
 -This will automatically reload the page whenever you make changes.
+
+## Future Improvements
+- Add mobile responsiveness
+- Add user login system
