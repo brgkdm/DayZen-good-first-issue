@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DayZen - Daily Routine Tracking</title>
-    <link rel="stylesheet" href="../css/indexacc.css">
+      <link rel="stylesheet" href="../css/indexacc.css">
     <link rel="stylesheet" href="../css/onboarding.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="../css/theme.css">
@@ -13,44 +13,68 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intro.js/8.3.2/introjs.min.css" integrity="sha512-LG7l1tbF72DGUqBESsGCnS8DdKqrLT3lmONMnSfkvZGWKIwUznlBPQUHYh0q1OEf67CDzXJ0/kARmPv4vTCVmw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link href="https://fonts.googleapis.com/css2?family=Libertinus+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 </head>
+</head>
 <body>
-    <div class="wrapper">  <!-- Added a wrapper for the entire page -->
-        <header>
-            <div class="container">
+
+    <header>
+        <div class="container">
+
+            <!-- LEFT: Hamburger (mobile only) + Logo -->
+            <div class="header-left">
+                <button class="hamburger" id="hamburger-btn" aria-label="Open menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
                 <div class="logo">
                     <img src="../assets/images/logos/logo.png" alt="DayZen Logo">
                     <h1>DayZen</h1>
                 </div>
-                <nav>
-                    <ul class="navbar-items">
-                        <li><a href="../index.html">Home</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Communication</a></li>
-                        <li><button id="take-tour-btn" class="tour-button">Take Tour</button></li>
-                    </ul>
-                    <div class="user-icon">
-                        <a href="Profile.html">
-                            <img src="../assets/images/icons/user.png" alt="User Icon">
-                        </a>
-                    </div>
-                    <!-- 🌗 Theme Toggle -->
-                    <div class="theme-toggle">
-                        <img id="theme-icon" src="../assets/images/icons/sun.png" alt="Toggle Theme" />
-                    </div>
-                </nav>
-                
-                
             </div>
-        </header>
-        
+
+            <!-- CENTER: Nav links (hidden on mobile) -->
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Communication</a></li>
+                </ul>
+            </nav>
+
+            <!-- RIGHT: Take Tour + Profile + Theme -->
+            <div class="header-right">
+                <button class="tour-button" id="take-tour-btn">Take Tour</button>
+                <a href="Profile.html" class="user-icon">
+                    <img src="../assets/images/icons/user.png" alt="User Icon">
+                </a>
+                <div class="theme-toggle" id="theme-toggle">
+                    <img id="theme-icon" src="../assets/images/icons/sun.png" alt="Toggle Theme">
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-nav" id="mobile-nav">
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Communication</a></li>
+        </ul>
+    </div>
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Page Body -->
+    <div class="wrapper">
         <div class="body-container">
             <div class="main-content">
                 <h1 class="welcome">Welcome, <span id="user-name"></span>!</h1>
                 <h2>We Are Happy to See You Among Us.</h2>
                 <h3>What would you like to do next?</h3>
-                
-                <!-- New CTA section with clear, action-oriented buttons -->
+
                 <div class="cta-container">
                     <a href="Profile.html" class="cta-button primary-cta">
                         <img src="../assets/images/icons/user.png" alt="Profile Icon" class="cta-icon">
@@ -66,7 +90,7 @@
                     </a>
                 </div>
             </div>
-            
+
             <div class="sidebar">
                 <h2>Profile Status</h2>
                 <p>Complete your profile</p>
@@ -77,80 +101,108 @@
                 <a href="Profile.html" class="sidebar-button">Go to Profile</a>
             </div>
         </div>
-    </div> <!-- Closing wrapper div -->
+    </div>
+
     <section id="routine-section">
-    <h2>Your Routines</h2>
-    <div id="routine-list"></div>
+        <h2>Your Routines</h2>
+        <div id="routine-list"></div>
     </section>
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 DayZen - All Rights Reserved.</p>
+            <p>&copy; 2026 DayZen - All Rights Reserved.</p>
         </div>
     </footer>
-    
+
     <script>
-        var username = localStorage.getItem("username");
-        if (username) {
-            document.getElementById("user-name").textContent = username;
-        } else {
-            document.getElementById("user-name").textContent = "Guest";
+        // Username
+        const username = localStorage.getItem("username");
+        document.getElementById("user-name").textContent = username || "Guest";
+
+        // Hamburger menu
+        const hamburgerBtn = document.getElementById("hamburger-btn");
+        const mobileNav = document.getElementById("mobile-nav");
+        const overlay = document.getElementById("overlay");
+
+        function openMenu() {
+            mobileNav.classList.add("open");
+            overlay.classList.add("open");
+            hamburgerBtn.setAttribute("aria-expanded", "true");
+            document.body.style.overflow = "hidden";
         }
-        </script>
-    <script src="../js/onboarding-dashboard.js"></script>
-    <script src="../js/acc-theme-toggle.js"></script>
-    <script>
-        let routine = {
-  name: "Morning Exercise",
-  time: "07:00",
-  repeat: "Every Day",
-};
 
-let routines = [routine];
+        function closeMenu() {
+            mobileNav.classList.remove("open");
+            overlay.classList.remove("open");
+            hamburgerBtn.setAttribute("aria-expanded", "false");
+            document.body.style.overflow = "";
+        }
 
-function listRoutines() {
-  let routineList = document.getElementById("routine-list");
+        hamburgerBtn.addEventListener("click", () => {
+            mobileNav.classList.contains("open") ? closeMenu() : openMenu();
+        });
 
-  //   routineList.innerHTML = "";
+        overlay.addEventListener("click", closeMenu);
 
-  routines.forEach(function (routine, index) {
-    routineList.innerHTML += `
-            <div class="routine">
-                <h3>${routine.name}</h3>
-                <p>Time: ${routine.time}</p>
-                <p>Repeat: ${routine.repeat}</p>
-                <button onclick="deleteRoutine(${index})">Delete</button>
-            </div>
-        `;
-  });
-}
+        // Close menu when clicking anywhere outside the drawer
+        document.addEventListener("click", (e) => {
+            if (
+                mobileNav.classList.contains("open") &&
+                !mobileNav.contains(e.target) &&
+                !hamburgerBtn.contains(e.target)
+            ) {
+                closeMenu();
+            }
+        });
 
-function addRoutine() {
-  let name = document.getElementById("name").value;
-  let time = document.getElementById("time").value;
-  let repeat = document.getElementById("repeat").value;
+        mobileNav.querySelectorAll("a").forEach(link => link.addEventListener("click", closeMenu));
 
-  let newRoutine = {
-    name: name,
-    time: time,
-    repeat: repeat,
-  };
+        document.addEventListener("keydown", e => {
+            if (e.key === "Escape") closeMenu();
+        });
 
-  routines.push(newRoutine);
-  listRoutines();
-}
+        window.addEventListener("resize", () => {
+            if (window.innerWidth > 768) closeMenu();
+        });
 
-function deleteRoutine(index) {
-  routines.splice(index, 1);
-  listRoutines();
-}
+        // Theme toggle
+        const themeToggle = document.getElementById("theme-toggle");
+        const themeIcon = document.getElementById("theme-icon");
 
-document.addEventListener("DOMContentLoaded", function () {
-  listRoutines();
-});
+        if (localStorage.getItem("dayzen-theme") === "dark") {
+            document.body.classList.add("dark");
+            themeIcon.src = "../assets/images/icons/moon.png";
+        }
 
+        themeToggle.addEventListener("click", () => {
+            const isDark = document.body.classList.toggle("dark");
+            themeIcon.src = isDark ? "../assets/images/icons/moon.png" : "../assets/images/icons/sun.png";
+            localStorage.setItem("dayzen-theme", isDark ? "dark" : "light");
+        });
+
+        // Routines
+        let routines = [{ name: "Morning Exercise", time: "07:00", repeat: "Every Day" }];
+
+        function listRoutines() {
+            const routineList = document.getElementById("routine-list");
+            routineList.innerHTML = routines.map((r, i) => `
+                <div class="routine">
+                    <h3>${r.name}</h3>
+                    <p>Time: ${r.time}</p>
+                    <p>Repeat: ${r.repeat}</p>
+                    <button onclick="deleteRoutine(${i})">Delete</button>
+                </div>
+            `).join("");
+        }
+
+        function deleteRoutine(index) {
+            routines.splice(index, 1);
+            listRoutines();
+        }
+
+        document.addEventListener("DOMContentLoaded", listRoutines);
+        listRoutines();
     </script>
-    
+
 </body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/8.3.2/intro.min.js" integrity="sha512-5ykRz1AkSpATwLO5fFqJb7Y5kprfzu/q9PbRVSOspLcn2Tm7m6vZIAyoUA4a5GFNRIlxM43kHXmYEphfz3eOWA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </html>
