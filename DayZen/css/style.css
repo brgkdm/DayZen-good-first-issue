@@ -203,7 +203,7 @@ nav .nav-img {
     background-color: #02172c;
     color: white;
     padding: 12px 30px;
-    font-size: 18px;
+    font-size: 18px;   
     border-radius: 25px;
     text-decoration: none;
     transition: all 0.3s ease;
@@ -212,6 +212,8 @@ nav .nav-img {
 .btn:hover {
     background-color: #ffffff;
     color: #02172c;
+    border:1px solid #02172c;
+    font-weight:bold;
     transform: scale(1.05);
     box-shadow: 0 0 15px #0a2238;
 }
