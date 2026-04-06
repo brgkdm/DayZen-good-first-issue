@@ -1,6 +1,7 @@
 # Contributing to Our Project
 
-Thank you for taking the time to contribute! Here's how you can help:
+Hey!! Welcome! Thanks for help to develop this project
+Here's how you can help:
 
 ## How to Report a Bug
 1. Check if the bug is already reported in the [Issues](https://github.com/brgkdm/DayZen-good-first-issue/issues) section.
