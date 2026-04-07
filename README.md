@@ -76,4 +76,7 @@ Use Live Server in VS Code for a better development experience:
 
 ## 🚀 Future Improvements
 - Add mobile responsiveness  
-- Implement user authentication system  
+- Implement user authentication system
+
+
+Contributed by Megha 🚀
