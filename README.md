@@ -80,3 +80,10 @@ Use Live Server in VS Code for a better development experience:
 
 
 Contributed by Megha 🚀
+
+## Help and Support
+
+If you need help or face any issues,feel free to:
+- Open an issue in this repository
+- Contact the maintainers
+- Check existing discussions for solution 
