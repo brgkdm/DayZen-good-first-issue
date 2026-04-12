@@ -29,7 +29,7 @@ A simple and user-friendly interface that enables users to easily plan and track
 
 ## 👥 Contributors
 - brgkdm — Project Founder
-
+- Harshit (@Harshitcodes01) — Contributor
 ## ⚠️ Important Note
 This project is open for collaborative development.
 
