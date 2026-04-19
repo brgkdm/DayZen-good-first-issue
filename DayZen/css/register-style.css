@@ -72,3 +72,13 @@ button:hover {
   background-color: #2980b9;
   transform: scale(1.05);
 }
+#securityMessage{
+    margin-top:20px;
+    padding:15px;
+    background:#f4f8ff;
+    border-radius:6px;
+}
+
+#securityMessage button{
+    margin-right:10px;
+}
