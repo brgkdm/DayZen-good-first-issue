@@ -9,15 +9,37 @@ body {
   height: 100vh;
   margin: 0;
   padding: 0;
-  overflow-x: hidden; /* ADD THIS */
+  overflow-x: hidden;
 }
 
 .container {
   width: 90%;
   max-width: 400px;
   margin: 20px auto;
-  padding: 20px;
+  padding: 25px;
   box-sizing: border-box;
+
+  /*NEW (glass effect) */
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+
+  animation: fadeIn 0.6s ease;
+}
+
+.welcome-message {
+  text-align: center;
+  font-size: 28px;
+  color: #fff;
+  margin-bottom: 25px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  color: #fff;
+  font-size: 14px;
 }
 
 input {
@@ -25,6 +47,72 @@ input {
   box-sizing: border-box;
 }
 
+/* improved inputs */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  height: 2.2rem;
+  padding: 8px;
+  margin-bottom: 18px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  transition: 0.3s;
+}
+
+input:focus {
+  box-shadow: 0 0 5px #fff;
+}
+
+/* button upgrade */
+button {
+  width: 100%;
+  height: 2.4rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #1e90ff;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #0d6efd;
+  transform: scale(1.05);
+}
+
+/* login text */
+.login-link {
+  text-align: center;
+  margin-top: 10px;
+  color: #fff;
+}
+
+.login-link a {
+  color: #ffd700;
+  text-decoration: none;
+}
+
+/* security popup improve */
+#securityMessage {
+  display: none;  
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 15px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+#securityMessage button {
+  margin-right: 10px;
+  margin-top: 8px;
+}
+
+/* animation */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -34,51 +122,4 @@ input {
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-.welcome-message {
-  text-align: center;
-  font-size: 32px;
-  color: #333;
-  margin-bottom: 30px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-label {
-  display: block;
-  margin-bottom: 10px;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="password"],
-button {
-  width: 100%;
-  height: 2rem;
-  padding: 5px;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  transition: all 0.3s ease;
-}
-
-button {
-  background-color: #3498db;
-  color: #fff;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #2980b9;
-  transform: scale(1.05);
-}
-#securityMessage{
-    margin-top:20px;
-    padding:15px;
-    background:#f4f8ff;
-    border-radius:6px;
-}
-
-#securityMessage button{
-    margin-right:10px;
 }

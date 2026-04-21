@@ -1,31 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up - DayZen</title>
     <link rel="stylesheet" href="../css/register-style.css">
 </head>
-<body>
-    <div class="container">
-        <h2 class="welcome-message">Get Started Now!</h2>
-        <form id="registerForm">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-            <button type="submit" id="registerBtn">Sign Up</button>
-        </form>
-    </div>
-<div id="securityMessage" style="display:none; margin-top:20px;">
-    <p>Your account is secure. Want to set up 2-factor authentication?
 
-    </p>
-    <button id="setup2fa">Set up 2 factor authentication</button>
-    <button id="skipSecurity">No thanks</button>
-</div>
+<body>
+
+    <div class="container">
+        <h2 class="welcome-message">✨ Get Started Now!</h2>
+
+        <form id="registerForm">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Enter your username" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Create a password" required>
+
+            <button type="submit" id="registerBtn">🚀 Sign Up</button>
+        </form>
+
+        <p class="login-link">
+            Already have an account? <a href="#">Login</a>
+        </p>
+    </div>
+
+    <div id="securityMessage">
+        <p>🔒 Your account is secure. Want to enable extra protection?</p>
+        <button id="setup2fa">Set up 2 factor authentication</button>
+        <button id="skipSecurity">No thanks</button>
+    </div>
+
     <script src="../js/register-script.js"></script>
+
 </body>
+
 </html>
