@@ -1,3 +1,8 @@
+## Announcement: 
+Thank you for your contributions. Please check out the contents of my other repository and rate it if you like it. Thanks. 
+
+https://github.com/exc-analyzer/exc
+
 # 🌿 DayZen (Good First Issue)
 
 ## 📌 Purpose
