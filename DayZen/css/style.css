@@ -1,191 +1,206 @@
 /* Base Styling */
 body {
-    background-color: #101c2e;
-    /* Dark blue background */
-    color: #fff;
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: #101c2e;
+  /* Dark blue background */
+  color: #fff;
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 header {
-    background: linear-gradient(45deg, #2c3e50, #3498db);
-    color: #fff;
-    padding: 20px 0;
-    /* Fixed zero padding to something functional, avoiding flat nothingness */
-    position: relative;
-    /* Added relative positioning for better child element control */
+  background: linear-gradient(45deg, #2c3e50, #3498db);
+  color: #fff;
+  padding: 20px 0;
+  /* Fixed zero padding to something functional, avoiding flat nothingness */
+  position: relative;
+  /* Added relative positioning for better child element control */
 }
 
 .logo {
-    display: flex;
-    align-items: center;
-    position: relative;
+  display: flex;
+  align-items: center;
+  position: relative;
 }
 
 .mb-0 {
-    position: absolute;
-    top: 5px;
-    left: 60px;
-    z-index: 100;
-    text-shadow: 0 0 20px rgb(155, 150, 150);
+  position: absolute;
+  top: 5px;
+  left: 60px;
+  z-index: 100;
+  text-shadow: 0 0 20px rgb(155, 150, 150);
 }
 
 .reflect {
-    position: absolute;
-    top: 12px;
-    left: 65px;
-    color: rgb(0, 0, 0);
-    background-color: transparent;
-    text-shadow: 0 0 20px rgb(0, 0, 0);
+  position: absolute;
+  top: 12px;
+  left: 65px;
+  color: rgb(0, 0, 0);
+  background-color: transparent;
+  text-shadow: 0 0 20px rgb(0, 0, 0);
 }
 
 .logo img {
-    width: 50px;
-    margin-right: 10px;
+  width: 50px;
+  margin-right: 10px;
 }
 
 header h1 {
-    font-size: 2em;
-    font-weight: bold;
-    margin: 0;
-    margin-left: -110px;
-    /* Changed invalid negative padding to margin for proper positioning without breaking layout */
+  font-size: 2em;
+  font-weight: bold;
+  margin: 0;
+  margin-left: -110px;
+  /* Changed invalid negative padding to margin for proper positioning without breaking layout */
 }
 
 /* Default glow effect */
 .neon-glow {
-    position: relative;
-    animation: neon-glow-animation 1.5s ease-out infinite alternate;
-    padding: 10px;
-    border-radius: 10px;
+  position: relative;
+  animation: neon-glow-animation 1.5s ease-out infinite alternate;
+  padding: 10px;
+  border-radius: 10px;
 }
 
 /* The glowing neon blue effect */
 @keyframes neon-glow-animation {
-    0% {
-        box-shadow: 0 0 5px #1e90ff, 0 0 15px #1e90ff, 0 0 30px #1e90ff;
-    }
+  0% {
+    box-shadow:
+      0 0 5px #1e90ff,
+      0 0 15px #1e90ff,
+      0 0 30px #1e90ff;
+  }
 
-    100% {
-        box-shadow: 0 0 10px #1e90ff, 0 0 20px #1e90ff, 0 0 50px #1e90ff;
-    }
+  100% {
+    box-shadow:
+      0 0 10px #1e90ff,
+      0 0 20px #1e90ff,
+      0 0 50px #1e90ff;
+  }
 }
 
 /* For the feature section itself, styling it in a way it becomes highlighted */
 .feature {
-    opacity: 0.6;
-    transition: opacity 0.5s ease-in-out;
-    position: relative;
-    /* Added relative positioning to make tooltips functional and relative to each feature */
+  opacity: 0.6;
+  transition: opacity 0.5s ease-in-out;
+  position: relative;
+  /* Added relative positioning to make tooltips functional and relative to each feature */
 }
 
 /* Highlighted feature */
 .feature.highlight {
-    opacity: 1;
-    animation: neon-glow-animation 1.5s ease-out infinite alternate;
+  opacity: 1;
+  animation: neon-glow-animation 1.5s ease-out infinite alternate;
 }
 
 /* Tooltip styling */
 .tooltip {
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: #fff;
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 14px;
-    display: none;
-    max-width: 200px;
-    z-index: 9999;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  display: none;
+  max-width: 200px;
+  z-index: 9999;
 }
 
 /* Make tooltips appear on hover for pure CSS functionality */
 .feature:hover .tooltip {
-    display: block;
-    /* Added to make tooltips functional without JS, showing on hover like a teasing reveal */
+  display: block;
+  /* Added to make tooltips functional without JS, showing on hover like a teasing reveal */
 }
 
 /* Adjusted tooltip positions to be relative and responsive; removed fixed viewport positions */
 .tooltip[data-tooltip="1"] {
-    top: 100%;
-    /* Position below the feature for better flow */
-    left: 0;
+  top: 100%;
+  /* Position below the feature for better flow */
+  left: 0;
 }
 
 .tooltip[data-tooltip="2"] {
-    top: 100%;
-    left: 0;
+  top: 100%;
+  left: 0;
 }
 
 .tooltip[data-tooltip="3"] {
-    top: 100%;
-    left: 0;
+  top: 100%;
+  left: 0;
 }
 
 h1,
 h2,
 h3 {
-    text-shadow: 0 0 5px #19232d, 0 0 10px #1e90ff, 0 0 20px #0b2239;
-    /* Uncommented and applied the neon effect for consistent glow */
+  text-shadow:
+    0 0 5px #19232d,
+    0 0 10px #1e90ff,
+    0 0 20px #0b2239;
+  /* Uncommented and applied the neon effect for consistent glow */
 }
 
 /* Navbar Styling */
 nav.navbar {
-    background-color: #2c3e50;
-    /* Fixed 'red' to match comment's 'Darker blue navbar' for thematic consistency */
-    padding: 25px 0;
-    border-bottom: 2px solid #1e90ff;
+  background-color: #2c3e50;
+  /* Fixed 'red' to match comment's 'Darker blue navbar' for thematic consistency */
+  padding: 25px 0;
+  border-bottom: 2px solid #1e90ff;
 }
 
 .navbar-toggler-icon {
-    background-color: #fff;
-    border-radius: 7px;
+  background-color: #fff;
+  border-radius: 7px;
 }
 
 nav .navbar-nav {
-    display: flex;
-    justify-content: end;
-    width: 100%;
+  display: flex;
+  justify-content: end;
+  width: 100%;
 }
 
 nav .nav-item {
-    padding-right: 10px;
+  padding-right: 10px;
 }
 
 nav .nav-link {
-    color: #fff;
-    font-size: 18px;
-    padding: 10px 30px;
-    font-weight: bold;
-    transition: all 0.3s ease;
+  color: #e5e7eb;
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
 }
 
 /* Simple but classy hover effect */
 nav .nav-link:hover {
-    box-shadow: 0 0 5px #ffffff, 0 0 5px #1e90ff, inset 0 0 5px #ffffff, inset 0 0 3px #1e90ff;
-    /* Combined duplicated box-shadows into one for non-overriding functionality */
-    border: 1px solid #1e90ff;
-    /* Added border style to make border-color functional */
-    border-radius: 10px;
-    color: white;
+  color: #ffffff;
+  background: rgba(99, 102, 241, 0.2);
+  box-shadow: 0 0 12px rgba(99, 102, 241, 0.8);
+  transform: translateY(-2px);
+}
+
+nav .nav-link:active {
+  background: rgba(99, 102, 241, 0.25);
+  box-shadow: 0 0 12px rgba(99, 102, 241, 0.8);
+  color: white;
 }
 
 nav .nav-img {
-    height: 20px;
-    padding-right: 5px;
+  height: 20px;
+  padding-right: 5px;
 }
 
 /* Hero Section Styling */
 .hero {
-    text-align: center;
-    padding: 80px 0;
-    background: linear-gradient(45deg, #569fe9, #0f5192);
-    /* Blue gradient background */
+  text-align: center;
+  padding: 80px 0;
+  background: linear-gradient(45deg, #569fe9, #0f5192);
+  /* Blue gradient background */
 }
 
 .hero-content {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 /* Improve hero section text readability */
@@ -198,224 +213,293 @@ nav .nav-img {
   color: #4b5563; /* softer gray, still highly readable */
 }
 
-
 .hero .btn {
-    background-color: #02172c;
-    color: white;
-    padding: 12px 30px;
-    font-size: 18px;
-    border-radius: 25px;
-    text-decoration: none;
-    transition: all 0.3s ease;
+  background-color: #02172c;
+  color: white;
+  padding: 12px 30px;
+  font-size: 18px;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn {
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: white;
+  border: none;
+  padding: 6px 16px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+  top: 10px;
+  transition: all 1s ease;
+  /* top: 100px; */
 }
 
 .btn:hover {
-    background-color: #ffffff;
-    color: #02172c;
-    transform: scale(1.05);
-    box-shadow: 0 0 15px #0a2238;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
+  background: linear-gradient(135deg, #4f46e5, #4338ca);
 }
 
+.form-control {
+  background-color: #f9fafb;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 10px;
+  transition: all 0.3s ease;
+}
+
+.form-control:hover {
+  border-color: #6366f1;
+  box-shadow: 0 0 6px rgba(99, 102, 241, 0.3);
+  transform: translateY(-1px);
+}
+
+.form-control:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 10px rgba(79, 70, 229, 0.5);
+  outline: none;
+  background-color: #ffffff;
+}
+
+.form-control::placeholder {
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+.container h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1f2937 !important;
+  position: relative;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.container h2:hover {
+  color: #4f46e5 !important;
+  text-shadow: 0 0 10px rgba(79, 70, 229, 0.6);
+  transform: translateY(-2px);
+}
+
+.container h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 3px;
+  background: #6366f1 !important;
+  transition: 0.3s ease;
+}
+
+.container h2:hover ::after {
+  width: 100%;
+}
 /* Features Section */
 .features {
-    padding: 60px 0;
-    background-color: #1b2b38;
-    text-align: center;
+  padding: 60px 0;
+  background-color: #1b2b38;
+  text-align: center;
 }
 
 .features h2 {
-    color: #e9ecf0;
-    font-size: 32px;
-    margin-bottom: 30px;
+  color: #e9ecf0;
+  font-size: 32px;
+  margin-bottom: 30px;
 }
 
 .feature {
-    display: inline-block;
-    margin: 20px;
-    max-width: 300px;
-    transition: transform 0.3s ease;
+  display: inline-block;
+  margin: 20px;
+  max-width: 300px;
+  transition: transform 0.3s ease;
 }
 
 .feature img {
-    width: 100px;
-    height: 100px;
-    margin-bottom: 15px;
-    filter: drop-shadow(0 0 10px #1e90ff);
+  width: 100px;
+  height: 100px;
+  margin-bottom: 15px;
+  filter: drop-shadow(0 0 10px #1e90ff);
 }
 
 .feature h3 {
-    color: #fff;
-    font-size: 22px;
-    text-shadow: 0 0 5px #1e90ff;
+  color: #fff;
+  font-size: 22px;
+  text-shadow: 0 0 5px #1e90ff;
 }
 
 .feature p {
-    color: #bbb;
+  color: #bbb;
 }
 
 .feature:hover {
-    transform: scale(1.1);
-    /* Chose scale over translateY for smoother, more engaging hover like a swelling erection */
-    text-shadow: 0 0 10px #1e90ff;
+  transform: scale(1.1);
+  /* Chose scale over translateY for smoother, more engaging hover like a swelling erection */
+  text-shadow: 0 0 10px #1e90ff;
 }
 
 /* Footer Styling */
 footer {
-    background-color: #222;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
 }
 
 footer a {
-    color: #1e90ff;
-    text-decoration: none;
+  color: #1e90ff;
+  text-decoration: none;
 }
 
 footer a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 /* Light Theme Overrides */
 .light-theme {
-    background-color: #ffffff;
-    /* White background for light theme */
-    color: #000;
+  background-color: #ffffff;
+  /* White background for light theme */
+  color: #000;
 }
 
 .light-theme nav.navbar {
-    background-color: #f0f0f0;
-    /* Light gray navbar */
-    border-bottom: 2px solid #1e90ff;
+  background-color: #f0f0f0;
+  /* Light gray navbar */
+  border-bottom: 2px solid #1e90ff;
 }
 
 .light-theme .btn {
-    background-color: #1e90ff;
-    color: white;
+  background-color: #1e90ff;
+  color: white;
 }
 
 .light-theme .btn:hover {
-    background-color: #3498db;
+  background-color: #3498db;
 }
 
 .light-theme footer {
-    background-color: #f0f0f0;
-    color: #000;
+  background-color: #f0f0f0;
+  color: #000;
 }
 
 /* Dark Mode Styles */
 body.dark-mode {
-    background-color: #1a1a1a;
-    color: #f0f0f0;
+  background-color: #1a1a1a;
+  color: #f0f0f0;
 }
 
 body.dark-mode header {
-    background: linear-gradient(45deg, #1a1a1a, #2c3e50);
+  background: linear-gradient(45deg, #1a1a1a, #2c3e50);
 }
 
 body.dark-mode .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('hero-bg.jpg') center/cover no-repeat;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url("hero-bg.jpg") center/cover no-repeat;
 }
 
 body.dark-mode .btn {
-    background: #2980b9;
+  background: #2980b9;
 }
 
 body.dark-mode footer {
-    background: #111;
+  background: #111;
 }
 
 body.dark-mode #contact {
-    color: #000;
+  color: #000;
 }
 
 /* Theme Toggle */
 .theme-toggle {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
 }
 
 .theme-toggle img {
-    width: 30px;
+  width: 30px;
 }
 
 @media (max-width: 900px) {
-    .logo {
-        margin-bottom: 10px;
-        position: relative;
-        left: 100px;
-        top: 15px;
-        justify-content: center;
-    }
+  .logo {
+    margin-bottom: 10px;
+    position: relative;
+    left: 100px;
+    top: 15px;
+    justify-content: center;
+  }
 
-    /* position of the image on the minimum width size  */
-    .logo.img {
-        position: relative;
-        left: -10px;
-        bottom: 20px;
-        top: 0px;
-    }
+  /* position of the image on the minimum width size  */
+  .logo.img {
+    position: relative;
+    left: -10px;
+    bottom: 20px;
+    top: 0px;
+  }
 }
 
 .theme-toggle {
-    right: 60px;
+  right: 60px;
 }
 
 /* Made tooltips responsive for smaller screens */
 .tooltip {
-    max-width: 150px;
-    font-size: 12px;
+  max-width: 150px;
+  font-size: 12px;
 }
 
 .feature {
-    max-width: 100%;
-    /* Full width on mobile for better positioning */
-    margin: 10px 0;
+  max-width: 100%;
+  /* Full width on mobile for better positioning */
+  margin: 10px 0;
 }
 
 @media (max-width: 768px) {
-    .logo img {
-        border: 2px solid red;
-        position: relative;
-        left: 20px;
-        bottom: 10px;
-    }
+  .logo img {
+    border: 2px solid red;
+    position: relative;
+    left: 20px;
+    bottom: 10px;
+  }
 
-    .theme-toggle {
-        right: 60px;
-    }
+  .theme-toggle {
+    right: 60px;
+  }
 
-    /* Made tooltips responsive for smaller screens */
-    .tooltip {
-        max-width: 150px;
-        font-size: 12px;
-    }
+  /* Made tooltips responsive for smaller screens */
+  .tooltip {
+    max-width: 150px;
+    font-size: 12px;
+  }
 
-    .feature {
-        max-width: 100%;
-        /* Full width on mobile for better positioning */
-        margin: 10px 0;
-    }
+  .feature {
+    max-width: 100%;
+    /* Full width on mobile for better positioning */
+    margin: 10px 0;
+  }
 }
 
 /* Animation added for theme icon */
 #theme-icon {
-    animation-name: rotate360;
-    animation-timing-function: linear;
-    animation-duration: 5s;
-    animation-iteration-count: infinite;
-    animation-direction: normal;
-    animation-delay: 1s;
+  animation-name: rotate360;
+  animation-timing-function: linear;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-delay: 1s;
 }
 
 @keyframes rotate360 {
-    from {
-        transform: rotate(0deg);
-    }
+  from {
+    transform: rotate(0deg);
+  }
 
-    to {
-        transform: rotate(360deg);
-    }
+  to {
+    transform: rotate(360deg);
+  }
 }
