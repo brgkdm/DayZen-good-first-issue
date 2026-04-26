@@ -5,24 +5,236 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DayZen - Daily Routine Tracker</title>
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="../css/style.css" />
-  <link rel="stylesheet" href="../css/help.css" />
-  <link rel="stylesheet" href="../css/onboarding.css" />
-  <link rel="stylesheet" href="../css/theme.css" />
-  <link rel="stylesheet" href="../css/footer.css" />
-  <link rel="stylesheet" href="../css/about.css" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Libertinus+Sans&display=swap" rel="stylesheet">
-
   <!-- Intro JS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intro.js/8.3.2/introjs.min.css"/>
+
+  <style>
+    :root {
+      --mint-light: #f2faf9;
+      --mint-accent: #a8dadc;
+      --blue-light: #f0f9ff;
+      --blue-accent: #90e0ef;
+      --text-dark: #2d3436;
+      --text-muted: #636e72;
+      --pure-white: #ffffff;
+      --soft-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+      --transition-smooth: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text-dark);
+      background-color: var(--pure-white);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+    }
+
+    /* Navbar */
+    .navbar {
+      background-color: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      padding: 1rem 0;
+      transition: var(--transition-smooth);
+    }
+
+    .navbar-brand h1 {
+      font-size: 1.5rem;
+      color: var(--text-dark);
+      letter-spacing: 1px;
+    }
+
+    .nav-link {
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: var(--text-dark) !important;
+      margin: 0 10px;
+      transition: var(--transition-smooth);
+      opacity: 0.8;
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-link:hover {
+      opacity: 1;
+      transform: translateY(-1px);
+    }
+
+    .nav-img {
+      width: 16px;
+      margin-right: 8px;
+      filter: grayscale(100%) opacity(0.7);
+      transition: var(--transition-smooth);
+    }
+
+    .nav-link:hover .nav-img {
+      filter: grayscale(0%) opacity(1);
+    }
+
+    .btn-primary {
+      background-color: var(--mint-accent);
+      border: none;
+      color: var(--text-dark);
+      padding: 12px 32px;
+      border-radius: 50px;
+      font-weight: 500;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: var(--transition-smooth);
+      box-shadow: var(--soft-shadow);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--blue-accent);
+      color: var(--text-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 180px 0 120px;
+      background: linear-gradient(135deg, var(--pure-white) 0%, var(--mint-light) 100%);
+      position: relative;
+    }
+
+    .hero h2 {
+      font-size: 4rem;
+      margin-bottom: 1.5rem;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.1;
+      letter-spacing: -1px;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      margin-bottom: 3rem;
+      font-weight: 300;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Features Section */
+    .features {
+      padding: 120px 0;
+    }
+
+    .features h2 {
+      margin-bottom: 80px;
+      font-size: 2.8rem;
+    }
+
+    .feature-card {
+      padding: 50px 40px;
+      border-radius: 24px;
+      background: var(--pure-white);
+      transition: var(--transition-smooth);
+      border: 1px solid rgba(0,0,0,0.03);
+      height: 100%;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.04);
+      border-color: var(--blue-accent);
+    }
+
+    .feature-card img {
+      width: 55px;
+      transition: var(--transition-smooth);
+    }
+
+    .feature-card h3 {
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+    }
+
+    .feature-card p {
+      color: var(--text-muted);
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    /* Contact Section */
+    #contact {
+      background-color: var(--blue-light) !important;
+      border-radius: 40px;
+      margin: 80px auto;
+      padding: 100px 60px !important;
+      max-width: 1000px;
+    }
+
+    #contact h2 {
+      text-align: center;
+      margin-bottom: 15px;
+      font-size: 2.8rem;
+    }
+
+    .form-control {
+      border: 1px solid rgba(0,0,0,0.05);
+      border-radius: 16px;
+      padding: 18px 25px;
+      margin-bottom: 25px;
+      font-size: 1rem;
+      transition: var(--transition-smooth);
+    }
+
+    .form-control:focus {
+      box-shadow: 0 0 0 4px rgba(168, 218, 220, 0.2);
+      border-color: var(--mint-accent);
+      background-color: var(--pure-white);
+    }
+
+    /* Footer */
+    .footer {
+      background-color: var(--pure-white) !important;
+      color: var(--text-dark) !important;
+      padding: 80px 0 40px !important;
+      border-top: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .footer a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      margin: 0 15px;
+      transition: var(--transition-smooth);
+    }
+
+    .footer a:hover {
+      color: var(--mint-accent);
+    }
+
+    .security-subtle {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 30px;
+      opacity: 0.7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+  </style>
 </head>
 
 <body>
@@ -33,19 +245,19 @@
     <div class="container align-items-center">
 
       <!-- Logo -->
-      <div class="logo d-flex align-items-center">
-        <img src="../assets/images/logos/logoWhite.png" alt="DayZen Logo" width="40">
-        <h1 class="ms-2 mb-0">DayZen</h1>
-      </div>
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="../assets/images/logos/logoWhite.png" alt="DayZen Logo" width="32" style="filter: invert(1);">
+        <h1 class="ms-3 mb-0">DayZen</h1>
+      </a>
 
       <!-- Toggle -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav_items">
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#nav_items">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <!-- Nav Items -->
       <div class="collapse navbar-collapse" id="nav_items">
-        <ul class="navbar-nav ms-auto">
+        <ul class="navbar-nav ms-auto align-items-center">
 
           <li class="nav-item">
             <a class="nav-link" href="#">
@@ -81,16 +293,16 @@
             </a>
           </li>
 
-          <li class="nav-item">
-            <button class="btn btn-primary btn-sm ms-2">Take Tour</button>
+          <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+            <button class="btn btn-primary">Take Tour</button>
           </li>
 
         </ul>
       </div>
 
       <!-- Theme Icon -->
-      <div class="ms-3">
-        <img src="../assets/images/icons/sun.png" alt="Theme" width="25">
+      <div class="ms-4 d-none d-lg-block">
+        <img src="../assets/images/icons/sun.png" alt="Theme" width="20" style="cursor: pointer; opacity: 0.5;">
       </div>
 
     </div>
@@ -98,14 +310,14 @@
 </header>
 
 <!-- HERO -->
-<section class="hero">
-  <div class="container text-center">
-    <h2>You determine your time, you manage your day!</h2>
+<section class="hero text-center">
+  <div class="container">
+    <h2 class="mb-4">You determine your time, <br><span style="color: var(--mint-accent); font-style: italic;">you manage your day.</span></h2>
     <p>
-      Easily plan, track and manage your daily routines with DayZen.
+      Easily plan, track and manage your daily routines with DayZen. Designed for peace and clarity.
     </p>
     <a href="../pages/register.html" class="btn btn-primary">
-      Start Now and Be More Organized
+      Start Now
     </a>
   </div>
 </section>
@@ -113,59 +325,85 @@
 <!-- FEATURES -->
 <section class="features">
   <div class="container text-center">
-    <h2>Why Choose DayZen?</h2>
+    <h2 class="mb-5">Why Choose DayZen?</h2>
 
-    <div class="feature">
-      <img src="../assets/images/Illustrations/productivity.png" alt="">
-      <h3>Easy Planning</h3>
-      <p>Plan your routines easily with reminders.</p>
-    </div>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="feature-card">
+          <div class="mb-4 d-flex align-items-center justify-content-center" style="height: 60px;">
+            <img src="../assets/images/Illustrations/productivity.png" alt="">
+          </div>
+          <h3>Easy Planning</h3>
+          <p>Plan your routines effortlessly with intuitive reminders and a clean, focused interface.</p>
+        </div>
+      </div>
 
-    <div class="feature">
-      <img src="../assets/images/Illustrations/planning.png" alt="">
-      <h3>Detailed Statistics</h3>
-      <p>Analyze and improve your daily performance.</p>
-    </div>
+      <div class="col-md-4">
+        <div class="feature-card">
+          <div class="mb-4 d-flex align-items-center justify-content-center" style="height: 60px;">
+            <img src="../assets/images/Illustrations/planning.png" alt="">
+          </div>
+          <h3>Detailed Statistics</h3>
+          <p>Analyze and improve your daily performance with beautiful, minimalist visualizations.</p>
+        </div>
+      </div>
 
-    <div class="feature">
-      <img src="../assets/images/Illustrations/reward.png" alt="">
-      <h3>Motivation</h3>
-      <p>Stay motivated with engaging content.</p>
+      <div class="col-md-4">
+        <div class="feature-card">
+          <div class="mb-4 d-flex align-items-center justify-content-center" style="height: 60px;">
+            <img src="../assets/images/Illustrations/reward.png" alt="">
+          </div>
+          <h3>Motivation</h3>
+          <p>Stay inspired and focused with curated content that fuels your daily growth.</p>
+        </div>
+      </div>
     </div>
 
   </div>
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="py-5 bg-light">
-  <div class="container">
-    <h2>Contact Us</h2>
-
-    <form>
-      <input class="form-control mb-2" placeholder="Your name">
-      <input class="form-control mb-2" placeholder="Email">
-      <textarea class="form-control mb-2" placeholder="Message"></textarea>
-      <button class="btn btn-primary">Send</button>
-    </form>
-
+<section id="contact" class="container">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <h2>Let's Connect</h2>
+      <p class="text-center text-muted mb-5">Have questions? We'd love to hear from you.</p>
+      <form>
+        <div class="row">
+          <div class="col-md-6">
+            <input class="form-control" placeholder="Your name">
+          </div>
+          <div class="col-md-6">
+            <input class="form-control" placeholder="Email address">
+          </div>
+        </div>
+        <textarea class="form-control" placeholder="How can we help you?" rows="5"></textarea>
+        <div class="text-center">
+          <button class="btn btn-primary mt-2">Send Message</button>
+        </div>
+      </form>
+    </div>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer class="footer text-center text-white p-3">
-  <p>© 2024 DayZen</p>
-  <p>
-    <a href="pages/privacy.html">Privacy</a> |
-    <a href="pages/terms.html">Terms</a>
-  </p>
+<footer class="footer text-center">
+  <div class="container">
+    <div class="mb-5">
+      <img src="../assets/images/logos/logoWhite.png" alt="DayZen" width="32" style="filter: invert(1); opacity: 0.4;">
+    </div>
+    <p class="mb-3">© 2024 DayZen. All rights reserved.</p>
+    <div class="footer-links mb-4">
+      <a href="pages/privacy.html">Privacy Policy</a>
+      <a href="pages/terms.html">Terms of Service</a>
+    </div>
+    <div class="security-subtle">
+      <span>🔒</span> Your data is always secure and encrypted.
+    </div>
+  </div>
 </footer>
 
-<!-- SECURITY NOTICE (FIXED POSITION) -->
-<div class="security-notice text-center">
-  🔒 Your account is secure.
-</div>
-
-<!-- JS -->
+<!-- JS (Keeping existing references) -->
 <script src="js/theme-toggle.js"></script>
 <script src="js/script.js"></script>
 <script src="js/help-button.js"></script>
