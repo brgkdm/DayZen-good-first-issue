@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <title>DayZen Blog</title>
+ <style>
+  :root {
+   --bg: #0b1120;
+   --surface: rgba(255, 255, 255, 0.08);
+   --text: #f4f7ff;
+   --accent: #7effd3;
+   --accent2: #6b8cff;
+   --shadow: 0 18px 45px rgba(0, 0, 0, 0.25);
+  }
+
+  * {
+   margin: auto;
+   box-sizing: border-box;
+   /* margin: 0; */
+   padding: 0;
+  }
+
+  body {
+   min-height: 100vh;
+   font-family: "Inter", Arial, sans-serif;
+   background: radial-gradient(circle at top, #1f2a4f, #0b1120 55%);
+   color: var(--text);
+   line-height: 1.6;
+  }
+
+  .page {
+   display: flex;
+   flex-direction: column;
+   max-width: 1120px;
+   margin:  auto;
+   padding: 40px 24px 80px;
+  }
+
+  .hero {
+   margin-bottom: 48px;
+   animation: fadeIn 1.1s ease both;
+  }
+
+  .hero h1 {
+   font-size: clamp(3rem, 5vw, 5rem);
+   letter-spacing: -0.05em;
+  text-align: center;
+  text-shadow: #8c919d 4px 4px 8px;
+  margin-bottom: 16px;
+text-decoration: dotted underline rgba(102, 160, 189, 0.28) 4px;
+
+  }
+
+  .hero p {
+   max-width: 760px;
+   font-size: 1.15rem;
+   color: rgba(244, 247, 255, 0.8);
+  }
+
+  .hero .highlight {
+   background: linear-gradient(90deg, rgba(126, 255, 211, 0.28), rgba(107, 140, 255, 0.28));
+   color: #fff;
+   padding: 0.2em 0.35em;
+   border-radius: 0.55rem;
+   font-weight: 600;
+  }
+
+  .posts {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+   gap: 24px;
+  }
+
+  .post {
+   background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+   border: 1px solid rgba(255, 255, 255, 0.08);
+   border-radius: 26px;
+   padding: 28px;
+   box-shadow: var(--shadow);
+   position: relative;
+   overflow: hidden;
+   animation: floatUp 1.1s ease both;
+  }
+
+  .post::before {
+   content: "";
+   position: absolute;
+   top: -30%;
+   right: -30%;
+   width: 180px;
+   height: 180px;
+   background: radial-gradient(circle, rgba(126, 255, 211, 0.22), transparent 70%);
+   border-radius: 50%;
+   filter: blur(20px);
+  }
+
+  .post h2 {
+   font-size: 1.65rem;
+   margin-bottom: 14px;
+  }
+
+  .post p {
+   font-size: 1rem;
+   color: rgba(244, 247, 255, 0.78);
+   margin-bottom: 18px;
+  }
+
+  .post .tag {
+   display: inline-flex;
+   align-items: center;
+   gap: 0.5rem;
+   padding: 0.65rem 0.9rem;
+   background: rgba(126, 255, 211, 0.14);
+   border-radius: 999px;
+   color: #c8f7ea;
+   font-size: 0.95rem;
+   font-weight: 600;
+  }
+
+  .post .tag::before {
+   content: "";
+   width: 8px;
+   height: 8px;
+   border-radius: 50%;
+   background: var(--accent);
+  }
+
+  .post footer {
+   margin-top: 22px;
+   display: flex;
+   justify-content: space-between;
+   gap: 16px;
+   flex-wrap: wrap;
+   color: rgba(244, 247, 255, 0.65);
+   font-size: 0.95rem;
+  }
+
+  .post a {
+   color: var(--accent2);
+   text-decoration: none;
+   font-weight: 600;
+  }
+
+  @keyframes fadeIn {
+   from {
+    opacity: 0;
+    transform: translateY(18px);
+   }
+   to {
+    opacity: 1;
+    transform: translateY(0);
+   }
+  }
+
+  @keyframes floatUp {
+   from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+   }
+   to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+   }
+  }
+
+  @media (max-width: 600px) {
+   .page {
+    padding: 30px 16px 60px;
+   }
+
+   .hero p {
+    font-size: 1rem;
+   }
+
+   .post {
+    padding: 22px;
+   }
+  }
+  .back-home {
+
+   text-align: center;
+   margin-top: 40px;
+   background-color: #c8f7ea;
+   padding: 10px 12px;
+   border-radius: 60%;
+   text-decoration: none;
+   display: inline-block;
+  }
+  .btn-home{
+   font-weight: 600;
+   text-decoration: none;
+  }
+  .back-home :hover {
+   font-weight: 900;
+   font-size:medium;
+   font: bold;
+   color: var(--accent2);
+   transition: font 0.6s ease;
+  }
+ </style>
+</head>
+<body>
+ <main class="page">
+  <section class="hero">
+   <h1>DayZen Blog</h1>
+   <p>Explore fresh insights, creative updates, and thoughtful ideas with smooth motion and eye-catching typography. Every post is designed to feel modern, calm, and easy to read.</p>
+  </section>
+
+  <section class="posts">
+   <article class="post">
+    <h2>Crafting a Minimalist UI for Focused Work</h2>
+    <p>Learn how to build a clean interface that reduces distractions and makes content feel calm, balanced, and pleasant to browse on desktop or mobile.</p>
+    <span class="tag">Design</span>
+    <footer>
+     <span>April 28, 2026</span>
+     <a href="#">Read more →</a>
+    </footer>
+   </article>
+
+   <article class="post">
+    <h2>Animating Micro-interactions with Pure CSS</h2>
+    <p>Discover simple animation tricks that make buttons, cards, and page transitions feel alive without slowing down your site.</p>
+    <span class="tag">Frontend</span>
+    <footer>
+     <span>April 20, 2026</span>
+     <a href="#">Read more →</a>
+    </footer>
+   </article>
+
+   <article class="post">
+    <h2>Colorful Text Blocks for Better Visual Flow</h2>
+    <p>Use highlight text backgrounds and bold typography to guide readers through your content with clarity and style.</p>
+    <span class="tag">Typography</span>
+    <footer>
+     <span>April 12, 2026</span>
+     <a href="#">Read more →</a>
+
+     
+    </footer>
+   </article>
+  </section>
+  <div class="back-home">
+          <a href="./index.html" class="btn-home">← Back to Home</a>
+      </div> 
+ </main>
+</body>
+</html>

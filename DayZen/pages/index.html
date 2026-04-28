@@ -32,9 +32,10 @@
     body {
       font-family: 'Inter', sans-serif;
       color: var(--text-dark);
-      background-color: var(--pure-white);
+      background-color:bisque;
       line-height: 1.7;
       overflow-x: hidden;
+      background-color: #a8dadc;
     }
 
     h1, h2, h3 {
@@ -44,7 +45,7 @@
 
     /* Navbar */
     .navbar {
-      background-color: rgba(255, 255, 255, 0.9);
+      background-color:#a8dadc;
       backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(0, 0, 0, 0.05);
       padding: 1rem 0;
@@ -58,19 +59,20 @@
     }
 
     .nav-link {
-      font-size: 0.9rem;
-      font-weight: 400;
-      color: var(--text-dark) !important;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--mint-light) !important;
       margin: 0 10px;
       transition: var(--transition-smooth);
-      opacity: 0.8;
       display: flex;
+      text-shadow: #161717;
+      text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
       align-items: center;
     }
 
     .nav-link:hover {
       opacity: 1;
-      transform: translateY(-1px);
+      transform: translateY(-0.8px);
     }
 
     .nav-img {
@@ -133,106 +135,413 @@
     }
 
     /* Features Section */
-    .features {
-      padding: 120px 0;
-    }
+    /* section background */
+.features {
+  padding: 140px 0;
+  background: linear-gradient(180deg, #A8DADC, #208cb4);
+  position: relative;
+  overflow: hidden;
+}
 
-    .features h2 {
-      margin-bottom: 80px;
-      font-size: 2.8rem;
-    }
+/* subtle animated glow */
+.features::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 70% 30%, rgba(212, 206, 217, 0.12), transparent 10%);
+  animation: moveBg 12s ease-in-out infinite;
+}
 
-    .feature-card {
-      padding: 50px 40px;
-      border-radius: 24px;
-      background: var(--pure-white);
-      transition: var(--transition-smooth);
-      border: 1px solid rgba(0,0,0,0.03);
-      height: 100%;
-    }
+@keyframes moveBg {
+  0% { transform: translate(0,0); }
+  50% { transform: translate(-6%, -4%); }
+  100% { transform: translate(0,0); }
+}
 
-    .feature-card:hover {
-      transform: translateY(-12px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.04);
-      border-color: var(--blue-accent);
-    }
+/* headings */
+.features-title {
+  font-size: 2.8rem;
+  color: #fff;
+  margin-bottom: 10px;
+}
 
-    .feature-card img {
-      width: 55px;
-      transition: var(--transition-smooth);
-    }
+.features-subtitle {
+  color: #e0e2e7;
+  margin-bottom: 70px;
+}
 
-    .feature-card h3 {
-      font-size: 1.6rem;
-      margin-bottom: 20px;
-    }
+/* cards */
+.feature-card {
+  position: relative;
+  padding: 50px 35px;
+  border-radius: 22px;
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: all 0.35s ease;
+  height: 100%;
+  overflow: hidden;
+}
 
-    .feature-card p {
-      color: var(--text-muted);
-      font-size: 1rem;
-      line-height: 1.6;
-    }
+/* glowing border effect */
+.feature-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 22px;
+  padding: 1px;
+  background: linear-gradient(120deg, #38bdf8, #a78bfa, transparent);
+  -webkit-mask: 
+    linear-gradient(#000 0 0) content-box, 
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.feature-card:hover::before {
+  opacity: 1;
+}
+
+/* hover lift + tilt */
+.feature-card:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+}
+
+/* icon */
+.icon-wrap {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.icon-wrap img {
+  width: 60px;
+  transition: transform 0.4s ease;
+}
+
+/* icon animation */
+.feature-card:hover img {
+  transform: scale(1.2) rotate(8deg);
+}
+
+/* text */
+.feature-card h3 {
+  font-size: 1.5rem;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.feature-card p {
+  color: #f2f4f5;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* entrance animation */
+.feature-card {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.feature-card:nth-child(1) { animation-delay: 0.2s; }
+.feature-card:nth-child(2) { animation-delay: 0.4s; }
+.feature-card:nth-child(3) { animation-delay: 0.6s; }
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* responsive */
+@media (max-width: 768px) {
+  .features-title {
+    font-size: 2rem;
+  }
+}
 
     /* Contact Section */
-    #contact {
-      background-color: var(--blue-light) !important;
-      border-radius: 40px;
-      margin: 80px auto;
-      padding: 100px 60px !important;
-      max-width: 1000px;
-    }
+#contact {
+  margin: 100px auto;
+  max-width: 1100px;
+  padding: 20px;
+  
+}
 
-    #contact h2 {
-      text-align: center;
-      margin-bottom: 15px;
-      font-size: 2.8rem;
-    }
+/* glass card */
+.contact-card {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  padding: 80px 60px;
+  border-radius: 30px;
+  color: #e2e8f0;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+}
 
-    .form-control {
-      border: 1px solid rgba(0,0,0,0.05);
-      border-radius: 16px;
-      padding: 18px 25px;
-      margin-bottom: 25px;
-      font-size: 1rem;
-      transition: var(--transition-smooth);
-    }
+/* animated glow background */
+.contact-card::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 20% 30%, rgba(56,189,248,0.15), transparent 40%);
+  animation: floatBg 10s ease-in-out infinite;
+}
 
-    .form-control:focus {
-      box-shadow: 0 0 0 4px rgba(168, 218, 220, 0.2);
-      border-color: var(--mint-accent);
-      background-color: var(--pure-white);
-    }
+@keyframes floatBg {
+  0% { transform: translate(0,0); }
+  50% { transform: translate(-4%, -6%); }
+  100% { transform: translate(0,0); }
+}
+
+/* headings */
+.title {
+  text-align: center;
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #94a3b8;
+  margin-bottom: 50px;
+}
+
+/* input group */
+.input-group {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+/* inputs */
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  padding: 18px 20px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.05);
+  color: #fff;
+  outline: none;
+  font-size: 0.95rem;
+  transition: 0.3s ease;
+}
+
+/* glowing focus */
+.input-group input:focus,
+.input-group textarea:focus {
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 3px rgba(56,189,248,0.25);
+  background: rgba(255,255,255,0.08);
+}
+
+/* floating labels */
+.input-group label {
+  position: absolute;
+  top: 50%;
+  left: 18px;
+  transform: translateY(-50%);
+  font-size: 0.9rem;
+  color: #94a3b8;
+  pointer-events: none;
+  transition: 0.3s ease;
+}
+
+.input-group textarea + label {
+  top: 20px;
+  transform: none;
+}
+
+/* label animation */
+.input-group input:focus + label,
+.input-group input:valid + label,
+.input-group textarea:focus + label,
+.input-group textarea:valid + label {
+  top: -10px;
+  left: 14px;
+  font-size: 0.75rem;
+  color: #38bdf8;
+  background: #0f172a;
+  padding: 0 6px;
+  border-radius: 6px;
+}
+
+/* button */
+.btn-send {
+  margin-top: 10px;
+  padding: 14px 40px;
+  border-radius: 50px;
+  border: none;
+  background: linear-gradient(90deg, #38bdf8, #a78bfa);
+  color: white;
+  font-weight: 500;
+  font-size: 1rem;
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+
+/* button hover animation */
+.btn-send:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(56,189,248,0.4);
+}
+
+/* ripple effect */
+.btn-send::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 300%;
+  background: rgba(255,255,255,0.2);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  transition: 0.5s;
+}
+
+.btn-send:hover::after {
+  width: 120%;
+}
+
+/* responsive */
+@media (max-width: 768px) {
+  .contact-card {
+    padding: 50px 25px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+}
 
     /* Footer */
-    .footer {
-      background-color: var(--pure-white) !important;
-      color: var(--text-dark) !important;
-      padding: 80px 0 40px !important;
-      border-top: 1px solid rgba(0,0,0,0.05);
-    }
+   .footer {
+  background: linear-gradient(180deg, #A8DADC, #208cb4);
+  color: #e2e8f0;
+  padding: 90px 0 50px;
+  position: relative;
+  overflow: hidden;
+}
 
-    .footer a {
-      color: var(--text-muted);
-      text-decoration: none;
-      font-size: 0.95rem;
-      margin: 0 15px;
-      transition: var(--transition-smooth);
-    }
+/* subtle animated gradient glow */
+.footer::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 30% 30%, rgba(56,189,248,0.15), transparent 40%);
+  animation: floatBg 12s ease-in-out infinite;
+}
 
-    .footer a:hover {
-      color: var(--mint-accent);
-    }
+@keyframes floatBg {
+  0% { transform: translate(0,0); }
+  50% { transform: translate(-5%, -5%); }
+  100% { transform: translate(0,0); }
+}
 
-    .security-subtle {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      margin-top: 30px;
-      opacity: 0.7;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-    }
+/* logo */
+.footer-logo img {
+  width: 42px;
+  opacity: 0.8;
+  transition: transform 0.4s ease, opacity 0.4s;
+}
+
+.footer-logo img:hover {
+  transform: scale(1.15) rotate(5deg);
+  opacity: 1;
+}
+
+/* copyright */
+.footer p {
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+  color: #e8eaed;
+  letter-spacing: 0.5px;
+   font:bolder;
+  font-weight: bolder;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+}
+
+/* links */
+.footer-links {
+  margin-bottom: 25px;
+}
+
+.footer-links a {
+  position: relative;
+  color: #e6e6ea;
+  font:bolder;
+  font-weight: bolder;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+  text-decoration: none;
+  margin: 0 18px;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+/* animated underline */
+.footer-links a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -4px;
+  background: linear-gradient(90deg, #1900f8, #4f30ad);
+  transition: width 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #005a81;
+}
+
+.footer-links a:hover::after {
+  width: 100%;
+}
+
+/* security badge */
+.security-badge {
+  margin-top: 25px;
+  font-size: 0.85rem;
+  color: #eaecee;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  border-radius: 50px;
+  background: rgba(192, 92, 92, 0.3);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* glow hover */
+.security-badge:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 20px rgba(56,189,248,0.3);
+}
+
+/* lock animation */
+.lock {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.8; }
+}
+   
 
   </style>
 </head>
@@ -266,14 +575,14 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="pages/about.html">
+            <a class="nav-link" href="about.html">
               <img src="../assets/images/Illustrations/about_us.png" class="nav-img" />
               About Us
             </a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="blog.html">
               <img src="../assets/images/Illustrations/blog.png" class="nav-img" />
               Blog
             </a>
@@ -287,7 +596,7 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="pages/register.html">
+            <a class="nav-link" href="register.html">
               <img src="../assets/images/icons/userColor.png" class="nav-img" />
               Login
             </a>
@@ -325,81 +634,101 @@
 <!-- FEATURES -->
 <section class="features">
   <div class="container text-center">
-    <h2 class="mb-5">Why Choose DayZen?</h2>
+
+    <h2 class="features-title">Why Choose DayZen?</h2>
+    <p class="features-subtitle">Designed to simplify your life and boost your focus.</p>
 
     <div class="row g-4">
+
       <div class="col-md-4">
         <div class="feature-card">
-          <div class="mb-4 d-flex align-items-center justify-content-center" style="height: 60px;">
+          <div class="icon-wrap">
             <img src="../assets/images/Illustrations/productivity.png" alt="">
           </div>
           <h3>Easy Planning</h3>
-          <p>Plan your routines effortlessly with intuitive reminders and a clean, focused interface.</p>
+          <p>Plan your routines effortlessly with intuitive reminders and a clean interface.</p>
         </div>
       </div>
 
       <div class="col-md-4">
         <div class="feature-card">
-          <div class="mb-4 d-flex align-items-center justify-content-center" style="height: 60px;">
+          <div class="icon-wrap">
             <img src="../assets/images/Illustrations/planning.png" alt="">
           </div>
           <h3>Detailed Statistics</h3>
-          <p>Analyze and improve your daily performance with beautiful, minimalist visualizations.</p>
+          <p>Analyze your daily performance with beautiful and minimal insights.</p>
         </div>
       </div>
 
       <div class="col-md-4">
         <div class="feature-card">
-          <div class="mb-4 d-flex align-items-center justify-content-center" style="height: 60px;">
+          <div class="icon-wrap">
             <img src="../assets/images/Illustrations/reward.png" alt="">
           </div>
           <h3>Motivation</h3>
-          <p>Stay inspired and focused with curated content that fuels your daily growth.</p>
+          <p>Stay inspired with curated content that keeps your momentum going.</p>
         </div>
       </div>
-    </div>
 
+    </div>
   </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact" class="container">
-  <div class="row justify-content-center">
-    <div class="col-lg-8">
-      <h2>Let's Connect</h2>
-      <p class="text-center text-muted mb-5">Have questions? We'd love to hear from you.</p>
-      <form>
-        <div class="row">
-          <div class="col-md-6">
-            <input class="form-control" placeholder="Your name">
-          </div>
-          <div class="col-md-6">
-            <input class="form-control" placeholder="Email address">
-          </div>
+  <div class="contact-card">
+    
+    <h2 class="title">Let’s Connect</h2>
+    <p class="subtitle">Have questions? We'd love to hear from you.</p>
+
+    <form>
+      <div class="row">
+        <div class="col-md-6 input-group">
+          <input type="text" required>
+          <label>Your Name</label>
         </div>
-        <textarea class="form-control" placeholder="How can we help you?" rows="5"></textarea>
-        <div class="text-center">
-          <button class="btn btn-primary mt-2">Send Message</button>
+
+        <div class="col-md-6 input-group">
+          <input type="email" required>
+          <label>Email Address</label>
         </div>
-      </form>
-    </div>
+      </div>
+
+      <div class="input-group">
+        <textarea rows="5" required></textarea>
+        <label>How can we help you?</label>
+      </div>
+
+      <div class="text-center">
+        <button class="btn-send">
+          <span>Send Message</span>
+        </button>
+      </div>
+    </form>
+
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer class="footer text-center">
   <div class="container">
-    <div class="mb-5">
-      <img src="../assets/images/logos/logoWhite.png" alt="DayZen" width="32" style="filter: invert(1); opacity: 0.4;">
+
+    <div class="footer-logo mb-4">
+      <img src="../assets/images/logos/logoWhite.png" alt="DayZen">
     </div>
-    <p class="mb-3">© 2024 DayZen. All rights reserved.</p>
-    <div class="footer-links mb-4">
+
+    <p class="copyright">© 2024 DayZen. All rights reserved.</p>
+
+    <div class="footer-links">
       <a href="pages/privacy.html">Privacy Policy</a>
       <a href="pages/terms.html">Terms of Service</a>
     </div>
-    <div class="security-subtle">
-      <span>🔒</span> Your data is always secure and encrypted.
+
+    <div class="security-badge">
+      <span class="lock">🔒</span>
+      <span>Your data is encrypted & protected</span>
     </div>
+
   </div>
 </footer>
 
