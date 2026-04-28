@@ -4,48 +4,418 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Start New Project - DayZen</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/new-project.css">
-    <link rel="stylesheet" href="../css/onboarding.css">
+    
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libertinus+Sans&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Intro.js for Tour -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intro.js/8.3.2/introjs.min.css" integrity="sha512-LG7l1tbF72DGUqBESsGCnS8DdKqrLT3lmONMnSfkvZGWKIwUznlBPQUHYh0q1OEf67CDzXJ0/kARmPv4vTCVmw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        :root {
+            --zen-green: #2ecc71;
+            --zen-blue: #3498db;
+            --zen-light-green: #e8f5e9;
+            --zen-light-blue: #e3f2fd;
+            --zen-bg: #ffffff;
+            --zen-white: #ffffff;
+            --zen-text: #2c3e50;
+            --zen-muted: #7f8c8d;
+            --nav-height: 80px;
+            --card-shadow: rgba(46, 204, 113, 0.08);
+            --border-color: rgba(52, 152, 219, 0.1);
+            --hero-gradient: linear-gradient(135deg, #f0fff4 0%, #ebf8ff 100%);
+            --cta-gradient: linear-gradient(135deg, #2ecc71 0%, #3498db 100%);
+        }
+
+        [data-theme="dark"] {
+            --zen-bg: #1a1a2e;
+            --zen-white: #16213e;
+            --zen-text: #e9ecef;
+            --zen-muted: #94a3b8;
+            --card-shadow: rgba(0, 0, 0, 0.4);
+            --border-color: rgba(255, 255, 255, 0.05);
+            --hero-gradient: linear-gradient(135deg, #0f3460 0%, #1a1a2e 100%);
+            --zen-light-green: #1b4d3e;
+            --zen-light-blue: #1e3a5f;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--zen-bg);
+            color: var(--zen-text);
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Libertinus Sans', sans-serif;
+            font-weight: 700;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: var(--zen-white) !important;
+            min-height: var(--nav-height);
+            border-bottom: 1px solid var(--border-color);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.02);
+            z-index: 1030;
+            transition: background-color 0.3s ease;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo-container img {
+            width: 40px;
+            margin-right: 10px;
+        }
+
+        .logo-container h1 {
+            font-size: 1.5rem;
+            color: var(--zen-text);
+            margin: 0;
+        }
+
+        .nav-link {
+            color: var(--zen-text) !important;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            padding: 8px 12px !important;
+            margin: 0 5px;
+        }
+
+        .nav-link:hover {
+            color: var(--zen-green) !important;
+        }
+
+        .nav-img {
+            height: 18px;
+            margin-right: 6px;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 160px 0 120px;
+            background: var(--hero-gradient);
+            border-bottom: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .hero h2 {
+            font-size: 2.8rem;
+            color: var(--zen-text);
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--zen-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Form Card */
+        .project-form-card {
+            max-width: 800px;
+            margin: -50px auto 60px;
+            background: var(--zen-white);
+            padding: 40px;
+            border-radius: 24px;
+            box-shadow: 0 15px 45px var(--card-shadow);
+            border: 1px solid var(--border-color);
+            position: relative;
+            z-index: 10;
+            transition: all 0.3s ease;
+        }
+
+        .form-label {
+            font-weight: 600;
+            color: var(--zen-text);
+            margin-bottom: 8px;
+        }
+
+        .form-control {
+            border-radius: 12px;
+            padding: 12px 15px;
+            border: 1px solid var(--border-color);
+            background-color: var(--zen-white);
+            color: var(--zen-text);
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            border-color: var(--zen-green);
+            background-color: var(--zen-white);
+            color: var(--zen-text);
+            box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.1);
+        }
+
+        .form-control::placeholder {
+            color: var(--zen-muted);
+            opacity: 0.7;
+        }
+
+        /* Type Selection Grid */
+        .project-types-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .type-card {
+            background: var(--zen-white);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 25px 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .type-card:hover {
+            border-color: var(--zen-blue);
+            transform: translateY(-5px);
+            background: var(--zen-white);
+        }
+
+        .type-card.selected {
+            background: var(--zen-light-green);
+            border-color: var(--zen-green);
+            box-shadow: 0 8px 20px rgba(46, 204, 113, 0.1);
+        }
+
+        .type-card img {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 15px;
+        }
+
+        .type-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            color: var(--zen-text);
+        }
+
+        .type-card p {
+            font-size: 0.85rem;
+            color: var(--zen-muted);
+            margin: 0;
+        }
+
+        /* Buttons */
+        .cta-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 40px;
+            justify-content: center;
+        }
+
+        .btn-zen {
+            padding: 12px 30px;
+            border-radius: 12px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            min-width: 180px;
+        }
+
+        .btn-zen-primary {
+            background: var(--cta-gradient);
+            color: white;
+            box-shadow: 0 4px 15px rgba(46, 204, 113, 0.2);
+        }
+
+        .btn-zen-primary:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+            color: white;
+        }
+
+        .btn-zen-secondary {
+            background: var(--zen-white);
+            color: var(--zen-text);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-zen-secondary:hover {
+            background: var(--zen-light-blue);
+            color: var(--zen-text);
+        }
+
+        .btn-tour {
+            background: #1a5276; /* Much darker blue for high contrast */
+            color: #ffffff !important;
+            border: none;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .btn-tour:hover {
+            background: #154360;
+            transform: scale(1.05);
+            color: #ffffff !important;
+        }
+
+        /* Theme Toggle */
+        #theme-toggle {
+            background: none;
+            border: none;
+            padding: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: background-color 0.3s ease;
+            margin-right: 10px;
+        }
+
+        #theme-toggle:hover {
+            background-color: var(--border-color);
+        }
+
+        #theme-toggle svg {
+            width: 22px;
+            height: 22px;
+            fill: var(--zen-text);
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--zen-white);
+            border-top: 1px solid var(--border-color);
+            padding: 40px 0;
+            text-align: center;
+            margin-top: auto;
+            transition: all 0.3s ease;
+        }
+
+        .footer p {
+            margin-bottom: 10px;
+            color: var(--zen-muted);
+        }
+
+        .footer a {
+            color: var(--zen-blue);
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        @media (max-width: 768px) {
+            .hero h2 { font-size: 2rem; }
+            .project-form-card { margin: -30px 15px 40px; padding: 25px; }
+            .project-types-grid { grid-template-columns: 1fr; }
+            .cta-group { flex-direction: column; }
+        }
+
+        /* Intro.js Customization */
+        .introjs-tooltip {
+            border-radius: 16px;
+            font-family: 'Poppins', sans-serif;
+        }
+        .introjs-nextbutton {
+            background: var(--zen-green) !important;
+            color: white !important;
+            border: none !important;
+            text-shadow: none !important;
+        }
+    </style>
 </head>
 <body>
-    <header>
+
+<header>
+    <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
-            <div class="logo">
+            <a href="index.html" class="logo-container">
                 <img src="../assets/images/logos/logo.png" alt="DayZen Logo">
                 <h1>DayZen</h1>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Communication</a></li>
-                    <li><button id="take-tour-btn" class="tour-button">Take Tour</button></li>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav_items">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="nav_items">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <img src="../assets/images/Illustrations/home.png" class="nav-img" /> Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">
+                            <img src="../assets/images/Illustrations/about_us.png" class="nav-img" /> About Us
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <img src="../assets/images/Illustrations/blog.png" class="nav-img" /> Blog
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="help.html">
+                            <img src="../assets/images/Illustrations/communication.png" class="nav-img" /> Help
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Profile.html">
+                            <img src="../assets/images/icons/userColor.png" class="nav-img" /> Profile
+                        </a>
+                    </li>
+                    <li class="nav-item ms-lg-2 d-flex align-items-center">
+                        <button id="theme-toggle" title="Toggle Night Mode">
+                            <svg viewBox="0 0 24 24">
+                                <path id="theme-icon-path" d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-3.03 0-5.5-2.47-5.5-5.5 0-1.82.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/>
+                            </svg>
+                        </button>
+                        <button class="btn btn-tour btn-sm rounded-pill px-4 tour-button">Take Tour</button>
+                    </li>
                 </ul>
-                <div class="user-icon">
-                    <a href="Profile.html">
-                        <img src="../assets/images/icons/user.png" alt="User Icon">
-                    </a>
-                </div>
-            </nav>
+            </div>
         </div>
-    </header>
+    </nav>
+</header>
 
-    <div class="container main-container">
-        <h1>Start Your First Project</h1>
-        <p class="subtitle">Create a new routine to track your daily activities</p>
+<section class="hero">
+    <div class="container">
+        <h2>Start Your First Project</h2>
+        <p>A serene space to organize your life. Achieve your goals with clarity and peace.</p>
+    </div>
+</section>
 
-        <div class="project-form">
-            <div class="form-group">
-                <label for="project-name">Project Name</label>
-                <input type="text" id="project-name" placeholder="e.g., Morning Workout Routine" id="project-name">
+<main class="container">
+    <div class="project-form-card">
+        <form id="projectForm">
+            <div class="mb-4">
+                <label for="project-name" class="form-label">What's the name of your project?</label>
+                <input type="text" class="form-control" id="project-name" placeholder="e.g., Daily Meditation" required>
             </div>
 
-            <div class="form-group">
-                <label for="project-description">Description</label>
-                <textarea id="project-description" placeholder="Describe your routine..."></textarea>
+            <div class="mb-4">
+                <label for="project-description" class="form-label">Briefly describe your goal</label>
+                <textarea class="form-control" id="project-description" rows="2" placeholder="My goal is to..."></textarea>
             </div>
 
             <div class="form-group" id="Project-Type">
@@ -54,37 +424,104 @@
                     <div class="project-type-card">
                         <img src="../assets/images/illustrations/productivity.png" alt="Fitness">
                         <h3>Fitness</h3>
-                        <p>Track your workouts and physical activities</p>
+                        <p>Health & Vitality.</p>
                     </div>
                     <div class="project-type-card">
                         <img src="../assets/images/illustrations/planning.png" alt="Study">
                         <h3>Study</h3>
-                        <p>Organize your learning and study sessions</p>
+                        <p>Growth & Focus.</p>
                     </div>
                     <div class="project-type-card">
                         <img src="../assets/images/illustrations/reward.png" alt="Work">
                         <h3>Work</h3>
-                        <p>Manage your professional tasks and goals</p>
+                        <p>Impact & Flow.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Clear CTA buttons -->
-            <div class="project-cta-container">
-                <button type="button" class="cta-button primary-cta">Create Project</button>
-                <a href="indexacc.html" class="cta-button secondary-cta">Back to Dashboard</a>
+            <div class="cta-group">
+                <button type="submit" class="btn-zen btn-zen-primary cta-button primary-cta">Create Project</button>
+                <a href="indexacc.html" class="btn-zen btn-zen-secondary">Cancel</a>
             </div>
+        </form>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <p>© 2024 DayZen. Your companion for a balanced life.</p>
+        <div>
+            <a href="privacy.html">Privacy Policy</a>
+            <span class="text-muted">|</span>
+            <a href="terms.html">Terms of Service</a>
         </div>
     </div>
+</footer>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 DayZen - All Rights Reserved.</p>
-        </div>
-    </footer>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Theme Toggle Logic
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIconPath = document.getElementById('theme-icon-path');
+    const body = document.documentElement;
 
-    <script src="../js/new-project.js"></script>
-    <script src="../js/onboarding-project.js"></script>
-</body>
+    const moonPath = "M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-3.03 0-5.5-2.47-5.5-5.5 0-1.82.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z";
+    const sunPath = "M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41l-1.06-1.06zm1.06-12.37c-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06c.39-.38.39-1.02 0-1.41zM7.05 18.36c.39-.39.39-1.03 0-1.41l-1.06-1.06c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0z";
+
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    if (currentTheme === 'dark') {
+        body.setAttribute('data-theme', 'dark');
+        themeIconPath.setAttribute('d', sunPath);
+    }
+
+    themeToggle.addEventListener('click', () => {
+        const isDark = body.getAttribute('data-theme') === 'dark';
+        if (isDark) {
+            body.removeAttribute('data-theme');
+            themeIconPath.setAttribute('d', moonPath);
+            localStorage.setItem('theme', 'light');
+        } else {
+            body.setAttribute('data-theme', 'dark');
+            themeIconPath.setAttribute('d', sunPath);
+            localStorage.setItem('theme', 'dark');
+        }
+    });
+
+    // Routine selection
+    const cards = document.querySelectorAll('.type-card');
+    let selectedType = null;
+    
+    cards.forEach(card => {
+        card.addEventListener('click', () => {
+            cards.forEach(c => c.classList.remove('selected'));
+            card.classList.add('selected');
+            selectedType = card.dataset.type;
+        });
+    });
+
+    document.getElementById('projectForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('project-name').value;
+        
+        if(!selectedType) {
+            alert('Please select a routine type to continue.');
+            return;
+        }
+        
+        alert(`Success! Your "${name}" ${selectedType} project has been created.`);
+        window.location.href = 'indexacc.html';
+    });
+});
+</script>
+
+<!-- Bootstrap Bundle JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Intro.js JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/8.3.2/intro.min.js" integrity="sha512-5ykRz1AkSpATwLO5fFqJb7Y5kprfzu/q9PbRVSOspLcn2Tm7m6vZIAyoUA4a5GFNRIlxM43kHXmYEphfz3eOWA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-</html> 
+
+<!-- Onboarding Script -->
+<script src="../js/onboarding-project.js"></script>
+
+</body>
+</html>
