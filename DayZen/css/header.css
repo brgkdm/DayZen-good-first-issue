@@ -1,80 +1,128 @@
-body{
-     padding-top: 80px; 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap');
+
+:root {
+    --bg-dark: #0a0a12;
+    --glass-bg: rgba(15, 15, 26, 0.7);
+    --accent-cyan: #00f2ff;
+    --accent-purple: #7000ff;
+    --text-main: #f0f0f5;
+    --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-header {
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: wheat;
+    background-color: var(--bg-dark); 
+}
+
+/* Glass Navbar Core */
+.custom-navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 30px 30px;
+    z-index: 1000;
+    transition: var(--transition);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.custom-navbar.scrolled {
+    padding: 12px 30px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
-    background: linear-gradient(45deg, #2c3e50, #3498db);
-    color: #fff;
-    padding: 0px 0px;
-  
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
 }
 
-
-.logo {
+/* Logo Styling */
+.logo-wrapper {
     display: flex;
     align-items: center;
     text-decoration: none;
+    gap: 12px;
+}
+
+.logo-text {
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: -0.5px;
     color: #fff;
 }
 
-.logo img {
-    width: 50px;
-    margin-right: 10px;
+.text-gradient {
+    background: linear-gradient(to right, var(--accent-cyan), var(--accent-purple));
+    background-clip:text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-header h1 {
-    font-size: 2em;
-    font-weight: bold;
+/* Nav Links & Hover Animations */
+.nav-menu {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 35px;
     margin: 0;
 }
 
-/* Navbar Styling */
-nav.navbar {
-    background-color: #1a2b3c; /* Darker blue navbar */
-    padding: 15px 0;
-    border-bottom: 2px solid #1e90ff;
-    border: 200px solid black;
-   
+.nav-link {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 500;
+    font-size: 0.95rem;
+    position: relative;
+    transition: var(--transition);
 }
 
-.navbar-toggler-icon {
-    background-color: red;
-    border-radius: 7px;
+.nav-link:hover {
+    color: var(--accent-cyan);
+    text-shadow: 0 0 15px rgba(0, 242, 255, 0.4);
 }
 
-nav .navbar-nav {
-    display: flex;
-    justify-content: end;
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent-cyan), var(--accent-purple));
+    transition: var(--transition);
+}
+
+.nav-link:hover::after {
     width: 100%;
 }
 
-nav .nav-item {
-    padding-right: 20px;
-}
-
-nav .nav-link {
+/* Modern Pill Button */
+.login-pill {
+    text-decoration: none;
+    padding: 20px 24px;
+    background: rgba(255, 255, 255, 0.05);
     color: #fff;
-    font-size: 18px;
-    padding: 10px 20px;
-    font-weight: bold;
-    transition: all 0.3s ease;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: var(--transition);
+    overflow: hidden;
+    position: relative;
 }
 
-nav .nav-link:hover {
-    background-color: #1e90ff;
-    box-shadow: 0 0 10px #1e90ff, 0 0 20px #1e90ff;
-    border-radius: 15px;
-}
-
-nav .nav-img{
-    height: 20px;
-    padding-right: 10px;
-}
-
-@media (max-width: 768px) {
-    .logo {
-        margin-bottom: 10px;
-        justify-content: center;
-    }
+.login-pill:hover {
+    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+    border-color: transparent;
+    color: #000;
+    box-shadow: 0 0 25px rgba(112, 0, 255, 0.4);
+    transform: translateY(-2px);
 }

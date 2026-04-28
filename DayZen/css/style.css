@@ -253,13 +253,13 @@ nav .nav-img {
 
 .form-control:hover {
   border-color: #6366f1;
-  box-shadow: 0 0 6px rgba(99, 102, 241, 0.3);
+  box-shadow: 1px 1px 1px rgba(99, 102, 241, 0.3);
   transform: translateY(-1px);
 }
 
 .form-control:focus {
   border-color: #4f46e5;
-  box-shadow: 0 0 10px rgba(79, 70, 229, 0.5);
+  box-shadow: 0 0 1px rgba(79, 70, 229, 0.5);
   outline: none;
   background-color: #ffffff;
 }

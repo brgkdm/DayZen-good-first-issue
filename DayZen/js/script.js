@@ -64,6 +64,32 @@ document.addEventListener("DOMContentLoaded", function () {
     heroContent.classList.add("active");
   }
 
+  // Page transition fade animation
+  document.documentElement.style.opacity = 0;
+  document.documentElement.style.transition = "opacity 0.35s ease";
+  requestAnimationFrame(() => {
+    document.documentElement.style.opacity = 1;
+  });
+
+  document.querySelectorAll('a[href]').forEach((link) => {
+    const url = link.getAttribute('href');
+    if (!url || url.startsWith('#') || url.startsWith('mailto:') || url.startsWith('tel:') || link.target === '_blank') {
+      return;
+    }
+
+    const isExternal = url.startsWith('http') && !url.includes(window.location.hostname);
+    if (isExternal) return;
+
+    link.addEventListener('click', function (event) {
+      if (url.startsWith('#')) return;
+      event.preventDefault();
+      document.documentElement.style.opacity = 0;
+      setTimeout(() => {
+        window.location.href = link.href;
+      }, 280);
+    });
+  });
+
   // Scroll animation (safe)
   let lastScrollPosition = 0;
   const featuresSection = document.querySelector(".features");
