@@ -4,22 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Help and Support - DayZen</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom Serene Theme CSS -->
     <link rel="stylesheet" href="../css/help.css">
-    <link rel="stylesheet" href="../css/header.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
-<body>
-    <div id="header-container"></div>
-    <script src="../js/     .js"></script>
+<body class="help-page">
 
-    <!-- Help and Support Section -->
-    <div class="container mt-5 mb-5">
-        <h2 class="text-center">Need Help? We're Here for You!</h2>
-        <p class="text-center">If you have any questions or need assistance, feel free to use the Help feature or check our frequently asked questions below.</p>
+    <!-- Simple Navigation -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="../index.html">
+                <span class="logo-text">DayZen</span>
+            </a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="help.html">Help</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Help and Support Content -->
+    <div class="container help-content py-5">
+        <div class="text-center mb-5">
+            <h1 class="display-4 page-title">Peace & Serenity</h1>
+            <p class="lead subtitle">If you have any questions or need assistance, we're here for you.</p>
+        </div>
         
-        <div class="faq-section">
-            <h4>Frequently Asked Questions</h4>
-            <!-- Dropdown for FAQ -->
+        <div class="faq-container">
+            <h2 class="faq-title mb-4">Frequently Asked Questions</h2>
             <div class="accordion" id="faqAccordion">
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingOne">
@@ -27,9 +50,9 @@
                             How can DayZen help me organize my daily routine?
                         </button>
                     </h2>
-                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
                         <div class="accordion-body">
-                            DayZen helps you track your daily tasks, set customizable reminders, and analyze your daily activities to improve your routine.
+                            DayZen provides a peaceful environment to track your tasks, set gentle reminders, and visualize your daily progress without the stress of traditional planning tools.
                         </div>
                     </div>
                 </div>
@@ -41,7 +64,7 @@
                     </h2>
                     <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
                         <div class="accordion-body">
-                            Yes, DayZen is designed to help busy professionals, students, and anyone with a structured daily routine by providing easy-to-use tracking and reminder tools.
+                            Absolutely. Whether you're managing complex projects or a heavy study schedule, our "serene" interface helps you focus on what matters most, one step at a time.
                         </div>
                     </div>
                 </div>
@@ -53,48 +76,25 @@
                     </h2>
                     <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
                         <div class="accordion-body">
-                            DayZen stands out by offering detailed statistics on your daily routines and a simple interface that helps you optimize your time effectively.
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingFour">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                            Can I track different types of routines like work and personal life in DayZen?
-                        </button>
-                    </h2>
-                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Yes, you can track multiple routines like work, personal, or fitness routines and set different reminders for each activity.
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingFive">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                            How do I set reminders for my daily tasks?
-                        </button>
-                    </h2>
-                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            You can easily set reminders for your daily tasks within the app, allowing you to stay on track and be notified when it's time to start your next task.
+                            Unlike other apps that focus on "productivity at any cost," DayZen prioritizes your mental well-being and helps you build routines that are sustainable and peaceful.
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <script src="../js/help-button.js"></script>
+    
+    <!-- Floating Support Container -->
+    <div id="help-container"></div>
 
-    <footer>
+    <footer class="text-center py-4 mt-5">
         <div class="container">
-            <p>&copy; 2024 DayZen - All Rights Reserved.</p>
-            <p><a href="pages/privacy.html">Privacy Policy</a> | <a href="pages/terms.html">Terms of Service</a></p>
+            <p class="mb-0">&copy; 2024 DayZen - Peace of Mind in Every Moment.</p>
         </div>
     </footer>
 
-    <!-- Bootstrap and Scripts -->
-    <script src="https://kit.fontawesome.com/b98344ca09.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS and Custom Support Script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/help-button.js"></script>
 </body>
 </html>
