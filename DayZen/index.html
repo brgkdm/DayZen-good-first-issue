@@ -58,6 +58,13 @@
       letter-spacing: 1px;
     }
 
+    .navbar-brand .slogan {
+      font-size: 0.65rem;
+      color: var(--text-muted);
+      letter-spacing: 0.5px;
+      margin-top: 2px;
+    }
+
     .nav-link {
       font-size: 1rem;
       font-weight: 700;
@@ -556,7 +563,10 @@
       <!-- Logo -->
       <a class="navbar-brand d-flex align-items-center" href="#">
         <img src="assets/images/logos/logoWhite.png" alt="DayZen Logo" width="32" style="filter: invert(1);">
-        <h1 class="ms-3 mb-0">DayZen</h1>
+        <div class="ms-3 d-flex flex-column">
+          <h1 class="mb-0">DayZen</h1>
+          <small class="slogan">Set Your Time, Manage Your Day!</small>
+        </div>
       </a>
 
       <!-- Toggle -->
