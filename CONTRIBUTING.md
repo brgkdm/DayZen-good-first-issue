@@ -41,6 +41,6 @@ If you encounter any issues during setup, please open an issue or ask for help i
 - Ensure that your code is well-documented and tested.
 
 ## Communication
-Feel free to reach out via [email] or in the project's [discussion forum].
+Feel free to reach out via [email](mailto:support@dayzen.app) or in the project's [discussion forum](https://github.com/brgkdm/DayZen-good-first-issue/discussions).
 
 We appreciate your contribution!
