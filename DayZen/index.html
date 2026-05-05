@@ -16,8 +16,6 @@
   <!-- Intro JS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intro.js/8.3.2/introjs.min.css"/>
 
-  <link rel="stylesheet" href="css/theme.css">
-
   <style>
     :root {
       --mint-light: #f2faf9;
@@ -114,6 +112,44 @@
       color: var(--text-dark);
       transform: translateY(-2px);
       box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    body.dark-mode {
+      background-color: #121212;
+      color: #e0e0e0;
+    }
+
+    body.dark-mode .navbar {
+      background-color: #1f1f1f !important;
+      border-bottom-color: rgba(255, 255, 255, 0.08);
+    }
+
+    body.dark-mode .navbar-brand h1,
+    body.dark-mode .hero h2 {
+      color: #e0e0e0;
+    }
+
+    body.dark-mode .navbar-brand .slogan,
+    body.dark-mode .hero p {
+      color: #aeb8be;
+    }
+
+    body.dark-mode .nav-link {
+      color: #e0e0e0 !important;
+    }
+
+    body.dark-mode .hero {
+      background: linear-gradient(135deg, #1c1c1c 0%, #242424 100%);
+    }
+
+    body.dark-mode .btn-primary {
+      background-color: #0d6efd;
+      color: #ffffff;
+    }
+
+    body.dark-mode .btn-primary:hover {
+      background-color: #0b5ed7;
+      color: #ffffff;
     }
 
     /* Hero Section */
