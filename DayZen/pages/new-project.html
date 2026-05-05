@@ -88,6 +88,20 @@
             margin: 0;
         }
 
+        .logo-container .brand-copy {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+
+        .logo-container .brand-slogan {
+            color: var(--zen-text);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.4px;
+            margin-top: 2px;
+        }
+
         .nav-link {
             color: var(--zen-text) !important;
             font-weight: 500;
@@ -350,7 +364,10 @@
         <div class="container">
             <a href="../index.html" class="logo-container">
                 <img src="../assets/images/logos/logo.png" alt="DayZen Logo">
-                <h1>DayZen</h1>
+                <div class="brand-copy">
+                    <h1>DayZen</h1>
+                    <small class="brand-slogan">Set Your Time, Manage Your Day!</small>
+                </div>
             </a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav_items">

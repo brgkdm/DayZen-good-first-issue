@@ -37,6 +37,21 @@ body.help-page {
     font-size: 1.8rem;
 }
 
+.help-page .brand-copy {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+.help-page .brand-slogan {
+    color: var(--text-color);
+    font-family: var(--body-font);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-top: 2px;
+}
+
 .help-page .nav-link {
     color: var(--text-color) !important;
     font-weight: 600;
