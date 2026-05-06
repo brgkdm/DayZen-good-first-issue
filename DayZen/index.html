@@ -16,6 +16,8 @@
   <!-- Intro JS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intro.js/8.3.2/introjs.min.css"/>
 
+  <link rel="stylesheet" href="css/brand.css">
+
   <style>
     :root {
       --mint-light: #f2faf9;
@@ -58,11 +60,8 @@
       letter-spacing: 1px;
     }
 
-    .navbar-brand .slogan {
-      font-size: 0.65rem;
-      color: var(--text-muted);
-      letter-spacing: 0.5px;
-      margin-top: 2px;
+    .navbar-brand .brand-slogan {
+      color: var(--text-dark);
     }
 
     .nav-link {
@@ -599,11 +598,11 @@
     <div class="container align-items-center">
 
       <!-- Logo -->
-      <a class="navbar-brand d-flex align-items-center" href="#">
+      <a class="navbar-brand d-flex align-items-center" href="#" aria-label="DayZen">
         <img src="assets/images/logos/logoWhite.png" alt="DayZen Logo" width="32" style="filter: invert(1);">
-        <div class="ms-3 d-flex flex-column">
+        <div class="ms-3 brand-copy">
           <h1 class="mb-0">DayZen</h1>
-          <small class="slogan">Set Your Time, Manage Your Day!</small>
+          <small class="brand-slogan" aria-hidden="true">Set Your Time, Manage Your Day!</small>
         </div>
       </a>
 

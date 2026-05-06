@@ -37,6 +37,10 @@ body.help-page {
     font-size: 1.8rem;
 }
 
+.help-page .brand-slogan {
+    color: var(--text-color);
+}
+
 .help-page .nav-link {
     color: var(--text-color) !important;
     font-weight: 600;

@@ -64,6 +64,11 @@ header h1 {
     white-space: nowrap;
 }
 
+.logo .brand-slogan {
+    color: #fff;
+    opacity: 0.95;
+}
+
 /* ---- Desktop nav ---- */
 .desktop-nav ul {
     list-style: none;
