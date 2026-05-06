@@ -749,6 +749,24 @@
 <script src="js/onboarding.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+//fixing the navbar collaspe when clicked outside of menu area//
+
+<script>
+  document.addEventListener("click", function (e) {
+    const navbar = document.querySelector(".navbar-collapse");
+    const toggler = document.querySelector(".navbar-toggler");
+
+    if (
+      navbar.classList.contains("show") &&
+      !navbar.contains(e.target) &&
+      !toggler.contains(e.target)
+    ) {
+      bootstrap.Collapse.getInstance(navbar).hide();
+    }
+  });
+</script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/8.3.2/intro.min.js"></script>
 
 </body>
