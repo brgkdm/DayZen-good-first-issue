@@ -109,20 +109,3 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
-
-// -------------------- THEME TOGGLE --------------------
-const themeIcon = document.getElementById("theme-icon");
-const body = document.body;
-
-if (themeIcon) {
-  themeIcon.addEventListener("click", function () {
-    body.classList.toggle("dark-mode");
-    body.classList.toggle("light-mode");
-
-    if (body.classList.contains("dark-mode")) {
-      themeIcon.src = "assets/images/moon_1.png";
-    } else {
-      themeIcon.src = "assets/images/sun.png";
-    }
-  });
-}

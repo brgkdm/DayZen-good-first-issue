@@ -114,6 +114,44 @@
       box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
     }
 
+    body.dark-mode {
+      background-color: #121212;
+      color: #e0e0e0;
+    }
+
+    body.dark-mode .navbar {
+      background-color: #1f1f1f !important;
+      border-bottom-color: rgba(255, 255, 255, 0.08);
+    }
+
+    body.dark-mode .navbar-brand h1,
+    body.dark-mode .hero h2 {
+      color: #e0e0e0;
+    }
+
+    body.dark-mode .navbar-brand .slogan,
+    body.dark-mode .hero p {
+      color: #aeb8be;
+    }
+
+    body.dark-mode .nav-link {
+      color: #e0e0e0 !important;
+    }
+
+    body.dark-mode .hero {
+      background: linear-gradient(135deg, #1c1c1c 0%, #242424 100%);
+    }
+
+    body.dark-mode .btn-primary {
+      background-color: #0d6efd;
+      color: #ffffff;
+    }
+
+    body.dark-mode .btn-primary:hover {
+      background-color: #0b5ed7;
+      color: #ffffff;
+    }
+
     /* Hero Section */
     .hero {
       padding: 180px 0 120px;
@@ -621,7 +659,7 @@
 
       <!-- Theme Icon -->
       <div class="ms-4 d-none d-lg-block">
-        <img src="assets/images/icons/sun.png" alt="Theme" width="20" style="cursor: pointer; opacity: 0.5;">
+        <img id="theme-icon" src="assets/images/icons/sun.png" alt="Toggle theme" width="20" style="cursor: pointer; opacity: 0.5;">
       </div>
 
     </div>
