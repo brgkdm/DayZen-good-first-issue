@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
             </nav>
         </header>
     `;
+        
 });
 
 window.addEventListener("scroll", () => {

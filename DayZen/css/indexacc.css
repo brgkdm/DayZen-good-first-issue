@@ -242,6 +242,7 @@ header h1 {
 }
 
 .overlay.open {
+    display: block;
     opacity: 1;
 }
 
