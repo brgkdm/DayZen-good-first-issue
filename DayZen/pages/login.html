@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up - DayZen</title>
+    <title>Sign In - DayZen</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -25,7 +25,7 @@
             box-shadow: 0 8px 32px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.06);
             padding: 2.5rem 2rem;
             width: 100%;
-            max-width: 420px;
+            max-width: 400px;
         }
 
         .logo {
@@ -54,9 +54,7 @@
             outline: none; transition: border-color 0.2s, background 0.2s;
         }
         .input-wrap input::placeholder { color: #b0bac6; font-size: 13px; }
-        .input-wrap input:focus   { border-color: #2891b7; background: #fff; }
-        .input-wrap input.valid   { border-color: #38a169; background: #fff; }
-        .input-wrap input.invalid { border-color: #e53e3e; background: #fff; }
+        .input-wrap input:focus { border-color: #2891b7; background: #fff; }
 
         .toggle-pw {
             position: absolute; right: 11px; top: 50%; transform: translateY(-50%);
@@ -66,25 +64,6 @@
         }
         .toggle-pw:hover { color: #2891b7; }
 
-        /* Status icon (checkmark / cross) for confirm password */
-        .status-icon {
-            position: absolute; right: 13px; top: 50%; transform: translateY(-50%);
-            font-size: 16px; pointer-events: none;
-        }
-
-        .field-hint { font-size: 11px; min-height: 16px; margin-top: 5px; color: #e53e3e; }
-        .field-hint.ok { color: #38a169; }
-
-        /* Password strength bars */
-        .pw-strength { display: flex; gap: 4px; margin-top: 7px; }
-        .pw-bar { height: 3px; flex: 1; background: #e2e8f0; border-radius: 2px; transition: background 0.35s; }
-
-        /* Strength label */
-        .pw-strength-label {
-            font-size: 11px; margin-top: 4px; color: #7a8494;
-            min-height: 14px; transition: color 0.3s;
-        }
-
         /* Error box */
         .error-box {
             background: #fff5f5; border: 1px solid #fed7d7;
@@ -93,7 +72,7 @@
             margin-bottom: 1rem; display: none;
         }
 
-        #registerBtn {
+        #loginBtn {
             width: 100%; background: #2891b7; color: #fff;
             border: none; border-radius: 8px;
             font-family: 'Outfit', sans-serif; font-size: 15px; font-weight: 600;
@@ -101,9 +80,8 @@
             transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
             box-shadow: 0 2px 8px rgba(40,145,183,0.35);
         }
-        #registerBtn:hover:not(:disabled) { background: #1e7aa0; box-shadow: 0 4px 14px rgba(40,145,183,0.45); }
-        #registerBtn:active:not(:disabled) { transform: scale(0.98); }
-        #registerBtn:disabled { background: #a8dadc; color: #fff; cursor: not-allowed; box-shadow: none; }
+        #loginBtn:hover { background: #1e7aa0; box-shadow: 0 4px 14px rgba(40,145,183,0.45); }
+        #loginBtn:active { transform: scale(0.98); }
 
         .divider { display: flex; align-items: center; gap: 12px; margin: 1.25rem 0; }
         .divider::before, .divider::after { content: ''; flex: 1; height: 1px; background: #e2e8f0; }
@@ -120,9 +98,9 @@
         .social-btn:hover { background: #f7f9fc; border-color: #2891b7; }
         .social-btn:active { transform: scale(0.98); }
 
-        .login-link { text-align: center; font-size: 13px; color: #7a8494; margin-top: 1.25rem; }
-        .login-link a { color: #2891b7; text-decoration: none; font-weight: 600; }
-        .login-link a:hover { text-decoration: underline; }
+        .register-link { text-align: center; font-size: 13px; color: #7a8494; margin-top: 1.25rem; }
+        .register-link a { color: #2891b7; text-decoration: none; font-weight: 600; }
+        .register-link a:hover { text-decoration: underline; }
 
         @media (max-width: 480px) {
             .container { padding: 2rem 1.25rem; }
@@ -138,69 +116,32 @@
         <span class="logo-name">DayZen</span>
     </div>
 
-    <h2 class="welcome-message">Create an Account</h2>
-    <p class="welcome-sub">Join DayZen and start managing your day.</p>
+    <h2 class="welcome-message">Welcome Back!</h2>
+    <p class="welcome-sub">Sign in to continue to your dashboard.</p>
 
     <div class="error-box" id="errorBox"></div>
 
-    <form id="registerForm" novalidate>
+    <form id="loginForm" novalidate>
 
-        <!-- Username -->
         <div class="field">
-            <label for="username">Username</label>
+            <label for="identifier">Username, email or phone</label>
             <div class="input-wrap">
-                <input type="text" id="username" name="username"
-                       placeholder="e.g. john_doe"
-                       autocomplete="off" required>
+                <input type="text" id="username" placeholder="Username, email or phone" name="identifier" required>
             </div>
-            <div class="field-hint" id="hint-username"></div>
         </div>
 
-        <!-- Email -->
-        <div class="field">
-            <label for="email">Email</label>
-            <div class="input-wrap">
-                <input type="email" id="email" name="email"
-                       placeholder="you@example.com"
-                       autocomplete="off" required>
-            </div>
-            <div class="field-hint" id="hint-email"></div>
-        </div>
-
-        <!-- Password -->
         <div class="field">
             <label for="password">Password</label>
             <div class="input-wrap">
                 <input type="password" id="password" name="password"
-                       placeholder="Min. 8 characters" required>
-                <button type="button" class="toggle-pw" id="togglePw1" aria-label="Show password">
-                    <span id="eyeIcon1">&#128065;</span>
+                       placeholder="Your password" required>
+                <button type="button" class="toggle-pw" id="togglePw" aria-label="Show password">
+                    <span id="eyeIcon">&#128065;</span>
                 </button>
             </div>
-            <div class="pw-strength">
-                <div class="pw-bar" id="bar1"></div>
-                <div class="pw-bar" id="bar2"></div>
-                <div class="pw-bar" id="bar3"></div>
-                <div class="pw-bar" id="bar4"></div>
-            </div>
-            <div class="pw-strength-label" id="strengthLabel"></div>
-            <div class="field-hint" id="hint-password"></div>
         </div>
 
-        <!-- Confirm Password -->
-        <div class="field">
-            <label for="confirmPassword">Confirm Password</label>
-            <div class="input-wrap">
-                <input type="password" id="confirmPassword" name="confirmPassword"
-                       placeholder="Repeat your password" required>
-                <button type="button" class="toggle-pw" id="togglePw2" aria-label="Show confirm password">
-                    <span id="eyeIcon2">&#128065;</span>
-                </button>
-            </div>
-            <div class="field-hint" id="hint-confirm"></div>
-        </div>
-
-        <button type="submit" id="registerBtn" disabled>Create account</button>
+        <button type="submit" id="loginBtn">login</button>
 
     </form>
 
@@ -230,10 +171,11 @@
         </button>
     </div>
 
-    <p class="login-link">Already have an account? <a href="Login.html">login</a></p>
+    <p class="register-link">Don't have an account? <a href="Register.html">Sign up</a></p>
 
 </div>
 
-<script src="../js/register-script.js"></script>
+<script src="../js/login-script.js"></script>
+    
 </body>
 </html>

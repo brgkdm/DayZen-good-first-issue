@@ -206,7 +206,26 @@
 
         document.addEventListener("DOMContentLoaded", listRoutines);
         listRoutines();
+    const loggedIn = localStorage.getItem('loggedIn');
+
+    if(loggedIn !== 'true'){
+        window.location.href = 'login.html';
+    }
+
+    const user = JSON.parse(localStorage.getItem('dayzenUser'));
+
+    console.log("Usuario:", user.identifier);
+    // Run this on your dashboard page (indexacc.html)
+document.addEventListener("DOMContentLoaded", () => {
+    const userName = localStorage.getItem("username");
+    const welcomeHeader = document.querySelector("h1");
+    
+    if (userName && welcomeHeader) {
+        welcomeHeader.innerText = `Welcome, ${userName}!`;
+    }
+});
     </script>
+
 
 </body>
 </html>
