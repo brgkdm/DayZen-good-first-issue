@@ -5,13 +5,13 @@ if (loginForm) {
     loginForm.addEventListener("submit", (e) => {
         e.preventDefault();
 
-        // CAPTURA CORREGIDA: Usamos 'username' y 'password'
+        // We used 'username' and 'password'
         const userInput = document.getElementById("username")?.value.trim();
         const passInput = document.getElementById("password")?.value;
 
-        // Si el JS no encuentra los campos, te lo dirá en la consola (F12)
+        // If the JS cannot find the fields, it will tell you in the console (F12)
         if (!userInput || !passInput) {
-            errorBox.textContent = "Please fill in all fields.";
+            errorBox.textContent = "The username or password is incorrect. Please try again.";
             errorBox.style.display = "block";
             return;
         }
@@ -33,7 +33,7 @@ if (loginForm) {
 }
 
 
-// Lógica del ojo para ver contraseña
+// Password visibility toggle
 document.getElementById('togglePw')?.addEventListener('click', () => {
     const pw = document.getElementById('password');
     const eye = document.getElementById('eyeIcon');
