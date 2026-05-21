@@ -30,6 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
             users.push({ username, email, password });
             localStorage.setItem('dayzen_users', JSON.stringify(users));
             localStorage.setItem('username', username);
+            localStorage.setItem('dayzen_logged', 'true');
 
             alert("Account created! Redirecting...");
             window.location.href = 'indexacc.html';
