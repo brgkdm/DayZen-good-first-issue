@@ -26,7 +26,7 @@ if (loginForm) {
             localStorage.setItem("dayzen_logged", "true");
             window.location.href = "indexacc.html";
         } else {
-            errorBox.textContent = "Invalid credentials. Try again.";
+            errorBox.textContent = "The username or password is incorrect. Please try again.";
             errorBox.style.display = "block";
         }
     });
