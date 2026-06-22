@@ -82,6 +82,8 @@ Use Live Server in VS Code for a better development experience:
 ## 🚀 Future Improvements
 - Add mobile responsiveness  
 - Implement user authentication system
+- Integrate with health monitoring apps, insead of showing the entire health stats. we can make it simple by giving a weighted score on all the aspects.
+- Implementing the screen time tracker, not just reading the hours used but the user must be able to neglect the apps that are usefull for productivity so that it does not add up in the screen time.
 
 
 Contributed by Megha 🚀
