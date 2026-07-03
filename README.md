@@ -3,66 +3,68 @@ Thank you for your contributions. Please check out the contents of my other repo
 
 https://github.com/exc-analyzer/exc
 
-# 🌿 DayZen (Good First Issue)
+---
 
-## 📌 Purpose
-To create an online platform that helps users organize and optimize their daily lives by efficiently tracking their daily routines.
+# 🌿 DayZen
 
-## 🎯 Target Audience
+**"Set Your Time, Manage Your Day!"**
+
+DayZen is an open-source online platform that helps users organize and optimize their daily lives by efficiently tracking their daily routines.
+
+## 📖 Table of Contents
+- [About the Project](#about-the-project)
+- [Project Structure](#project-structure)
+- [Getting Started](#getting-started)
+- [Future Improvements](#future-improvements)
+- [Contributing & Credits](#contributing--credits)
+- [Help and Support](#help-and-support)
+
+## 📌 About the Project
+
+### 🎯 Target Audience
 - Students
 - Professionals working in fast-paced environments
 - Stay-at-home parents
 - Athletes and anyone with a structured daily routine
 
-## 💡 Value Proposition
+### 💡 Value Proposition
 DayZen allows users to easily plan, track, and analyze their daily routines.  
 Its user-friendly interface, customizable reminders, and detailed statistics set it apart from similar platforms.
 
-## 🎨 Brand Identity
-- Color Palette: A vibrant and motivating color scheme
-- Logo: A modern and impactful design
-- Slogan: "Set Your Time, Manage Your Day!"
+### 🎨 Brand Identity
+- **Color Palette:** A vibrant and motivating color scheme
+- **Logo:** A modern and impactful design
+- **Slogan:** "Set Your Time, Manage Your Day!"
+- **Presentation Style:** A simple and user-friendly interface that enables users to easily plan and track their daily routines.
 
-## 📚 Content
+### 📚 Content
 - Blog posts
 - Video content
 - Interactive tools
 - Daily routine tips
 
-## 🖥️ Presentation Style
-A simple and user-friendly interface that enables users to easily plan and track their daily routines.
-
-## 👥 Contributors
-- brgkdm — Project Founder
-- Harshit (@Harshitcodes01) — Contributor
-## ⚠️ Important Note
-This project is open for collaborative development.
-
 ## 📂 Project Structure
 
-The project is organized into clear directories to keep code maintainable and easy to navigate:
+The project is organized into clear directories to keep code maintainable and easy to navigate. Keeping stylesheets, scripts, images, and pages in separate folders ensures scalability and easy collaboration.
 
 ### 📁 Folder Details
-- assets/images/ → Stores all image files (icons, logos, backgrounds, etc.)
-- css/ → Contains all stylesheets (.css files)
-- js/ → Contains JavaScript files for functionality and interactivity
-- pages/ → Contains additional HTML pages (e.g., About, Contact, Dashboard)
-- index.html → Main landing page
+- `assets/images/` → Stores all image files (icons, logos, backgrounds, etc.)
+  - `logos/` → Branding images
+  - `icons/` → UI elements
+  - `illustrations/` → Graphics used across pages
+  - `misc/` → Supporting files (e.g., image_link.txt)
+- `css/` → Contains all stylesheets (`.css` files)
+- `js/` → Contains JavaScript files for functionality and interactivity
+- `pages/` → Contains additional HTML pages (e.g., About, Contact, Dashboard)
+- `index.html` → Main landing page
 
-### 🖼️ Assets - Images
-- logos/ → Branding images
-- icons/ → UI elements
-- illustrations/ → Graphics used across pages
-- misc/ → Supporting files (e.g., image_link.txt)
+## 🚀 Getting Started
 
-## 📝 Notes
-Keeping stylesheets, scripts, images, and pages in separate folders ensures scalability and easy collaboration.
-
-## 🚀 How to Run the Project
+### How to Run the Project
 
 1. Clone the repository:
 ```bash
-git clone <repo-link>
+git clone https://github.com/brgkdm/DayZen-good-first-issue.git
 ```
 
 2. Navigate to the project folder:
@@ -70,29 +72,32 @@ git clone <repo-link>
 cd DayZen-good-first-issue
 ```
 
-3. Open index.html in your browser
+3. Open `index.html` in your browser.
 
-## 🔧 Optional (Recommended)
+### 🔧 Optional (Recommended)
 Use Live Server in VS Code for a better development experience:
-
-- Install the Live Server extension  
-- Right-click on index.html  
+- Install the **Live Server** extension  
+- Right-click on `index.html`  
 - Click "Open with Live Server"  
 
 ## 🚀 Future Improvements
 - Add mobile responsiveness  
 - Implement user authentication system
-- Integrate with health monitoring apps, insead of showing the entire health stats. we can make it simple by giving a weighted score on all the aspects.
-- Implementing the screen time tracker, not just reading the hours used but the user must be able to neglect the apps that are usefull for productivity so that it does not add up in the screen time.
+- Integrate with health monitoring apps. Instead of showing the entire health stats, we can make it simpler by giving a weighted score on all aspects.
+- Implement a screen time tracker that not only tracks usage hours but also allows users to exclude productivity apps so they don't count toward the total screen time.
 
+## 🤝 Contributing & Credits
 
-Contributed by Megha 🚀
+This project is open for collaborative development!
 
-## Help and Support
+**Project Team:**
+- **Berat Gökdemir (brgkdm)** — Project Founder & Developer
+- **Harshit (@Harshitcodes01)** — Contributor
+- **Megha** — Contributor
 
-If you need help or face any issues,feel free to:
+## ❓ Help and Support
+
+If you need help or face any issues, feel free to:
 - Open an issue in this repository
 - Contact the maintainers
-- Check existing discussions for solution
-
-Developed by Berat Gökdemir (brgkdm)
+- Check existing discussions for solutions
