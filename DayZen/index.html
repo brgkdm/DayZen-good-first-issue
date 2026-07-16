@@ -454,8 +454,48 @@
   background: #f3f4f6;
 }
 
-/* glow hover */
 
+/* glow hover */
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.cta-btn {
+    background: linear-gradient(135deg, #28a745, #20c997);
+    border: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 14px 34px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(32, 201, 151, 0.35);
+}
+
+.cta-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px rgba(32, 201, 151, 0.5);
+}
+
+.cta-btn-secondary {
+    border: 2px solid #20c997;
+    color: #20c997;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 14px 34px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.cta-btn-secondary:hover {
+    background: #20c997;
+    color: white;
+    transform: translateY(-4px);
+}
    
 
   </style>
@@ -543,9 +583,15 @@
     <p>
       Easily plan, track and manage your daily routines with DayZen. Designed for peace and clarity.
     </p>
-    <a href="pages/register.html" class="btn btn-primary">
-      Start Now
-    </a>
+    <div class="hero-buttons mt-4">
+  <a href="pages/register.html" class="btn btn-primary cta-btn">
+    Let's Get Started
+  </a>
+
+  <a href="pages/about.html" class="btn btn-outline-light cta-btn-secondary">
+    Explore Features
+  </a>
+</div>
   </div>
 </section>
 
