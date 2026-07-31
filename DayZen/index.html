@@ -496,7 +496,79 @@
     color: white;
     transform: translateY(-4px);
 }
-   
+/* ===========================
+   Progress Card
+=========================== */
+
+.progress-preview{
+    padding:100px 0;
+    background:#f8fafc;
+}
+
+.progress-card{
+    max-width:500px;
+    margin:auto;
+    background:white;
+    padding:50px;
+    border-radius:25px;
+    text-align:center;
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.progress-card:hover{
+    transform:translateY(-8px);
+}
+
+.progress-ring{
+    position:relative;
+    width:220px;
+    height:220px;
+    margin:auto auto 35px;
+}
+
+.progress-ring svg{
+    transform:rotate(-90deg);
+}
+
+.ring-bg{
+    fill:none;
+    stroke:#e9ecef;
+    stroke-width:14;
+}
+
+.ring-progress{
+    fill:none;
+    stroke:#20c997;
+    stroke-width:14;
+    stroke-linecap:round;
+    stroke-dasharray:534;
+    stroke-dashoffset:534;
+    transition:2s ease;
+}
+
+.progress-number{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+}
+
+.progress-number span{
+    font-size:2.8rem;
+    font-weight:700;
+    color:#20c997;
+}
+
+.progress-card h2{
+    color:#2d3436;
+    margin-bottom:15px;
+}
+
+.progress-card p{
+    color:#636e72;
+    margin-bottom:25px;
+}
 
   </style>
 </head>
@@ -592,6 +664,53 @@
     Explore Features
   </a>
 </div>
+  </div>
+</section>
+<!-- Today's Progress -->
+<section class="progress-preview">
+  <div class="container">
+
+    <div class="progress-card">
+
+      <div class="progress-ring">
+        <svg width="220" height="220">
+
+          <circle
+            class="ring-bg"
+            cx="110"
+            cy="110"
+            r="85">
+          </circle>
+
+          <circle
+            class="ring-progress"
+            cx="110"
+            cy="110"
+            r="85">
+          </circle>
+
+        </svg>
+
+        <div class="progress-number">
+          <span id="progressValue">75%</span>
+        </div>
+
+      </div>
+
+      <h2>Today's Progress</h2>
+
+      <p>
+        You have completed
+        <strong>9 of 12</strong>
+        planned tasks today.
+      </p>
+
+      <button class="btn btn-primary mt-3">
+        View Dashboard
+      </button>
+
+    </div>
+
   </div>
 </section>
 
@@ -722,6 +841,32 @@
 </script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/8.3.2/intro.min.js"></script>
+<script>
+
+const percent = 75;
+
+const circle = document.querySelector(".ring-progress");
+const value = document.getElementById("progressValue");
+
+const radius = 85;
+
+const circumference = 2 * Math.PI * radius;
+
+circle.style.strokeDasharray = circumference;
+
+circle.style.strokeDashoffset = circumference;
+
+setTimeout(()=>{
+
+const offset = circumference - (percent/100)*circumference;
+
+circle.style.strokeDashoffset = offset;
+
+value.innerHTML = percent + "%";
+
+},300);
+
+</script>
 
 </body>
 </html>
