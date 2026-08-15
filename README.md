@@ -3,6 +3,11 @@ Thank you for your contributions. Please check out the contents of my other repo
 
 https://github.com/exc-analyzer/exc
 
+## 🚀 Live Demo
+
+
+[View DayZen Live](https://day-zen-good-first-issue.vercel.app/)
+
 # 🌿 DayZen (Good First Issue)
 
 ## 📌 Purpose
