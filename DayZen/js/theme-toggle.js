@@ -1,8 +1,9 @@
 document.addEventListener('DOMContentLoaded', function () {
     const themeIcon = document.getElementById('theme-icon');
+    const themeToggle = document.getElementById('theme-toggle');
     const body = document.body;
 
-    if (!themeIcon) return;
+    if (!themeIcon || !themeToggle) return;
 
     // Determine base path depending on folder depth
     const basePath = location.pathname.includes('/pages/') ? '../' : '';
@@ -20,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Toggle theme on click
-    themeIcon.addEventListener('click', function () {
+    themeToggle.addEventListener('click', function () {
         let message = '';
 
         if (body.classList.contains('dark-mode')) {

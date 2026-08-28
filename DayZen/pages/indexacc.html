@@ -52,9 +52,9 @@
                 <a href="Profile.html" class="user-icon">
                     <img src="../assets/images/icons/user.png" alt="User Icon">
                 </a>
-                <div class="theme-toggle" id="theme-toggle">
-                    <img id="theme-icon" src="../assets/images/icons/sun.png" alt="Toggle Theme">
-                </div>
+                <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle dark mode">
+                    <img id="theme-icon" src="../assets/images/icons/sun.png" alt="Toggle theme">
+                </button>
             </div>
 
         </div>
@@ -108,7 +108,26 @@
     </div>
 
     <section id="routine-section">
-        <h2>Your Routines</h2>
+        <div class="routine-heading">
+            <div>
+                <h2>Your Routines</h2>
+                <p id="routine-progress" class="routine-progress">0 of 0 completed today</p>
+            </div>
+            <div class="streak-badge" aria-live="polite">🔥 <span id="streak-count">0</span> day streak</div>
+        </div>
+        <form id="routine-form" class="routine-form">
+            <label class="sr-only" for="routine-name">Routine name</label>
+            <input id="routine-name" type="text" placeholder="Add a routine" maxlength="60" required>
+            <label class="sr-only" for="routine-time">Routine time</label>
+            <input id="routine-time" type="time" required>
+            <label class="sr-only" for="routine-repeat">Repeat schedule</label>
+            <select id="routine-repeat">
+                <option>Every Day</option>
+                <option>Weekdays</option>
+                <option>Weekends</option>
+            </select>
+            <button type="submit">Add Routine</button>
+        </form>
         <div id="routine-list"></div>
     </section>
 
@@ -169,44 +188,84 @@
             if (window.innerWidth > 768) closeMenu();
         });
 
-        // Theme toggle
-        const themeToggle = document.getElementById("theme-toggle");
-        const themeIcon = document.getElementById("theme-icon");
+        // Routines
+        const routineStorageKey = "dayzen-routines";
+        const streakStorageKey = "dayzen-streak";
+        const today = new Date().toISOString().slice(0, 10);
+        let routines = JSON.parse(localStorage.getItem(routineStorageKey) || "null") || [
+            { name: "Morning Exercise", time: "07:00", repeat: "Every Day", completedDate: "" }
+        ];
+        let streak = JSON.parse(localStorage.getItem(streakStorageKey) || "null") || {
+            count: 0,
+            lastCompletedDate: ""
+        };
 
-        if (localStorage.getItem("dayzen-theme") === "dark") {
-            document.body.classList.add("dark");
-            themeIcon.src = "../assets/images/icons/moon.png";
+        function escapeHtml(value) {
+            return value.replace(/[&<>'"]/g, character => ({
+                "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;"
+            }[character]));
         }
 
-        themeToggle.addEventListener("click", () => {
-            const isDark = document.body.classList.toggle("dark");
-            themeIcon.src = isDark ? "../assets/images/icons/moon.png" : "../assets/images/icons/sun.png";
-            localStorage.setItem("dayzen-theme", isDark ? "dark" : "light");
-        });
-
-        // Routines
-        let routines = [{ name: "Morning Exercise", time: "07:00", repeat: "Every Day" }];
+        function saveRoutineData() {
+            localStorage.setItem(routineStorageKey, JSON.stringify(routines));
+            localStorage.setItem(streakStorageKey, JSON.stringify(streak));
+        }
 
         function listRoutines() {
             const routineList = document.getElementById("routine-list");
-            routineList.innerHTML = routines.map((r, i) => `
-                <div class="routine">
-                    <h3>${r.name}</h3>
-                    <p>Time: ${r.time}</p>
-                    <p>Repeat: ${r.repeat}</p>
-                    <button onclick="deleteRoutine(${i})">Delete</button>
+            const completedCount = routines.filter(routine => routine.completedDate === today).length;
+            document.getElementById("routine-progress").textContent = `${completedCount} of ${routines.length} completed today`;
+            document.getElementById("streak-count").textContent = streak.count;
+            routineList.innerHTML = routines.map((routine, index) => `
+                <div class="routine${routine.completedDate === today ? " completed" : ""}">
+                    <label class="routine-check">
+                        <input type="checkbox" ${routine.completedDate === today ? "checked" : ""} onchange="toggleRoutine(${index}, this.checked)">
+                        <span>${escapeHtml(routine.name)}</span>
+                    </label>
+                    <p>Time: ${escapeHtml(routine.time)}</p>
+                    <p>Repeat: ${escapeHtml(routine.repeat)}</p>
+                    <button onclick="deleteRoutine(${index})">Delete</button>
                 </div>
             `).join("");
         }
 
+        function toggleRoutine(index, isCompleted) {
+            routines[index].completedDate = isCompleted ? today : "";
+            const allCompleted = routines.length > 0 && routines.every(routine => routine.completedDate === today);
+            if (allCompleted && streak.lastCompletedDate !== today) {
+                const yesterday = new Date();
+                yesterday.setDate(yesterday.getDate() - 1);
+                const yesterdayKey = yesterday.toISOString().slice(0, 10);
+                streak.count = streak.lastCompletedDate === yesterdayKey ? streak.count + 1 : 1;
+                streak.lastCompletedDate = today;
+            }
+            saveRoutineData();
+            listRoutines();
+        }
+
+        document.getElementById("routine-form").addEventListener("submit", function (event) {
+            event.preventDefault();
+            routines.push({
+                name: document.getElementById("routine-name").value.trim(),
+                time: document.getElementById("routine-time").value,
+                repeat: document.getElementById("routine-repeat").value,
+                completedDate: ""
+            });
+            saveRoutineData();
+            this.reset();
+            listRoutines();
+        });
+
         function deleteRoutine(index) {
             routines.splice(index, 1);
+            saveRoutineData();
             listRoutines();
         }
 
         document.addEventListener("DOMContentLoaded", listRoutines);
         listRoutines();
     </script>
+    <script src="../js/theme-toggle.js"></script>
 
 </body>
 </html>

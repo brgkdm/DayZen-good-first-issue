@@ -10,12 +10,14 @@
 html, body {
     height: 100%;
     font-family: Arial, sans-serif;
+    overflow-x: hidden;
 }
 
 body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    transition: background-color 0.35s ease, color 0.35s ease;
 }
 
 /*-
@@ -147,6 +149,9 @@ header h1 {
     display: flex;
     align-items: center;
     cursor: pointer;
+    background: transparent;
+    border: 0;
+    padding: 4px;
 }
 
 .theme-toggle img {
@@ -157,6 +162,14 @@ header h1 {
 
 .theme-toggle img:hover {
     transform: rotate(20deg) scale(1.1);
+}
+
+.theme-toggle:focus-visible,
+.routine-form button:focus-visible,
+.routine button:focus-visible,
+.routine-check input:focus-visible {
+    outline: 3px solid #ffd166;
+    outline-offset: 3px;
 }
 
 /*-
@@ -265,6 +278,7 @@ header h1 {
     max-width: 1200px;
     margin: 0 auto;
     width: 100%;
+    animation: dashboard-rise 0.6s ease both;
 }
 
 .main-content {
@@ -384,10 +398,92 @@ header h1 {
 #routine-section h2 {
     font-size: 1.4em;
     color: #333;
-    margin-bottom: 16px;
+    margin-bottom: 4px;
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.routine-heading {
+    max-width: 1200px;
+    margin: 0 auto 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    animation: dashboard-rise 0.6s 0.1s ease both;
+}
+
+.routine-progress {
+    color: #666;
+    font-size: 14px;
+}
+
+.streak-badge {
+    color: #9a4d00;
+    background: #fff1df;
+    border: 1px solid #ffd39c;
+    border-radius: 20px;
+    padding: 8px 14px;
+    white-space: nowrap;
+    font-weight: 600;
+}
+
+.routine-form {
+    max-width: 1200px;
+    margin: 0 auto 20px;
+    display: flex;
+    gap: 10px;
+    animation: dashboard-rise 0.6s 0.18s ease both;
+}
+
+.routine-form input, .routine-form select {
+    min-width: 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font: inherit;
+}
+
+.routine-form input[type="text"] { flex: 1; }
+
+.routine-form button {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 16px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.routine-form button:hover { background: #005fc7; }
+
+.routine-check {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #007bff;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.routine-check input { width: 18px; height: 18px; }
+
+.routine.completed { border-color: #62c98a; background: #f0fff5; }
+.routine.completed .routine-check span { text-decoration: line-through; color: #398253; }
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
 
 #routine-list {
@@ -405,6 +501,7 @@ header h1 {
     padding: 16px;
     box-shadow: 0 1px 4px rgba(0,0,0,0.06);
     transition: transform 0.2s, box-shadow 0.2s;
+    animation: routine-pop 0.45s ease both;
 }
 
 .routine:hover {
@@ -428,6 +525,59 @@ header h1 {
 }
 
 .routine button:hover { background: #c82333; }
+
+body.dark-mode .main-content h2,
+body.dark-mode .main-content h3,
+body.dark-mode .routine-progress,
+body.dark-mode .routine p {
+    color: #c5ced8;
+}
+
+body.dark-mode .sidebar,
+body.dark-mode .routine {
+    background: #1d2733;
+    border-color: #405064;
+    color: #edf2f7;
+}
+
+body.dark-mode #routine-section {
+    background: #141b24;
+}
+
+body.dark-mode .sidebar h2,
+body.dark-mode #routine-section h2 {
+    color: #f4f7fa;
+}
+
+body.dark-mode .routine-form input,
+body.dark-mode .routine-form select {
+    background: #202c3a;
+    color: #f4f7fa;
+    border-color: #52657b;
+}
+
+body.dark-mode .routine.completed {
+    background: #183326;
+    border-color: #4fae76;
+}
+
+@keyframes dashboard-rise {
+    from { opacity: 0; transform: translateY(14px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes routine-pop {
+    from { opacity: 0; transform: scale(0.98); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
 
 /* 
    FOOTER
@@ -511,5 +661,14 @@ footer {
 
     #routine-list {
         grid-template-columns: 1fr;
+    }
+
+    .routine-heading, .routine-form {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .routine-form input, .routine-form select, .routine-form button {
+        width: 100%;
     }
 }
