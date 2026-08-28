@@ -35,12 +35,13 @@
     }
 
     body {
-  font-family: 'Inter', sans-serif;
-  color: var(--text-dark);
-  background: #f8fafc;
-  line-height: 1.7;
-  overflow-x: hidden;
-}
+      font-family: 'Inter', sans-serif;
+      color: var(--text-dark);
+      background: #f8fafc;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
     h1, h2, h3 {
       font-family: 'Playfair Display', serif;
       font-weight: 600;
@@ -48,11 +49,11 @@
 
     /* Navbar */
     .navbar {
-  background: #ffffff;
-  border-bottom: 1px solid #e5e7eb;
-  padding: 1rem 0;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.04);
-}
+      background: #ffffff;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 1rem 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    }
 
     .navbar-brand h1 {
       font-size: 1.5rem;
@@ -153,423 +154,443 @@
 
     /* Hero Section */
     .hero {
-  padding: 140px 0;
-  background: #f8fafc;
-  position: relative;
-}
+      padding: 140px 0;
+      background: #f8fafc;
+      position: relative;
+    }
 
     .hero h2 {
-  font-size: 3rem;
-  margin-bottom: 1.5rem;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.2;
-  letter-spacing: -0.5px;
-}
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+    }
 
     .hero p {
-  font-size: 1.1rem;
-  color: var(--text-muted);
-  margin-bottom: 2.5rem;
-  max-width: 550px;
-  margin-left: auto;
-  margin-right: auto;
-}
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      margin-bottom: 2.5rem;
+      max-width: 550px;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
     /* Features Section */
-    /* section background */
-.features {
-  padding: 120px 0;
-  background: #ffffff;
-}
+    .features {
+      padding: 120px 0;
+      background: #ffffff;
+    }
 
-/* subtle animated glow */
+    .features-title {
+      font-size: 2.8rem;
+      color: var(--text-dark);
+      margin-bottom: 10px;
+    }
 
+    .features-subtitle {
+      color: var(--text-muted);
+      margin-bottom: 60px;
+    }
 
+    .feature-card {
+      padding: 40px 30px;
+      border-radius: 16px;
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transition: 0.3s ease;
+      height: 100%;
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeUp 0.8s ease forwards;
+    }
 
+    .feature-card:hover {
+      transform: translateY(-4px);
+    }
 
-/* headings */
-.features-title {
-  font-size: 2.8rem;
-  color: #fff;
-  margin-bottom: 10px;
-}
+    .icon-wrap {
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 25px;
+    }
 
-.features-subtitle {
-  color: var(--text-muted);
-  margin-bottom: 60px;
-}
+    .icon-wrap img {
+      width: 60px;
+      transition: transform 0.4s ease;
+    }
 
-/* cards */
-.feature-card {
-  padding: 40px 30px;
-  border-radius: 16px;
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  transition: 0.3s ease;
-  height: 100%;
-}
+    .feature-card:hover img {
+      transform: scale(1.2) rotate(8deg);
+    }
 
-/* glowing border effect */
+    .feature-card h3 {
+      font-size: 1.5rem;
+      color: var(--text-dark);
+      margin-bottom: 15px;
+    }
 
+    .feature-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
 
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-/* hover lift + tilt */
-.feature-card:hover {
-  transform: translateY(-4px);
-}
-
-/* icon */
-.icon-wrap {
-  height: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 25px;
-}
-
-.icon-wrap img {
-  width: 60px;
-  transition: transform 0.4s ease;
-}
-
-/* icon animation */
-.feature-card:hover img {
-  transform: scale(1.2) rotate(8deg);
-}
-
-/* text */
-.feature-card h3 {
-  font-size: 1.5rem;
-  color: #fff;
-  margin-bottom: 15px;
-}
-
-.feature-card p {
-  color: #f2f4f5;
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-
-/* entrance animation */
-.feature-card {
-  opacity: 0;
-  transform: translateY(40px);
-  animation: fadeUp 0.8s ease forwards;
-}
-
-
-/* responsive */
-@media (max-width: 768px) {
-  .features-title {
-    font-size: 2rem;
-  }
-}
+    @media (max-width: 768px) {
+      .features-title {
+        font-size: 2rem;
+      }
+    }
 
     /* Contact Section */
-#contact {
-  margin: 100px auto;
-  max-width: 1100px;
-  padding: 20px;
-  
-}
+    #contact {
+      margin: 100px auto;
+      max-width: 1100px;
+      padding: 20px;
+    }
 
-/* glass card */
-.contact-card {
-  background: #ffffff;
-  padding: 70px 50px;
-  border-radius: 20px;
-  color: var(--text-dark);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
-}
+    .contact-card {
+      background: #ffffff;
+      padding: 70px 50px;
+      border-radius: 20px;
+      color: var(--text-dark);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    }
 
-/* animated glow background */
+    .title {
+      text-align: center;
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+    }
 
+    .subtitle {
+      text-align: center;
+      color: var(--text-muted);
+      margin-bottom: 40px;
+    }
 
-/* headings */
-.title {
-  text-align: center;
-  font-size: 2.8rem;
-  margin-bottom: 10px;
-}
+    .input-group {
+      position: relative;
+      margin-bottom: 30px;
+    }
 
-.subtitle {
-  text-align: center;
-  color: var(--text-muted);
-  margin-bottom: 40px;
-}
+    .input-group input,
+    .input-group textarea {
+      width: 100%;
+      padding: 16px 18px;
+      border-radius: 10px;
+      border: 1px solid #d1d5db;
+      background: #ffffff;
+      color: var(--text-dark);
+      outline: none;
+    }
 
-/* input group */
-.input-group {
-  position: relative;
-  margin-bottom: 30px;
-}
+    .input-group input:focus,
+    .input-group textarea:focus {
+      border-color: #a8dadc;
+      box-shadow: 0 0 0 2px rgba(168,218,220,0.3);
+    }
 
-/* inputs */
-.input-group input,
-.input-group textarea {
-  width: 100%;
-  padding: 16px 18px;
-  border-radius: 10px;
-  border: 1px solid #d1d5db;
-  background: #ffffff;
-  color: var(--text-dark);
-  outline: none;
-}
+    .input-group label {
+      position: absolute;
+      top: 50%;
+      left: 18px;
+      transform: translateY(-50%);
+      font-size: 0.9rem;
+      color: #94a3b8;
+      pointer-events: none;
+      transition: 0.3s ease;
+    }
 
-/* glowing focus */
-.input-group input:focus,
-.input-group textarea:focus {
-  border-color: #a8dadc;
-  box-shadow: 0 0 0 2px rgba(168,218,220,0.3);
-}
+    .input-group textarea + label {
+      top: 20px;
+      transform: none;
+    }
 
-/* floating labels */
-.input-group label {
-  position: absolute;
-  top: 50%;
-  left: 18px;
-  transform: translateY(-50%);
-  font-size: 0.9rem;
-  color: #94a3b8;
-  pointer-events: none;
-  transition: 0.3s ease;
-}
+    .input-group input:focus + label,
+    .input-group input:valid + label,
+    .input-group textarea:focus + label,
+    .input-group textarea:valid + label {
+      top: -10px;
+      left: 14px;
+      font-size: 0.75rem;
+      color: #38bdf8;
+      background: #0f172a;
+      padding: 0 6px;
+      border-radius: 6px;
+    }
 
-.input-group textarea + label {
-  top: 20px;
-  transform: none;
-}
+    .btn-send {
+      margin-top: 10px;
+      padding: 12px 32px;
+      border-radius: 30px;
+      border: none;
+      background: var(--mint-accent);
+      color: var(--text-dark);
+      font-weight: 600;
+      transition: 0.3s ease;
+    }
 
-/* label animation */
-.input-group input:focus + label,
-.input-group input:valid + label,
-.input-group textarea:focus + label,
-.input-group textarea:valid + label {
-  top: -10px;
-  left: 14px;
-  font-size: 0.75rem;
-  color: #38bdf8;
-  background: #0f172a;
-  padding: 0 6px;
-  border-radius: 6px;
-}
+    .btn-send:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(56,189,248,0.4);
+    }
 
-/* button */
-.btn-send {
-  margin-top: 10px;
-  padding: 12px 32px;
-  border-radius: 30px;
-  border: none;
-  background: var(--mint-accent);
-  color: var(--text-dark);
-  font-weight: 600;
-  transition: 0.3s ease;
-}
+    @media (max-width: 768px) {
+      .contact-card {
+        padding: 50px 25px;
+      }
 
-/* button hover animation */
-.btn-send:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(56,189,248,0.4);
-}
-
-/* ripple effect */
-
-
-/* responsive */
-@media (max-width: 768px) {
-  .contact-card {
-    padding: 50px 25px;
-  }
-
-  .title {
-    font-size: 2rem;
-  }
-}
+      .title {
+        font-size: 2rem;
+      }
+    }
 
     /* Footer */
-  .footer {
-  background: #ffffff;
-  color: var(--text-dark);
-  padding: 70px 0 40px;
-  border-top: 1px solid #e5e7eb;
-}
+    .footer {
+      background: #ffffff;
+      color: var(--text-dark);
+      padding: 70px 0 40px;
+      border-top: 1px solid #e5e7eb;
+    }
 
-/* subtle animated gradient glow */
+    .footer-logo img {
+      width: 42px;
+      opacity: 0.8;
+      transition: transform 0.4s ease, opacity 0.4s;
+    }
 
+    .footer-logo img:hover {
+      transform: scale(1.15) rotate(5deg);
+      opacity: 1;
+    }
 
-/* logo */
-.footer-logo img {
-  width: 42px;
-  opacity: 0.8;
-  transition: transform 0.4s ease, opacity 0.4s;
-}
+    .footer p {
+      margin-bottom: 20px;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
 
-.footer-logo img:hover {
-  transform: scale(1.15) rotate(5deg);
-  opacity: 1;
-}
+    .footer-links {
+      margin-bottom: 25px;
+    }
 
-/* copyright */
-.footer p {
-  margin-bottom: 20px;
-  font-size: 0.95rem;
-  color: var(--text-muted);
-}
+    .footer-links a {
+      color: var(--text-dark);
+      text-decoration: none;
+      margin: 0 12px;
+      font-size: 0.95rem;
+      transition: 0.3s ease;
+    }
 
-/* links */
-.footer-links {
-  margin-bottom: 25px;
-}
+    .footer-links a:hover {
+      color: #005a81;
+    }
 
-.footer-links a {
-  color: var(--text-dark);
-  text-decoration: none;
-  margin: 0 12px;
-  font-size: 0.95rem;
-  transition: 0.3s ease;
-}
+    .security-badge {
+      margin-top: 20px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 20px;
+      background: #f3f4f6;
+    }
 
-/* animated underline */
+    /* Hero Buttons */
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
 
+    .cta-btn {
+      background: linear-gradient(135deg, #28a745, #20c997);
+      border: none;
+      color: white;
+      font-size: 18px;
+      font-weight: 600;
+      padding: 14px 34px;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 20px rgba(32, 201, 151, 0.35);
+    }
 
-.footer-links a:hover {
-  color: #005a81;
-}
+    .cta-btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 25px rgba(32, 201, 151, 0.5);
+    }
 
+    .cta-btn-secondary {
+      border: 2px solid #20c997;
+      color: #20c997;
+      font-size: 18px;
+      font-weight: 600;
+      padding: 14px 34px;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+      background: transparent;
+    }
 
+    .cta-btn-secondary:hover {
+      background: #20c997;
+      color: white;
+      transform: translateY(-4px);
+    }
 
-/* security badge */
-.security-badge {
-  margin-top: 20px;
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 14px;
-  border-radius: 20px;
-  background: #f3f4f6;
-}
+    /* Progress Card */
+    .progress-preview {
+      padding: 100px 0;
+      background: #f8fafc;
+    }
 
+    .progress-card {
+      max-width: 500px;
+      margin: auto;
+      background: white;
+      padding: 50px;
+      border-radius: 25px;
+      text-align: center;
+      box-shadow: 0 15px 35px rgba(0,0,0,.08);
+      transition: .3s;
+    }
 
-/* glow hover */
-.hero-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 18px;
-    flex-wrap: wrap;
-    margin-top: 30px;
-}
+    .progress-card:hover {
+      transform: translateY(-8px);
+    }
 
-.cta-btn {
-    background: linear-gradient(135deg, #28a745, #20c997);
-    border: none;
-    color: white;
-    font-size: 18px;
-    font-weight: 600;
-    padding: 14px 34px;
-    border-radius: 50px;
-    transition: all 0.3s ease;
-    box-shadow: 0 8px 20px rgba(32, 201, 151, 0.35);
-}
+    .progress-ring {
+      position: relative;
+      width: 220px;
+      height: 220px;
+      margin: auto auto 35px;
+    }
 
-.cta-btn:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 25px rgba(32, 201, 151, 0.5);
-}
+    .progress-ring svg {
+      transform: rotate(-90deg);
+    }
 
-.cta-btn-secondary {
-    border: 2px solid #20c997;
-    color: #20c997;
-    font-size: 18px;
-    font-weight: 600;
-    padding: 14px 34px;
-    border-radius: 50px;
-    transition: all 0.3s ease;
-}
+    .ring-bg {
+      fill: none;
+      stroke: #e9ecef;
+      stroke-width: 14;
+    }
 
-.cta-btn-secondary:hover {
-    background: #20c997;
-    color: white;
-    transform: translateY(-4px);
-}
-/* ===========================
-   Progress Card
-=========================== */
+    .ring-progress {
+      fill: none;
+      stroke: #20c997;
+      stroke-width: 14;
+      stroke-linecap: round;
+      stroke-dasharray: 534;
+      stroke-dashoffset: 534;
+      transition: 2s ease;
+    }
 
-.progress-preview{
-    padding:100px 0;
-    background:#f8fafc;
-}
+    .progress-number {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+    }
 
-.progress-card{
-    max-width:500px;
-    margin:auto;
-    background:white;
-    padding:50px;
-    border-radius:25px;
-    text-align:center;
-    box-shadow:0 15px 35px rgba(0,0,0,.08);
-    transition:.3s;
-}
+    .progress-number span {
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: #20c997;
+    }
 
-.progress-card:hover{
-    transform:translateY(-8px);
-}
+    .progress-card h2 {
+      color: #2d3436;
+      margin-bottom: 15px;
+    }
 
-.progress-ring{
-    position:relative;
-    width:220px;
-    height:220px;
-    margin:auto auto 35px;
-}
+    .progress-card p {
+      color: #636e72;
+      margin-bottom: 25px;
+    }
 
-.progress-ring svg{
-    transform:rotate(-90deg);
-}
+    /* Help Button */
+    .help-button {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      z-index: 1000;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: var(--mint-accent);
+      color: var(--text-dark);
+      text-decoration: none;
+      font-size: 1.8rem;
+      font-weight: 700;
+      box-shadow: 0 8px 24px rgba(45, 52, 54, 0.18);
+      transition: transform 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+    }
 
-.ring-bg{
-    fill:none;
-    stroke:#e9ecef;
-    stroke-width:14;
-}
+    .help-button:hover,
+    .help-button:focus-visible {
+      background: var(--blue-accent);
+      color: var(--text-dark);
+      transform: translateY(-5px) scale(1.06);
+      box-shadow: 0 12px 30px rgba(45, 52, 54, 0.25);
+      outline: 3px solid rgba(144, 224, 239, 0.35);
+      outline-offset: 4px;
+    }
 
-.ring-progress{
-    fill:none;
-    stroke:#20c997;
-    stroke-width:14;
-    stroke-linecap:round;
-    stroke-dasharray:534;
-    stroke-dashoffset:534;
-    transition:2s ease;
-}
+    .help-button::after {
+      content: "Need help?";
+      position: absolute;
+      right: 72px;
+      white-space: nowrap;
+      padding: 8px 12px;
+      border-radius: 8px;
+      background: var(--text-dark);
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 500;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateX(8px);
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
 
-.progress-number{
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-}
+    .help-button:hover::after,
+    .help-button:focus-visible::after {
+      opacity: 1;
+      transform: translateX(0);
+    }
 
-.progress-number span{
-    font-size:2.8rem;
-    font-weight:700;
-    color:#20c997;
-}
+    @media (max-width: 576px) {
+      .help-button {
+        right: 16px;
+        bottom: 16px;
+        width: 54px;
+        height: 54px;
+      }
 
-.progress-card h2{
-    color:#2d3436;
-    margin-bottom:15px;
-}
-
-.progress-card p{
-    color:#636e72;
-    margin-bottom:25px;
-}
-
+      .help-button::after {
+        display: none;
+      }
+    }
   </style>
 </head>
 
@@ -656,16 +677,17 @@
       Easily plan, track and manage your daily routines with DayZen. Designed for peace and clarity.
     </p>
     <div class="hero-buttons mt-4">
-  <a href="pages/register.html" class="btn btn-primary cta-btn">
-    Let's Get Started
-  </a>
+      <a href="pages/register.html" class="btn btn-primary cta-btn">
+        Let's Get Started
+      </a>
 
-  <a href="pages/about.html" class="btn btn-outline-light cta-btn-secondary">
-    Explore Features
-  </a>
-</div>
+      <a href="pages/about.html" class="btn btn-outline-light cta-btn-secondary">
+        Explore Features
+      </a>
+    </div>
   </div>
 </section>
+
 <!-- Today's Progress -->
 <section class="progress-preview">
   <div class="container">
@@ -760,8 +782,8 @@
 <!-- CONTACT -->
 <section id="contact" class="container">
   <div class="contact-card">
-    
-    <h2 class="title">Let’s Connect</h2>
+
+    <h2 class="title">Let's Connect</h2>
     <p class="subtitle">Have questions? We'd love to hear from you.</p>
 
     <form>
@@ -800,7 +822,7 @@
       <img src="assets/images/logos/logoWhite.png" alt="DayZen">
     </div>
 
-    <p class="copyright">© 2024 DayZen. All rights reserved.</p>
+    <p class="copyright">&copy; 2024 DayZen. All rights reserved.</p>
 
     <div class="footer-links">
       <a href="pages/privacy.html">Privacy Policy</a>
@@ -808,14 +830,25 @@
     </div>
 
     <div class="security-badge">
-      <span class="lock">🔒</span>
-      <span>Your data is encrypted & protected</span>
+      <span class="lock">&#128274;</span>
+      <span>Your data is encrypted &amp; protected</span>
     </div>
 
   </div>
 </footer>
 
-<!-- JS (Keeping existing references) -->
+<!-- HELP BUTTON (fixed, outside footer) -->
+<a
+  href="pages/help.html"
+  class="help-button"
+  id="helpButton"
+  aria-label="Open Help and Support"
+  title="Help and Support"
+>
+  <span aria-hidden="true">?</span>
+</a>
+
+<!-- JS -->
 <script src="js/theme-toggle.js"></script>
 <script src="js/script.js"></script>
 <script src="js/help-button.js"></script>
@@ -823,8 +856,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-//fixing the navbar collaspe when clicked outside of menu area//
-
+<!-- Fix navbar collapse when clicked outside the menu area -->
 <script>
   document.addEventListener("click", function (e) {
     const navbar = document.querySelector(".navbar-collapse");
@@ -841,31 +873,24 @@
 </script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/8.3.2/intro.min.js"></script>
+
 <script>
+  const percent = 75;
 
-const percent = 75;
+  const circle = document.querySelector(".ring-progress");
+  const value = document.getElementById("progressValue");
 
-const circle = document.querySelector(".ring-progress");
-const value = document.getElementById("progressValue");
+  const radius = 85;
+  const circumference = 2 * Math.PI * radius;
 
-const radius = 85;
+  circle.style.strokeDasharray = circumference;
+  circle.style.strokeDashoffset = circumference;
 
-const circumference = 2 * Math.PI * radius;
-
-circle.style.strokeDasharray = circumference;
-
-circle.style.strokeDashoffset = circumference;
-
-setTimeout(()=>{
-
-const offset = circumference - (percent/100)*circumference;
-
-circle.style.strokeDashoffset = offset;
-
-value.innerHTML = percent + "%";
-
-},300);
-
+  setTimeout(() => {
+    const offset = circumference - (percent / 100) * circumference;
+    circle.style.strokeDashoffset = offset;
+    value.innerHTML = percent + "%";
+  }, 300);
 </script>
 
 </body>
