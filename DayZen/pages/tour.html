@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DayZen | Take a Tour</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/theme.css">
+
+    <style>
+    * {
+        box-sizing: border-box;
+        text-shadow: none !important;
+    }
+
+    body {
+        margin: 0;
+        min-height: 100vh;
+        background: linear-gradient(
+            135deg,
+            #071a3d 0%,
+            #0d2857 50%,
+            #102f63 100%
+        );
+        color: #e8f3ff;
+    }
+
+    .tour-wrapper {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 30px 20px;
+    }
+
+    .tour-container {
+        width: 100%;
+        max-width: 900px;
+    }
+
+    /* Header */
+
+    .tour-header {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .tour-header h1 {
+        font-size: 42px;
+        margin-bottom: 10px;
+        color: #a9d8ff;
+        font-weight: 700;
+    }
+
+    .tour-header p {
+        font-size: 17px;
+        color: #d6e8f8;
+        opacity: 0.8;
+    }
+
+    /* Progress */
+
+    .tour-progress {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 30px;
+    }
+
+    .progress-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #5c7698;
+        transition: 0.3s ease;
+    }
+
+    .progress-dot.active {
+        width: 30px;
+        border-radius: 10px;
+        background: #69b9f2;
+    }
+
+    /* Tour Card */
+
+    .tour-card {
+        padding: 45px;
+        border-radius: 24px;
+        text-align: center;
+
+        background: rgba(40, 68, 116, 0.55);
+        backdrop-filter: blur(15px);
+
+        border: 1px solid rgba(154, 202, 240, 0.22);
+
+        min-height: 430px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .tour-icon {
+        width: 90px;
+        height: 90px;
+        margin: 0 auto 25px;
+
+        border-radius: 50%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-size: 42px;
+
+        background: rgba(119, 190, 240, 0.14);
+        border: 1px solid rgba(135, 202, 246, 0.18);
+    }
+
+    .tour-card h2 {
+        font-size: 30px;
+        margin-bottom: 15px;
+        color: #b9ddff;
+        font-weight: 650;
+    }
+
+    .tour-card p {
+        max-width: 600px;
+        margin: 0 auto 25px;
+
+        line-height: 1.7;
+        font-size: 17px;
+
+        color: #dceaf8;
+        opacity: 0.82;
+    }
+
+    /* Demo */
+
+    .demo-box {
+        max-width: 450px;
+        margin: 10px auto 25px;
+        padding: 18px;
+
+        border-radius: 14px;
+        text-align: left;
+
+        background: rgba(8, 25, 57, 0.45);
+        border: 1px solid rgba(139, 192, 233, 0.15);
+    }
+
+    .demo-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        padding: 10px 0;
+
+        color: #d9eaf8;
+        border-bottom: 1px solid rgba(166, 207, 237, 0.12);
+    }
+
+    .demo-row:last-child {
+        border-bottom: none;
+    }
+
+    .demo-check {
+        width: 20px;
+        height: 20px;
+        accent-color: #69b9f2;
+    }
+
+    .demo-streak {
+        font-size: 24px;
+        text-align: center;
+        color: #a9d8ff;
+    }
+
+    /* Buttons */
+
+    .tour-actions {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 30px;
+    }
+
+    .tour-btn {
+        border: none;
+
+        padding: 13px 28px;
+        border-radius: 10px;
+
+        cursor: pointer;
+
+        font-size: 15px;
+        font-weight: 600;
+
+        text-decoration: none;
+
+        transition:
+            transform 0.2s ease,
+            background 0.2s ease;
+    }
+
+    .tour-btn:hover {
+        transform: translateY(-2px);
+    }
+
+    /* Back / Exit Button */
+
+    .back-btn {
+        background: rgba(214, 234, 250, 0.08);
+
+        border: 1px solid rgba(151, 201, 237, 0.3);
+
+        color: #cfe5f7;
+    }
+
+    .back-btn:hover {
+        background: rgba(214, 234, 250, 0.14);
+    }
+
+    /* Next Button */
+
+    .next-btn {
+        background: #5aa9df;
+        color: #061a35;
+    }
+
+    .next-btn:hover {
+        background: #70b9eb;
+    }
+
+    /* Start Button */
+
+    .start-btn {
+        background: #5aa9df;
+        color: #061a35;
+    }
+
+    .start-btn:hover {
+        background: #70b9eb;
+    }
+
+    /* Mobile */
+
+    @media (max-width: 600px) {
+
+        .tour-wrapper {
+            padding: 25px 15px;
+        }
+
+        .tour-card {
+            padding: 30px 20px;
+            min-height: 450px;
+        }
+
+        .tour-header h1 {
+            font-size: 32px;
+        }
+
+        .tour-header p {
+            font-size: 15px;
+        }
+
+        .tour-card h2 {
+            font-size: 25px;
+        }
+
+        .tour-card p {
+            font-size: 15px;
+        }
+
+        .tour-actions {
+            flex-direction: column;
+        }
+
+        .tour-btn {
+            width: 100%;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="tour-wrapper">
+
+    <div class="tour-container">
+
+        <div class="tour-header">
+            <h1>Take a Tour</h1>
+            <p>Let's get you started with DayZen.</p>
+        </div>
+
+        <!-- Progress indicators -->
+        <div class="tour-progress">
+            <span class="progress-dot active"></span>
+            <span class="progress-dot"></span>
+            <span class="progress-dot"></span>
+            <span class="progress-dot"></span>
+        </div>
+
+        <!-- Tour content -->
+        <div class="tour-card">
+
+            <div class="tour-step" data-step="0">
+
+                <div class="tour-icon">🌱</div>
+
+                <h2>Start Small</h2>
+
+                <p>
+                    Begin your DayZen journey by adding a few routines
+                    that matter to you. You don't need to plan everything
+                    at once.
+                </p>
+
+                <div class="demo-box">
+
+                    <div class="demo-row">
+                        <span>Morning Exercise</span>
+                        <input class="demo-check" type="checkbox">
+                    </div>
+
+                    <div class="demo-row">
+                        <span>Read for 20 minutes</span>
+                        <input class="demo-check" type="checkbox">
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="tour-step" data-step="1" hidden>
+
+                <div class="tour-icon">📝</div>
+
+                <h2>Create Your Routine</h2>
+
+                <p>
+                    Choose a routine, set a time and decide how often
+                    you want to repeat it. Your routines will appear
+                    on your dashboard.
+                </p>
+
+                <div class="demo-box">
+
+                    <div class="demo-row">
+                        <strong>Add a Routine</strong>
+                    </div>
+
+                    <div class="demo-row">
+                        <span>Study</span>
+                        <span>07:00</span>
+                    </div>
+
+                    <div class="demo-row">
+                        <span>Repeat</span>
+                        <span>Every Day</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="tour-step" data-step="2" hidden>
+
+                <div class="tour-icon">🎯</div>
+
+                <h2>Turn Goals Into Projects</h2>
+
+                <p>
+                    Have something bigger you want to accomplish?
+                    Create a project and organize it around a specific
+                    goal such as Fitness, Study or Work.
+                </p>
+
+                <div class="demo-box">
+
+                    <div class="demo-row">
+                        <strong>Build My Portfolio</strong>
+                    </div>
+
+                    <div class="demo-row">
+                        <span>Type</span>
+                        <span>Work</span>
+                    </div>
+
+                    <div class="demo-row">
+                        <span>Status</span>
+                        <span>In Progress</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="tour-step" data-step="3" hidden>
+
+                <div class="tour-icon">🔥</div>
+
+                <h2>Stay Consistent</h2>
+
+                <p>
+                    Complete your routines and keep building your streak.
+                    Focus on consistency rather than trying to accomplish
+                    everything in one day.
+                </p>
+
+                <div class="demo-box">
+
+                    <div class="demo-streak">
+                        🔥 7 Day Streak
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Navigation -->
+        <div class="tour-actions">
+
+            <a href="../index.html" class="tour-btn back-btn">
+                Exit Tour
+            </a>
+
+            <button id="nextBtn" class="tour-btn next-btn">
+                Next →
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+    const steps = document.querySelectorAll(".tour-step");
+    const dots = document.querySelectorAll(".progress-dot");
+    const nextBtn = document.getElementById("nextBtn");
+
+    let currentStep = 0;
+
+
+    function showStep(step) {
+
+        steps.forEach((item, index) => {
+            item.hidden = index !== step;
+        });
+
+        dots.forEach((dot, index) => {
+            dot.classList.toggle("active", index === step);
+        });
+
+        if (step === steps.length - 1) {
+
+            nextBtn.textContent = "Start Using DayZen →";
+            nextBtn.classList.add("start-btn");
+
+        } else {
+
+            nextBtn.textContent = "Next →";
+            nextBtn.classList.remove("start-btn");
+
+        }
+    }
+
+
+    nextBtn.addEventListener("click", () => {
+
+        if (currentStep < steps.length - 1) {
+
+            currentStep++;
+            showStep(currentStep);
+
+        } else {
+
+            // Finish the tour
+            window.location.href = "indexacc.html";
+
+        }
+
+    });
+
+
+    showStep(currentStep);
+
+</script>
+
+</body>
+</html>
