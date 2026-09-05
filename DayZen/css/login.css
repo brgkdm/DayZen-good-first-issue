@@ -14,7 +14,7 @@ h1, h2 { font-family: 'Playfair Display', serif; font-weight: 600; }
 .split-screen { display: flex; min-height: 100vh; width: 100%; }
 .quote-side { position: relative; width: 40%; background: linear-gradient(135deg, #457b9d 0%, #1d3557 100%); display: flex; align-items: center; justify-content: center; padding: 40px; color: white; overflow: hidden; }
 body.dark-mode .quote-side { background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); }
-.quote-side::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('../assets/images/Illustrations/productivity.png') center/cover no-repeat; opacity: 0.1; filter: grayscale(100%) brightness(200%); }
+.quote-side::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('../assets/images/illustrations/productivity.png') center/cover no-repeat; opacity: 0.1; filter: grayscale(100%) brightness(200%); }
 .quote-container { position: relative; z-index: 2; max-width: 80%; text-align: center; }
 .quote-icon { font-size: 3rem; margin-bottom: 2rem; opacity: 0.3; }
 #dynamic-quote { font-family: 'Playfair Display', serif; font-size: 2rem; font-style: italic; line-height: 1.4; margin-bottom: 1.5rem; }
