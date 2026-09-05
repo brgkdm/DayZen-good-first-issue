@@ -578,7 +578,20 @@
       opacity: 1;
       transform: translateX(0);
     }
+    .contact-response {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    }
 
+    .contact-response.success {
+      color: #2ecc71;
+    }
+
+    .contact-response.error {
+      color: #e74c3c;
+    }
     @media (max-width: 576px) {
       .help-button {
         right: 16px;
@@ -654,8 +667,8 @@
           </li>
 
           <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
-            <button class="btn btn-primary">Take Tour</button>
-          </li>
+    <a href="pages/tour.html" class="btn btn-primary">Take Tour</a>
+</li>
 
         </ul>
       </div>
@@ -726,10 +739,9 @@
         <strong>9 of 12</strong>
         planned tasks today.
       </p>
-
-      <button class="btn btn-primary mt-3">
-        View Dashboard
-      </button>
+    <a href="./pages/register.html" class="btn btn-primary mt-3">
+    View Dashboard
+    </a>
 
     </div>
 
@@ -781,37 +793,42 @@
 
 <!-- CONTACT -->
 <section id="contact" class="container">
-  <div class="contact-card">
+    <div class="contact-card">
 
-    <h2 class="title">Let's Connect</h2>
-    <p class="subtitle">Have questions? We'd love to hear from you.</p>
+        <h2 class="title">Let's Connect</h2>
+        <p class="subtitle">Have questions? We'd love to hear from you.</p>
 
-    <form>
-      <div class="row">
-        <div class="col-md-6 input-group">
-          <input type="text" required>
-          <label>Your Name</label>
-        </div>
+        <form id="contactForm">
 
-        <div class="col-md-6 input-group">
-          <input type="email" required>
-          <label>Email Address</label>
-        </div>
-      </div>
+            <div class="row">
+                <div class="col-md-6 input-group">
+                    <input type="text" id="contactName" required>
+                    <label>Your Name</label>
+                </div>
 
-      <div class="input-group">
-        <textarea rows="5" required></textarea>
-        <label>How can we help you?</label>
-      </div>
+                <div class="col-md-6 input-group">
+                    <input type="email" id="contactEmail" required>
+                    <label>Email Address</label>
+                </div>
+            </div>
 
-      <div class="text-center">
-        <button class="btn-send">
-          <span>Send Message</span>
-        </button>
-      </div>
-    </form>
+            <div class="input-group">
+                <textarea id="contactMessage" rows="5" required></textarea>
+                <label>How can we help you?</label>
+            </div>
 
-  </div>
+            <div class="text-center">
+                <button type="submit" class="btn-send">
+                    <span>Send Message</span>
+                </button>
+            </div>
+
+            <!-- Response message -->
+            <p id="contactResponse" class="contact-response"></p>
+
+        </form>
+
+    </div>
 </section>
 
 <!-- FOOTER -->
@@ -870,6 +887,28 @@
       bootstrap.Collapse.getInstance(navbar).hide();
     }
   });
+ 
+document.getElementById("contactForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const name = document.getElementById("contactName").value.trim();
+    const email = document.getElementById("contactEmail").value.trim();
+    const message = document.getElementById("contactMessage").value.trim();
+    const response = document.getElementById("contactResponse");
+
+    if (!name || !email || !message) {
+        response.textContent = "Please fill in all the fields.";
+        response.className = "contact-response error";
+        return;
+    }
+
+    response.textContent = `Thank you, ${name}! Your message has been received.`;
+    response.className = "contact-response success";
+
+    // Clear the form
+    document.getElementById("contactForm").reset();
+});
+
 </script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/8.3.2/intro.min.js"></script>

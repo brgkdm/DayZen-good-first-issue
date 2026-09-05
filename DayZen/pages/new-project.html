@@ -282,7 +282,7 @@
         /* Buttons */
         .btn-send {
             margin-top: 20px;
-            padding: 14px 40px;
+            padding: 10px 35px;
             border-radius: 50px;
             border: none;
             background: linear-gradient(90deg, #38bdf8, #a78bfa);
@@ -293,7 +293,7 @@
             overflow: hidden;
             transition: 0.3s ease;
             text-decoration: none;
-            display: inline-block;
+           
         }
 
         .btn-send:hover {
@@ -470,7 +470,7 @@
 
                 <div class="text-center mt-5">
                     <button type="submit" class="btn-send">Create Project</button>
-                    <a href="../index.html" class="btn-send btn-cancel">Cancel</a>
+                    <a href="indexacc.html" class="btn-send btn-cancel">Cancel</a>
                 </div>
             </form>
         </div>
@@ -505,18 +505,19 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    document.getElementById('projectForm').addEventListener('submit', (e) => {
-        e.preventDefault();
-        const name = document.getElementById('project-name').value;
-        
-        if(!selectedType) {
-            alert('Please select a project type to continue.');
-            return;
-        }
-        
-        alert(`Success! Your "${name}" ${selectedType} project has been created.`);
-        window.location.href = '../index.html';
-    });
+   document.getElementById('projectForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById('project-name').value;
+
+    if (!selectedType) {
+        alert('Please select a project type to continue.');
+        return;
+    }
+
+    alert(`Success! Your "${name}" ${selectedType} project has been created.`);
+    window.location.href = 'indexacc.html';
+});
 });
 </script>
 
