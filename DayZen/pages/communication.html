@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Communication - DayZen</title>
+
+    <style>/* ===============================
+   DayZen Communication Page
+================================ */
+
+:root {
+    --bg-main: #162445;
+    --bg-dark: #111d38;
+    --bg-card: #21375d;
+    --bg-input: #1c3153;
+
+    --text-main: #e9eef7;
+    --text-soft: #b9c5d8;
+
+    --primary: #67b7f7;
+    --primary-hover: #8ccaff;
+
+    --border: rgba(150, 190, 230, 0.25);
+
+    --shadow:
+        0 12px 35px rgba(0, 0, 0, 0.18);
+}
+
+
+/* ===============================
+   Reset
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+
+    background:
+        linear-gradient(
+            180deg,
+            #263f66 0%,
+            #17264a 45%,
+            #111d38 100%
+        );
+
+    color: var(--text-main);
+
+    min-height: 100vh;
+
+    line-height: 1.6;
+}
+
+
+/* ===============================
+   Page Animation
+================================ */
+
+.page-fade {
+    animation: pageFade 0.7s ease;
+}
+
+
+@keyframes pageFade {
+
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* ===============================
+   Hero Section
+================================ */
+
+.communication-hero {
+
+    min-height: 320px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 45px 20px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(42, 66, 105, 0.95),
+            rgba(31, 50, 84, 0.95)
+        );
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+.hero-content {
+
+    max-width: 650px;
+
+    margin: auto;
+
+}
+
+
+.communication-icon {
+
+    width: 90px;
+
+    height: 90px;
+
+    margin: 0 auto 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 2.8rem;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.1);
+
+    border:
+        1px solid var(--border);
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.18);
+
+}
+
+
+.hero-content h1 {
+
+    font-size: 2.8rem;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 8px;
+
+}
+
+
+.hero-content p {
+
+    color: var(--text-soft);
+
+    max-width: 560px;
+
+    margin: auto;
+
+    font-size: 1rem;
+
+}
+
+
+/* ===============================
+   Back Home Button
+================================ */
+
+.back-home {
+
+    margin-top: 22px;
+
+}
+
+
+.btn-home {
+
+    display: inline-block;
+
+    padding: 10px 25px;
+
+    border-radius: 25px;
+
+    text-decoration: none;
+
+    color: #eaf5ff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #5ca8e8,
+            #367fc2
+        );
+
+    font-size: 0.85rem;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
+}
+
+
+.btn-home:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 20px rgba(90, 170, 235, 0.35);
+
+}
+
+
+/* ===============================
+   Main Container
+================================ */
+
+.communication-container {
+
+    max-width: 1050px;
+
+    margin: auto;
+
+    padding: 55px 25px 70px;
+
+}
+
+
+/* ===============================
+   Introduction
+================================ */
+
+.communication-intro {
+
+    max-width: 760px;
+
+    margin: 0 auto 45px;
+
+    padding: 32px;
+
+    border-radius: 18px;
+
+    background:
+        rgba(41, 61, 101, 0.8);
+
+    border:
+        1px solid var(--border);
+
+    box-shadow:
+        var(--shadow);
+
+}
+
+
+.communication-intro h2 {
+
+    font-size: 1.8rem;
+
+    margin-bottom: 12px;
+
+    color: #c9e2ff;
+
+}
+
+
+.communication-intro p {
+
+    color: var(--text-soft);
+
+    font-size: 0.95rem;
+
+}
+
+
+/* ===============================
+   Communication Cards
+================================ */
+
+.communication-options {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 22px;
+
+    margin-bottom: 50px;
+
+}
+
+
+.communication-card {
+
+    padding: 28px;
+
+    min-height: 230px;
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #243b63,
+            #1b2f52
+        );
+
+    border:
+        1px solid var(--border);
+
+    box-shadow:
+        var(--shadow);
+
+    transition:
+        transform 0.3s ease,
+        border 0.3s ease,
+        box-shadow 0.3s ease;
+
+}
+
+
+.communication-card:hover {
+
+    transform:
+        translateY(-8px);
+
+    border-color:
+        rgba(103, 183, 247, 0.6);
+
+    box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.28);
+
+}
+
+
+.card-icon {
+
+    font-size: 2rem;
+
+    margin-bottom: 15px;
+
+}
+
+
+.communication-card h2 {
+
+    font-size: 1.2rem;
+
+    margin-bottom: 10px;
+
+    color: #d8e9ff;
+
+}
+
+
+.communication-card p {
+
+    color: var(--text-soft);
+
+    font-size: 0.88rem;
+
+}
+
+
+/* ===============================
+   Message Section
+================================ */
+
+.message-section {
+
+    max-width: 780px;
+
+    margin: auto;
+
+    padding: 38px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #243b63,
+            #192b4a
+        );
+
+    border:
+        1px solid var(--border);
+
+    box-shadow:
+        var(--shadow);
+
+}
+
+
+.message-header {
+
+    margin-bottom: 28px;
+
+}
+
+
+.message-header h2 {
+
+    font-size: 1.8rem;
+
+    color: #c9e2ff;
+
+    margin-bottom: 8px;
+
+}
+
+
+.message-header p {
+
+    color: var(--text-soft);
+
+    font-size: 0.9rem;
+
+}
+
+
+/* ===============================
+   Form
+================================ */
+
+.communication-form {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
+
+}
+
+
+.form-group {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+.form-group label {
+
+    margin-bottom: 8px;
+
+    font-size: 0.9rem;
+
+    color: #cbd9eb;
+
+}
+
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+
+    width: 100%;
+
+    padding: 14px 15px;
+
+    border-radius: 10px;
+
+    border:
+        1px solid rgba(180, 210, 240, 0.18);
+
+    outline: none;
+
+    background:
+        var(--bg-input);
+
+    color:
+        var(--text-main);
+
+    font-size:
+        0.95rem;
+
+    transition:
+        border 0.3s ease,
+        box-shadow 0.3s ease;
+
+}
+
+
+.form-group textarea {
+
+    resize: vertical;
+
+    min-height: 130px;
+
+}
+
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+
+    color:
+        rgba(220, 230, 245, 0.45);
+
+}
+
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+
+    border-color:
+        var(--primary);
+
+    box-shadow:
+        0 0 0 3px rgba(103, 183, 247, 0.12);
+
+}
+
+
+/* ===============================
+   Send Button
+================================ */
+
+.send-btn {
+
+    border: none;
+
+    cursor: pointer;
+
+    padding: 14px 22px;
+
+    border-radius: 10px;
+
+    color: white;
+
+    font-size: 0.95rem;
+
+    font-weight: bold;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #5ca8e8,
+            #367fc2
+        );
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
+}
+
+
+.send-btn:hover {
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(92, 168, 232, 0.3);
+
+}
+
+
+.send-btn:active {
+
+    transform:
+        scale(0.98);
+
+}
+
+
+/* ===============================
+   Form Message
+================================ */
+
+.form-message {
+
+    text-align: center;
+
+    font-size: 0.9rem;
+
+    min-height: 20px;
+
+    color:
+        #8de3bd;
+
+}
+
+
+/* ===============================
+   Support Section
+================================ */
+
+.support-section {
+
+    max-width: 780px;
+
+    margin: 40px auto 0;
+
+    padding: 28px;
+
+    border-radius: 16px;
+
+    background:
+        rgba(35, 57, 94, 0.7);
+
+    border:
+        1px solid var(--border);
+
+}
+
+
+.support-content {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+}
+
+
+.support-icon {
+
+    min-width: 60px;
+
+    height: 60px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    font-size: 1.8rem;
+
+    background:
+        rgba(103, 183, 247, 0.12);
+
+}
+
+
+.support-content h2 {
+
+    color: #d8e9ff;
+
+    font-size: 1.3rem;
+
+    margin-bottom: 5px;
+
+}
+
+
+.support-content p {
+
+    color: var(--text-soft);
+
+    font-size: 0.88rem;
+
+}
+
+
+/* ===============================
+   Responsive Design
+================================ */
+
+@media (max-width: 850px) {
+
+    .communication-options {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .hero-content h1 {
+
+        font-size: 2.1rem;
+
+    }
+
+
+    .communication-container {
+
+        padding:
+            40px 16px;
+
+    }
+
+
+    .communication-options {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .message-section {
+
+        padding:
+            25px 20px;
+
+    }
+
+
+    .communication-intro {
+
+        padding:
+            25px 20px;
+
+    }
+
+
+    .support-content {
+
+        flex-direction:
+            column;
+
+        text-align:
+            center;
+
+    }
+
+}</style>
+</head>
+
+<body class="page-fade">
+
+    <!-- Hero Section -->
+    <header class="communication-hero">
+
+        <div class="hero-content">
+
+            <div class="communication-icon">💬</div>
+
+            <h1>Communication</h1>
+
+            <p>
+                Stay connected, share your thoughts, and let us help you
+                make your DayZen experience better.
+            </p>
+
+            <div class="back-home">
+                <a href="indexacc.html" class="btn-home">
+                    ← Back to Home
+                </a>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- Main Content -->
+    <main class="communication-container">
+
+        <!-- Introduction -->
+        <section class="communication-intro">
+
+            <h2>Let's Stay Connected</h2>
+
+            <p>
+                Communication is an important part of creating a better
+                daily experience. Whether you have a question, suggestion,
+                feedback, or need support, DayZen is here to listen.
+            </p>
+
+        </section>
+
+
+        <!-- Communication Cards -->
+        <section class="communication-options">
+
+            <div class="communication-card">
+
+                <div class="card-icon">💡</div>
+
+                <h2>Share an Idea</h2>
+
+                <p>
+                    Have an idea that could make DayZen better?
+                    Share your thoughts and help us improve the experience.
+                </p>
+
+            </div>
+
+
+            <div class="communication-card">
+
+                <div class="card-icon">❓</div>
+
+                <h2>Ask for Help</h2>
+
+                <p>
+                    Need help organizing your tasks or using a feature?
+                    Send us your question and we will guide you.
+                </p>
+
+            </div>
+
+
+            <div class="communication-card">
+
+                <div class="card-icon">✨</div>
+
+                <h2>Give Feedback</h2>
+
+                <p>
+                    Your feedback helps DayZen grow. Tell us what you enjoy
+                    and what we can improve.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Contact Form -->
+        <section class="message-section">
+
+            <div class="message-header">
+
+                <h2>Send Us a Message</h2>
+
+                <p>
+                    We would love to hear from you. Fill out the form below
+                    and share what's on your mind.
+                </p>
+
+            </div>
+
+
+            <form id="communicationForm" class="communication-form">
+
+                <div class="form-group">
+
+                    <label for="name">Your Name</label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Enter your name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="email">Email Address</label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter your email"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="topic">What would you like to share?</label>
+
+                    <select id="topic" required>
+
+                        <option value="">Choose a topic</option>
+
+                        <option value="idea">💡 Share an Idea</option>
+
+                        <option value="help">❓ Ask for Help</option>
+
+                        <option value="feedback">✨ Give Feedback</option>
+
+                        <option value="other">💬 Other</option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="message">Your Message</label>
+
+                    <textarea
+                        id="message"
+                        rows="6"
+                        placeholder="Write your message here..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <button type="submit" class="send-btn">
+
+                    <span>Send Message</span>
+                    <span>➜</span>
+
+                </button>
+
+
+                <p id="formMessage" class="form-message"></p>
+
+            </form>
+
+        </section>
+
+
+        <!-- Support Section -->
+        <section class="support-section">
+
+            <div class="support-content">
+
+                <div class="support-icon">🤝</div>
+
+                <div>
+
+                    <h2>We're Here for You</h2>
+
+                    <p>
+                        DayZen is built around making daily life feel more
+                        organized and less overwhelming. Your questions and
+                        ideas help us create a better experience for everyone.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    
+
+    <script>const communicationForm =
+    document.getElementById("communicationForm");
+
+const formMessage =
+    document.getElementById("formMessage");
+
+
+communicationForm.addEventListener(
+    "submit",
+    function (event) {
+
+        event.preventDefault();
+
+
+        const name =
+            document
+                .getElementById("name")
+                .value
+                .trim();
+
+
+        const topic =
+            document
+                .getElementById("topic")
+                .value;
+
+
+        if (name === "" || topic === "") {
+
+            formMessage.textContent =
+                "Please complete all required fields.";
+
+            formMessage.style.color =
+                "#ff9b9b";
+
+            return;
+
+        }
+
+
+        formMessage.textContent =
+            `Thank you, ${name}! Your ${topic} message has been received. 💙`;
+
+
+        formMessage.style.color =
+            "#8de3bd";
+
+
+        communicationForm.reset();
+
+
+        setTimeout(function () {
+
+            formMessage.textContent = "";
+
+        }, 5000);
+
+    }
+);</script>
+
+</body>
+</html>
