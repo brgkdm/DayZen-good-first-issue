@@ -290,7 +290,7 @@
     .input-group textarea {
       width: 100%;
       padding: 16px 18px;
-      border-radius: 10px;
+      /* border-radius: 20px 20px; */
       border: 1px solid #d1d5db;
       background: #ffffff;
       color: var(--text-dark);
@@ -299,38 +299,60 @@
 
     .input-group input:focus,
     .input-group textarea:focus {
-      border-color: #a8dadc;
+      border-color: #2161c7;
       box-shadow: 0 0 0 2px rgba(168,218,220,0.3);
     }
 
     .input-group label {
       position: absolute;
       top: 50%;
-      left: 18px;
+      left: 32px;
       transform: translateY(-50%);
       font-size: 0.9rem;
-      color: #94a3b8;
+      color: #285aa0;
       pointer-events: none;
       transition: 0.3s ease;
     }
 
     .input-group textarea + label {
-      top: 20px;
-      transform: none;
+      top: 16px;
+      left: 22px;
+       background: #ffffff;
+      /* transform: none; */
     }
 
+    
+
+
+
+     .input-group textarea:focus+ label,
+     .input-group textarea:valid + label{
+        left: 12px;
+        top: 02px;
+         background: #ffffff;
+        
+         color: #2b02f9; 
+        
+
+      }
+
     .input-group input:focus + label,
-    .input-group input:valid + label,
-    .input-group textarea:focus + label,
-    .input-group textarea:valid + label {
-      top: -10px;
-      left: 14px;
+    .input-group input:valid + label {
+      top: 0px;
+      left: 20px;
       font-size: 0.75rem;
-      color: #38bdf8;
-      background: #0f172a;
+      color: #2b02f9; 
+      background: #ffff;
       padding: 0 6px;
       border-radius: 6px;
     }
+    
+   
+  
+  
+    
+
+   
 
     .btn-send {
       margin-top: 10px;
@@ -795,13 +817,13 @@
 
         <div class="col-md-6 input-group">
           <input type="email" required>
-          <label>Email Address</label>
+          <label >Email Address</label>
         </div>
       </div>
 
       <div class="input-group">
         <textarea rows="5" required></textarea>
-        <label>How can we help you?</label>
+        <label id="text-area">How can we help you?</label>
       </div>
 
       <div class="text-center">

@@ -33,7 +33,7 @@ body {
   text-align: center;
   padding: 80px 20px;
   background: radial-gradient(circle at top, rgba(126, 211, 255, 0.18), transparent 40%), linear-gradient(135deg, #0c2340, #183d7a 90%);
-  color: #f5f8ff;
+  color: #d5211e;
   position: relative;
   overflow: hidden;
 }
