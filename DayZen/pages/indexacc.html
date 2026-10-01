@@ -118,6 +118,7 @@
         <form id="routine-form" class="routine-form">
             <label class="sr-only" for="routine-name">Routine name</label>
             <input id="routine-name" type="text" placeholder="Add a routine" maxlength="60" required>
+            <input id="search-routine" type="text" placeholder="Search a routine" >
             <label class="sr-only" for="routine-time">Routine time</label>
             <input id="routine-time" type="time" required>
             <label class="sr-only" for="routine-repeat">Repeat schedule</label>
@@ -191,6 +192,8 @@
         // Routines
         const routineStorageKey = "dayzen-routines";
         const streakStorageKey = "dayzen-streak";
+        const searchInput = document.getElementById("search-routine");
+        const searchText = searchInput.value.toLowerCase();
         const today = new Date().toISOString().slice(0, 10);
         let routines = JSON.parse(localStorage.getItem(routineStorageKey) || "null") || [
             { name: "Morning Exercise", time: "07:00", repeat: "Every Day", completedDate: "" }
@@ -211,23 +214,46 @@
             localStorage.setItem(streakStorageKey, JSON.stringify(streak));
         }
 
-        function listRoutines() {
-            const routineList = document.getElementById("routine-list");
-            const completedCount = routines.filter(routine => routine.completedDate === today).length;
-            document.getElementById("routine-progress").textContent = `${completedCount} of ${routines.length} completed today`;
-            document.getElementById("streak-count").textContent = streak.count;
-            routineList.innerHTML = routines.map((routine, index) => `
-                <div class="routine${routine.completedDate === today ? " completed" : ""}">
-                    <label class="routine-check">
-                        <input type="checkbox" ${routine.completedDate === today ? "checked" : ""} onchange="toggleRoutine(${index}, this.checked)">
-                        <span>${escapeHtml(routine.name)}</span>
-                    </label>
-                    <p>Time: ${escapeHtml(routine.time)}</p>
-                    <p>Repeat: ${escapeHtml(routine.repeat)}</p>
-                    <button onclick="deleteRoutine(${index})">Delete</button>
-                </div>
-            `).join("");
-        }
+function listRoutines() {
+    const routineList = document.getElementById("routine-list");
+
+    // Get what the user typed
+    const searchInput = document.getElementById("search-routine");
+    const searchText = searchInput.value.toLowerCase().trim();
+
+    const completedCount = routines.filter(
+        routine => routine.completedDate === today
+    ).length;
+
+    document.getElementById("routine-progress").textContent =
+        `${completedCount} of ${routines.length} completed today`;
+
+    document.getElementById("streak-count").textContent = streak.count;
+
+    // Find routines that match the search
+const filteredRoutines = routines
+    .map((routine, index) => ({ routine, index }))
+    .filter(item =>
+        item.routine.name.toLowerCase().includes(searchText)
+    );
+    // Display only the matching routines
+    routineList.innerHTML = filteredRoutines.map(({routine, index}) => `
+        <div class="routine${routine.completedDate === today ? " completed" : ""}">
+            <label class="routine-check">
+                <input type="checkbox"
+                    ${routine.completedDate === today ? "checked" : ""}
+                    onchange="toggleRoutine(${index}, this.checked)">
+                <span>${escapeHtml(routine.name)}</span>
+            </label>
+
+            <p>Time: ${escapeHtml(routine.time)}</p>
+            <p>Repeat: ${escapeHtml(routine.repeat)}</p>
+
+            <button onclick="deleteRoutine(${index})">Delete</button>
+        </div>
+    `).join("");
+}        document.getElementById("search-routine").addEventListener("input", listRoutines);
+
 
         function toggleRoutine(index, isCompleted) {
             routines[index].completedDate = isCompleted ? today : "";
