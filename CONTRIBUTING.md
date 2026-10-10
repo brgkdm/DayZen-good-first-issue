@@ -19,17 +19,8 @@ Follow the steps below to set up the project locally for development:
   ```bash
 cd DayZen-good-first-issue
   ```
-3. Install dependencies (if applicable):
-  ```bash
-  npm install
-  ```
-or follow the instructions provided in the README.
-
-4. Start the project locally:
-  ```bash
-  npm start
-  ```
-If you encounter any issues during setup, please open an issue or ask for help in the discussion forum.
+3. Open `DayZen/index.html` in your browser, or use the VS Code Live Server extension (right-click `DayZen/index.html` → *Open with Live Server*).
+   *Note: This is a static frontend site (HTML + CSS + Vanilla JS) with no build or npm step.*
 
 ## How to Submit Changes
 1. Fork the repository and create a new branch for your feature or fix.

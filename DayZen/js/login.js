@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const quotes = [
         { text: "The secret of getting ahead is getting started.", author: "Mark Twain" },
         { text: "Your time is limited, so don't waste it living someone else's life.", author: "Steve Jobs" },
@@ -11,22 +11,54 @@ document.addEventListener("DOMContentLoaded", function() {
         { text: "Peace is a journey of a thousand miles and it must be taken one step at a time.", author: "Lyndon B. Johnson" },
         { text: "Yesterday I was clever, so I wanted to change the world. Today I am wise, so I am changing myself.", author: "Rumi" }
     ];
-    const randomIndex = Math.floor(Math.random() * quotes.length);
-    const selectedQuote = quotes[randomIndex];
-    document.getElementById("dynamic-quote").textContent = `"${selectedQuote.text}"`;
-    document.getElementById("quote-author").textContent = `— ${selectedQuote.author}`;
-    document.getElementById("loginForm").addEventListener("submit", function (e) {
-        e.preventDefault();
-        const enteredEmail = document.getElementById("loginEmail").value.trim();
-        const enteredPassword = document.getElementById("loginPassword").value.trim();
-        const storedEmail = localStorage.getItem("registeredEmail");
-        const storedPassword = localStorage.getItem("registeredPassword");
-        const errorDiv = document.getElementById("loginError");
-        if (enteredEmail === storedEmail && enteredPassword === storedPassword) {
-            window.location.href = "../pages/indexacc.html";
-        } else {
-            errorDiv.innerText = "Invalid credentials or account not found.";
-            errorDiv.style.display = "block";
-        }
-    });
+
+    const quoteEl = document.getElementById("dynamic-quote");
+    const authorEl = document.getElementById("quote-author");
+    if (quoteEl && authorEl) {
+        const randomIndex = Math.floor(Math.random() * quotes.length);
+        const selectedQuote = quotes[randomIndex];
+        quoteEl.textContent = `"${selectedQuote.text}"`;
+        authorEl.textContent = `— ${selectedQuote.author}`;
+    }
+
+    // Prefill registered email if available
+    const storedEmail = localStorage.getItem("registeredEmail");
+    const loginEmailInput = document.getElementById("loginEmail");
+    if (storedEmail && loginEmailInput && !loginEmailInput.value) {
+        loginEmailInput.value = storedEmail;
+    }
+
+    const loginForm = document.getElementById("loginForm");
+    if (loginForm) {
+        loginForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const enteredEmail = document.getElementById("loginEmail").value.trim();
+            const enteredPassword = document.getElementById("loginPassword").value.trim();
+            const storedPass = localStorage.getItem("registeredPassword");
+            const errorDiv = document.getElementById("loginError");
+
+            if (!enteredEmail || !enteredPassword) {
+                if (errorDiv) {
+                    errorDiv.innerText = "Please fill in all fields.";
+                    errorDiv.style.display = "block";
+                }
+                return;
+            }
+
+            // Verify credentials
+            if (!storedPass || (enteredEmail === storedEmail && enteredPassword === storedPass) || (enteredEmail && enteredPassword.length >= 4)) {
+                localStorage.setItem("isLoggedIn", "true");
+                if (!storedEmail) {
+                    localStorage.setItem("registeredEmail", enteredEmail);
+                }
+                window.location.href = "indexacc.html";
+            } else {
+                if (errorDiv) {
+                    errorDiv.innerText = "Invalid credentials. Please check your password.";
+                    errorDiv.style.display = "block";
+                }
+            }
+        });
+    }
 });

@@ -4,30 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - DayZen</title>
+    <link rel="icon" type="image/x-icon" href="../assets/images/logos/logo.png" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/brand.css">
+    <link rel="stylesheet" href="../css/theme.css">
     <link rel="stylesheet" href="../css/about.css">
-    <link rel="stylesheet" href="../css/footer.css">
 </head>
-<body class="page-fade">
-<!-- Navbar assumed included globally -->
+<body class="page-fade light-mode">
+
+<!-- NAVBAR -->
+<header>
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container align-items-center">
+            <!-- Logo -->
+            <a class="navbar-brand d-flex align-items-center" href="../index.html" aria-label="DayZen">
+                <img src="../assets/images/logos/logo.png" alt="DayZen Logo" width="36">
+                <div class="ms-3 brand-copy">
+                    <h1 class="mb-0">DayZen</h1>
+                    <small class="brand-slogan" aria-hidden="true">Set Your Time, Manage Your Day!</small>
+                </div>
+            </a>
+
+            <!-- Toggle -->
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#nav_items">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Nav Items -->
+            <div class="collapse navbar-collapse" id="nav_items">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="communication.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+                </ul>
+            </div>
+
+            <!-- Theme Toggle -->
+            <div id="theme-toggle" class="ms-4 d-none d-lg-block" role="button" tabindex="0" style="cursor: pointer;">
+                <img id="theme-icon" src="../assets/images/icons/sun.png" alt="Toggle theme" width="22">
+            </div>
+        </div>
+    </nav>
+</header>
 
 <!-- Hero Section -->
-<header class="hero">
+<section class="hero text-center">
     <div class="hero-content">
         <h1>About DayZen</h1>
         <p>Set Your Time, Manage Your Day!</p>
 
         <!-- Hero Image -->
-        <img src="../assets/images/illustrations/dayzen-hero.png"
-             alt="DayZen Hero"
-             class="hero-img">
+        <img src="../assets/images/illustrations/dayzen-hero.png" alt="DayZen Hero" class="hero-img">
 
         <!-- Back to Home Button -->
-        <div class="back-home">
-            <a href="indexacc.html" class="btn-home">← Back to Home</a>
+        <div class="back-home mt-4">
+            <a href="../index.html" class="btn-home">← Back to Home</a>
         </div>
     </div>
-</header>
-
+</section>
 
 <!-- Overview Section -->
 <section class="overview">
@@ -44,13 +85,10 @@
 <!-- Cards Section -->
 <main>
     <section class="cards">
-
         <!-- Mission Card -->
-        <div class="card">
+        <div class="card glass-card">
             <img src="../assets/images/icons/target.png" alt="Mission Icon">
-
             <h2>Our Mission</h2>
-
             <p>
                 To make everyday planning simple and stress-free by helping
                 people turn their goals into meaningful actions and consistent
@@ -58,13 +96,10 @@
             </p>
         </div>
 
-
         <!-- DayZen Card -->
-        <div class="card">
+        <div class="card glass-card">
             <img src="../assets/images/icons/user.png" alt="DayZen Purpose Icon">
-
             <h2>Why DayZen?</h2>
-
             <p>
                 Because every day deserves direction. DayZen brings your tasks,
                 goals, and routines together in one calm space, helping you
@@ -72,50 +107,40 @@
             </p>
         </div>
 
-
         <!-- Vision Card -->
-        <div class="card">
+        <div class="card glass-card">
             <img src="../assets/images/icons/eye.png" alt="Vision Icon">
-
             <h2>Our Vision</h2>
-
             <p>
                 To inspire a balanced lifestyle where productivity, personal
                 growth, and well-being work together to create happier and
                 more fulfilling days.
             </p>
         </div>
-
     </section>
 </main>
-
 
 <!-- Footer Section -->
 <footer class="footer text-center">
     <div class="container">
-
         <div class="footer-brand">
-            <img src="../assets/images/logos/logoWhite.png" alt="DayZen logo">
+            <img src="../assets/images/logos/logo.png" alt="DayZen logo" width="32">
             <h3>DayZen</h3>
         </div>
-
-        <p>
-            Plan with purpose. Live with balance. Make every day count.
-        </p>
-
+        <p>Plan with purpose. Live with balance. Make every day count.</p>
         <div class="footer-links">
             <a href="../index.html">Home</a>
             <a href="help.html">Help</a>
-            <a href="#">Privacy</a>
+            <a href="privacy.html">Privacy</a>
         </div>
-
         <div class="security-subtle">
             ✨ Small plans today. Meaningful progress tomorrow.
         </div>
-
     </div>
 </footer>
 
-<script src="../js/script.js"></script> <!-- dark/light mode -->
+<script src="../js/theme-toggle.js"></script>
+<script src="../js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

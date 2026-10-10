@@ -1,27 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up - DayZen</title>
+    <link rel="icon" type="image/x-icon" href="../assets/images/logos/logo.png" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/brand.css">
+    <link rel="stylesheet" href="../css/theme.css">
     <link rel="stylesheet" href="../css/register-style.css">
 </head>
 
-<body>
+<body class="light-mode">
+    <div id="theme-toggle" class="theme-toggle-wrapper" style="position: fixed; top: 20px; right: 20px; cursor: pointer; z-index: 1000;" role="button" tabindex="0">
+        <img id="theme-icon" src="../assets/images/icons/sun.png" alt="Toggle theme" width="24">
+    </div>
 
-    <div class="container">
-        <h2 class="welcome-message">✨DayZen!</h2>
+    <div class="register-card-wrapper">
+        <div class="text-center mb-4">
+            <a href="../index.html">
+                <img src="../assets/images/logos/logo.png" alt="DayZen Logo" width="48" style="margin-bottom: 12px;">
+            </a>
+            <h2 class="welcome-message">✨ Join DayZen!</h2>
+            <p class="sub-message">Set Your Time, Manage Your Day!</p>
+        </div>
+
+        <div id="successToast">
+            🎉 Account created successfully! Redirecting to your dashboard...
+        </div>
 
         <form id="registerForm" novalidate>
-            <label for="username">Username</label>
-            <input type="text" id="username" name="username" placeholder="Enter your username" required>
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username" required>
+            </div>
 
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
 
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" placeholder="Create a password" required>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Create a password" required>
+            </div>
 
             <button type="submit" id="registerBtn">🚀 Sign Up</button>
         </form>
@@ -29,15 +54,13 @@
         <p class="login-link">
             Already have an account? <a href="login.html">Login</a>
         </p>
-        
+
+        <div style="text-align: center; margin-top: 16px;">
+            <a href="../index.html" class="back-home-link">← Back to Home</a>
+        </div>
     </div>
 
-    <div id="createaccount">
-        Account created successfully ! you may login now
-    </div>
-
+    <script src="../js/theme-toggle.js"></script>
     <script src="../js/register-script.js"></script>
-
 </body>
-
 </html>

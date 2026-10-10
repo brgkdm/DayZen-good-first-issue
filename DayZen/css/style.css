@@ -224,63 +224,58 @@ nav .nav-img {
 }
 
 .btn {
-  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  background: #10b981;
   color: white;
   border: none;
-  padding: 6px 16px;
-  border-radius: 8px;
-  font-weight: 500;
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-weight: 600;
   transition: all 0.3s ease;
-  position: relative;
-  top: 10px;
-  transition: all 1s ease;
-  /* top: 100px; */
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.25);
 }
 
 .btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
-  background: linear-gradient(135deg, #4f46e5, #4338ca);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.35);
+  background: #059669;
 }
 
 .form-control {
-  background-color: #f9fafb;
-  border: 1px solid #d1d5db;
-  border-radius: 8px;
-  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  padding: 10px 16px;
   transition: all 0.3s ease;
 }
 
 .form-control:hover {
-  border-color: #6366f1;
-  box-shadow: 1px 1px 1px rgba(99, 102, 241, 0.3);
-  transform: translateY(-1px);
+  border-color: #10b981;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.15);
 }
 
 .form-control:focus {
-  border-color: #4f46e5;
-  box-shadow: 0 0 1px rgba(79, 70, 229, 0.5);
+  border-color: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25);
   outline: none;
   background-color: #ffffff;
 }
 
 .form-control::placeholder {
-  color: #9ca3af;
+  color: #94a3b8;
   font-size: 14px;
 }
 
 .container h2 {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #1f2937 !important;
+  color: #0f172a !important;
   position: relative;
   display: inline-block;
   transition: all 0.3s ease;
 }
 
 .container h2:hover {
-  color: #4f46e5 !important;
-  text-shadow: 0 0 10px rgba(79, 70, 229, 0.6);
+  color: #10b981 !important;
   transform: translateY(-2px);
 }
 
@@ -291,11 +286,11 @@ nav .nav-img {
   bottom: -5px;
   width: 0%;
   height: 3px;
-  background: #6366f1 !important;
+  background: #10b981 !important;
   transition: 0.3s ease;
 }
 
-.container h2:hover ::after {
+.container h2:hover::after {
   width: 100%;
 }
 /* Features Section */
@@ -336,8 +331,7 @@ nav .nav-img {
 }
 
 .feature:hover {
-  transform: scale(1.1);
-  /* Chose scale over translateY for smoother, more engaging hover like a swelling erection */
+  transform: scale(1.05);
   text-shadow: 0 0 10px #1e90ff;
 }
 
@@ -461,7 +455,6 @@ body.dark-mode #contact {
 
 @media (max-width: 768px) {
   .logo img {
-    border: 2px solid red;
     position: relative;
     left: 20px;
     bottom: 10px;

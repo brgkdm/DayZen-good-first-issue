@@ -1,102 +1,351 @@
-/* =========================
-   LIGHT MODE (default)
-   ========================= */
-body.light-mode {
-    background-color: #ffffff;
-    color: #212529; /* Bootstrap default text */
-    transition: background-color 0.3s ease, color 0.3s ease;
+/* ===================================================
+   DayZen Aesthetic Emerald & Glassmorphism Design System
+   Palette: Shades of Emerald Green + Black & White
+   =================================================== */
+
+:root {
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading: 'Playfair Display', Georgia, serif;
+
+  /* Emerald Palette */
+  --emerald-50: #ecfdf5;
+  --emerald-100: #d1fae5;
+  --emerald-200: #a7f3d0;
+  --emerald-400: #34d399;
+  --emerald-500: #10b981;
+  --emerald-600: #059669;
+  --emerald-700: #047857;
+  --emerald-900: #064e3b;
+  --emerald-950: #022c22;
+
+  /* Glassmorphism Tokens (Light Mode) */
+  --glass-bg-light: rgba(255, 255, 255, 0.85);
+  --glass-border-light: rgba(16, 185, 129, 0.18);
+  --glass-shadow-light: 0 10px 40px -10px rgba(16, 185, 129, 0.08);
+
+  /* Glassmorphism Tokens (Dark Mode) */
+  --glass-bg-dark: rgba(12, 19, 29, 0.78);
+  --glass-border-dark: rgba(52, 211, 153, 0.2);
+  --glass-shadow-dark: 0 12px 40px 0 rgba(0, 0, 0, 0.5);
+
+  --transition-smooth: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-/* Navbar in light mode */
-body.light-mode .navbar {
-    background-color: #f8f9fa; /* light gray */
-    color: #212529;
-}
-body.light-mode .navbar .nav-link {
-    color: #212529;
-}
-body.light-mode .navbar .nav-link:hover {
-    color: #0d6efd; /* bootstrap primary blue */
+/* Base Body Styles */
+body {
+  font-family: var(--font-primary);
+  line-height: 1.7;
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-/* Hero Section */
-body.light-mode .hero {
-    background: linear-gradient(135deg, #e8f0ff, #ffffff);
-    color: #212529;
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  letter-spacing: -0.02em;
 }
 
-/* Footer */
-body.light-mode footer {
-    background-color: #f8f9fa;
-    color: #212529;
+/* ===================================================
+   LIGHT MODE (Default)
+   =================================================== */
+body, body.light-mode {
+  background-color: #f8fafc;
+  color: #0f172a;
 }
 
+body.light-mode .glass-card,
+body.light-mode .contact-card,
+body.light-mode .feature-card,
+body.light-mode .progress-card,
+body.light-mode .project-form-card,
+body.light-mode .communication-card,
+body.light-mode .communication-intro,
+body.light-mode .message-section,
+body.light-mode .support-section,
+body.light-mode .card,
+body.light-mode .faq-container {
+  background: var(--glass-bg-light);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border-light);
+  box-shadow: var(--glass-shadow-light);
+}
 
-/* =========================
+/* ===================================================
    DARK MODE
-   ========================= */
+   =================================================== */
 body.dark-mode {
-    background-color: #121212;
-    color: #e0e0e0;
-    transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: #070a0f !important;
+  color: #f8fafc !important;
 }
 
-/* Navbar in dark mode */
+/* Dark Mode Typography */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6,
+body.dark-mode strong,
+body.dark-mode b,
+body.dark-mode .title,
+body.dark-mode .features-title {
+  color: #ffffff !important;
+}
+
+body.dark-mode p,
+body.dark-mode span,
+body.dark-mode label,
+body.dark-mode small,
+body.dark-mode li {
+  color: #cbd5e1 !important;
+}
+
+body.dark-mode .text-muted,
+body.dark-mode .subtitle,
+body.dark-mode .features-subtitle,
+body.dark-mode .brand-slogan {
+  color: #94a3b8 !important;
+}
+
+/* Glassmorphism Containers in Dark Mode */
+body.dark-mode .glass-card,
+body.dark-mode .navbar,
+body.dark-mode .hero,
+body.dark-mode .contact-card,
+body.dark-mode .feature-card,
+body.dark-mode .progress-card,
+body.dark-mode .project-form-card,
+body.dark-mode .communication-card,
+body.dark-mode .communication-intro,
+body.dark-mode .message-section,
+body.dark-mode .support-section,
+body.dark-mode .card,
+body.dark-mode .profile-section,
+body.dark-mode .body-container,
+body.dark-mode .sidebar,
+body.dark-mode .faq-container,
+body.dark-mode .post {
+  background: var(--glass-bg-dark) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border: 1px solid var(--glass-border-dark) !important;
+  box-shadow: var(--glass-shadow-dark) !important;
+  color: #f8fafc !important;
+}
+
+/* Modern Navbar styling */
+.navbar {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(16, 185, 129, 0.12);
+}
+
 body.dark-mode .navbar {
-    background-color: #1f1f1f;
-    color: #e0e0e0;
-}
-body.dark-mode .navbar .nav-link {
-    color: #e0e0e0;
-}
-body.dark-mode .navbar .nav-link:hover {
-    color: #0dcaf0; /* Bootstrap cyan accent */
+  background: rgba(7, 10, 15, 0.85) !important;
+  border-bottom: 1px solid rgba(52, 211, 153, 0.15) !important;
 }
 
-/* Hero Section */
-body.dark-mode .hero {
-    background: linear-gradient(135deg, #1c1c1c, #2a2a2a);
-    color: #e0e0e0;
+body.dark-mode .navbar-brand h1,
+body.dark-mode .nav-link {
+  color: #f8fafc !important;
 }
 
-/* Footer */
-body.dark-mode footer {
-    background-color: #1f1f1f;
-    color: #aaa;
+.nav-link:hover,
+body.dark-mode .nav-link:hover {
+  color: var(--emerald-400) !important;
 }
 
-/* Buttons adjust automatically (Bootstrap dark theme support) */
-body.dark-mode .btn-primary {
-    background-color: #0d6efd;
-    border-color: #0d6efd;
+/* Logo Dark Mode Inversion & High Visibility */
+body.dark-mode img.logo-dark-mode,
+body.dark-mode .navbar-brand img,
+body.dark-mode .footer-logo img,
+body.dark-mode .footer-brand img,
+body.dark-mode .logo img {
+  filter: brightness(0) invert(1) drop-shadow(0 0 6px rgba(52, 211, 153, 0.6)) !important;
+  opacity: 1 !important;
 }
 
-/* =========================
-   NAVBAR (Light Mode)
-   ========================= */
-body.light-mode .navbar {
-    background-color: #f8f9fa !important; /* light gray */
+/* Inputs & Form Elements */
+input, textarea, select, .form-control {
+  border-radius: 12px !important;
+  transition: var(--transition-smooth) !important;
 }
 
-body.light-mode .navbar .nav-link {
-    color: #212529 !important;
+input:focus, textarea:focus, select:focus, .form-control:focus {
+  border-color: var(--emerald-500) !important;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25) !important;
 }
 
-body.light-mode .navbar .nav-link:hover {
-    color: #0d6efd !important; /* bootstrap primary blue */
+body.dark-mode input,
+body.dark-mode textarea,
+body.dark-mode select,
+body.dark-mode .form-control {
+  background-color: rgba(15, 23, 36, 0.85) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(52, 211, 153, 0.2) !important;
 }
 
-/* =========================
-   NAVBAR (Dark Mode)
-   ========================= */
-body.dark-mode .navbar {
-    background-color: #1f1f1f !important; /* dark gray */
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder,
+body.dark-mode select::placeholder {
+  color: #94a3b8 !important;
 }
 
-body.dark-mode .navbar .nav-link {
-    color: #e0e0e0 !important;
+input[type="time"] {
+  color-scheme: dark light;
 }
 
-body.dark-mode .navbar .nav-link:hover {
-    color: #0dcaf0 !important; /* bootstrap cyan */
+body.dark-mode input[type="time"] {
+  color-scheme: dark !important;
+  color: #ffffff !important;
+}
+
+body.dark-mode input[type="time"]::-webkit-calendar-picker-indicator {
+  filter: brightness(0) invert(1) !important;
+  opacity: 1 !important;
+  cursor: pointer;
+}
+
+/* Accordions - Dark Mode Override */
+body.dark-mode .accordion-button.collapsed,
+body.dark-mode .accordion-button.collapsed:focus,
+body.dark-mode .accordion-button.collapsed:active {
+  color: #ffffff !important;
+  background-color: transparent !important;
+}
+
+body.dark-mode .accordion-button.collapsed:hover {
+  color: #34d399 !important;
+  background-color: rgba(16, 185, 129, 0.15) !important;
+}
+
+body.dark-mode .accordion-button:not(.collapsed),
+body.dark-mode .accordion-button:not(.collapsed):hover,
+body.dark-mode .accordion-button:not(.collapsed):focus {
+  color: #ffffff !important;
+  background-color: var(--emerald-600) !important;
+}
+
+body.dark-mode .accordion-body {
+  color: #f1f5f9 !important;
+  background-color: rgba(15, 23, 42, 0.95) !important;
+}
+
+/* Aesthetic Emerald Buttons */
+.btn-primary,
+.cta-btn,
+.btn-send,
+.send-btn,
+#registerBtn,
+#loginBtn {
+  background: linear-gradient(135deg, var(--emerald-600), var(--emerald-500)) !important;
+  border: none !important;
+  color: #ffffff !important;
+  font-weight: 600 !important;
+  border-radius: 50px !important;
+  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.3) !important;
+  transition: var(--transition-smooth) !important;
+}
+
+.btn-primary:hover,
+.cta-btn:hover,
+.btn-send:hover,
+.send-btn:hover,
+#registerBtn:hover,
+#loginBtn:hover {
+  background: linear-gradient(135deg, var(--emerald-700), var(--emerald-600)) !important;
+  transform: translateY(-3px) scale(1.02) !important;
+  box-shadow: 0 12px 30px rgba(16, 185, 129, 0.45) !important;
+}
+
+/* Back to Home Button - Always Solid Emerald Green with Pure White Text */
+.btn-home {
+  background: linear-gradient(135deg, var(--emerald-600), var(--emerald-500)) !important;
+  color: #ffffff !important;
+  border: none !important;
+  padding: 12px 32px !important;
+  border-radius: 50px !important;
+  font-weight: 600 !important;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3) !important;
+  transition: var(--transition-smooth) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  text-decoration: none !important;
+}
+
+.btn-home:hover {
+  background: linear-gradient(135deg, var(--emerald-700), var(--emerald-600)) !important;
+  color: #ffffff !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.45) !important;
+}
+
+.cta-btn-secondary,
+.btn-outline-light {
+  border: 2px solid var(--emerald-500) !important;
+  color: var(--emerald-500) !important;
+  background: transparent !important;
+  border-radius: 50px !important;
+  font-weight: 600 !important;
+  transition: var(--transition-smooth) !important;
+}
+
+.cta-btn-secondary:hover,
+.btn-outline-light:hover {
+  background: var(--emerald-500) !important;
+  color: #ffffff !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.3) !important;
+}
+
+/* Footer Styling */
+footer, .footer {
+  background: #04080e !important;
+  border-top: 1px solid rgba(52, 211, 153, 0.15) !important;
+  color: #94a3b8 !important;
+}
+
+footer h1, footer h2, footer h3, .footer h1, .footer h2, .footer h3, .footer-brand h3 {
+  color: #ffffff !important;
+}
+
+footer .footer-brand img, .footer .footer-brand img {
+  filter: brightness(0) invert(1) drop-shadow(0 0 6px rgba(52, 211, 153, 0.6)) !important;
+  opacity: 1 !important;
+}
+
+footer a, .footer a {
+  color: var(--emerald-400) !important;
+  transition: var(--transition-smooth);
+}
+
+footer a:hover, .footer a:hover {
+  color: var(--emerald-200) !important;
+  text-shadow: 0 0 10px rgba(52, 211, 153, 0.4);
+}
+
+.security-badge, .security-subtle {
+  background: rgba(16, 185, 129, 0.1) !important;
+  color: var(--emerald-400) !important;
+  border: 1px solid rgba(52, 211, 153, 0.2) !important;
+  border-radius: 30px !important;
+}
+
+/* Routine cards & items */
+.routine {
+  border: 1px solid var(--glass-border-light) !important;
+  border-radius: 16px !important;
+  transition: var(--transition-smooth) !important;
+}
+
+body.dark-mode .routine {
+  background: rgba(15, 23, 36, 0.75) !important;
+  border-color: rgba(52, 211, 153, 0.2) !important;
+}
+
+.routine:hover {
+  transform: translateY(-4px) !important;
+  border-color: var(--emerald-400) !important;
+  box-shadow: 0 10px 30px rgba(16, 185, 129, 0.15) !important;
 }

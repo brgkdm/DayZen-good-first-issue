@@ -48,11 +48,11 @@ This project is open for collaborative development.
 The project is organized into clear directories to keep code maintainable and easy to navigate:
 
 ### 📁 Folder Details
-- assets/images/ → Stores all image files (icons, logos, backgrounds, etc.)
-- css/ → Contains all stylesheets (.css files)
-- js/ → Contains JavaScript files for functionality and interactivity
-- pages/ → Contains additional HTML pages (e.g., About, Contact, Dashboard)
-- index.html → Main landing page
+- DayZen/index.html → Main landing page
+- DayZen/css/ → Contains modular stylesheets for pages and components (`index.css`, `brand.css`, `blog.css`, `communication.css`, `new-project.css`, `about.css`, `help.css`, `profile.css`, etc.)
+- DayZen/js/ → Contains JavaScript files for interactive functionality (`script.js`, `theme-toggle.js`, `indexacc.js`, `communication.js`, `new-project.js`, etc.)
+- DayZen/pages/ → Secondary HTML pages (About, Blog, Communication, Help, Profile, Register, New Project)
+- DayZen/assets/images/ → Image assets (logos, icons, illustrations)
 
 ### 🖼️ Assets - Images
 - logos/ → Branding images
@@ -72,16 +72,16 @@ git clone <repo-link>
 
 2. Navigate to the project folder:
 ```bash
-cd DayZen-good-first-issue
+cd DayZen
 ```
 
-3. Open index.html in your browser
+3. Open `DayZen/index.html` in your browser
 
 ## 🔧 Optional (Recommended)
 Use Live Server in VS Code for a better development experience:
 
 - Install the Live Server extension  
-- Right-click on index.html  
+- Right-click on `DayZen/index.html`  
 - Click "Open with Live Server"  
 
 ## 🚀 Future Improvements
