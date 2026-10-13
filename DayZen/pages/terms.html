@@ -4,48 +4,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms of Service - DayZen</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/brand.css">
+    <link rel="stylesheet" href="../css/theme.css">
     <link rel="stylesheet" href="../css/about.css">
     <link rel="stylesheet" href="../css/footer.css">
 </head>
 <body class="page-fade">
 
+<!-- NAVBAR -->
+<header>
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container align-items-center">
+            <!-- Logo -->
+            <a class="navbar-brand d-flex align-items-center" href="../index.html" aria-label="DayZen">
+                <img src="../assets/images/logos/logoWhite.png" alt="DayZen Logo" width="32" style="filter: invert(1);">
+                <div class="ms-3 brand-copy">
+                    <h1 class="mb-0">DayZen</h1>
+                    <small class="brand-slogan" aria-hidden="true">Set Your Time, Manage Your Day!</small>
+                </div>
+            </a>
+
+            <!-- Toggle -->
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#nav_items">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Nav Items -->
+            <div class="collapse navbar-collapse" id="nav_items">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="communication.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="help.html">Help</a></li>
+                </ul>
+            </div>
+
+            <!-- Theme Toggle -->
+            <div id="theme-toggle" class="ms-4 d-none d-lg-block" role="button" tabindex="0" style="cursor: pointer;">
+                <img id="theme-icon" src="../assets/images/icons/sun.png" alt="Toggle theme" width="20" style="cursor: pointer; opacity: 0.5;">
+            </div>
+        </div>
+    </nav>
+</header>
+
 <!-- Hero Section -->
-<header class="hero">
+<section class="hero text-center" style="padding-top: 140px;">
     <div class="hero-content">
         <h1>Terms of Service</h1>
         <p>Please read these terms carefully</p>
 
         <!-- Back to Home Button -->
-        <div class="back-home">
+        <div class="back-home mt-3">
             <a href="../index.html" class="btn-home">← Back to Home</a>
         </div>
     </div>
-</header>
+</section>
 
 <!-- Terms Content -->
-<main class="container" style="max-width: 900px; padding: 60px 20px;">
-    <section style="margin-bottom: 40px;">
-        <h2 style="margin-bottom: 20px; color: #2d3436;">Acceptance of Terms</h2>
-        <p style="line-height: 1.8; color: #636e72;">
+<main class="container glass-card p-5 my-5 rounded-4" style="max-width: 900px;">
+    <section class="mb-4">
+        <h2 class="mb-3">Acceptance of Terms</h2>
+        <p>
             By accessing and using DayZen, you accept and agree to be bound by the terms and provisions 
             of this agreement. If you do not agree to these terms, please do not use this service.
         </p>
     </section>
 
-    <section style="margin-bottom: 40px;">
-        <h2 style="margin-bottom: 20px; color: #2d3436;">Use of Service</h2>
-        <p style="line-height: 1.8; color: #636e72;">
+    <section class="mb-4">
+        <h2 class="mb-3">Use of Service</h2>
+        <p>
             DayZen is a free, open-source daily routine tracking application. You may use this service 
             for personal, non-commercial purposes. The service is provided "as is" without any warranties.
         </p>
     </section>
 
-    <section style="margin-bottom: 40px;">
-        <h2 style="margin-bottom: 20px; color: #2d3436;">User Responsibilities</h2>
-        <p style="line-height: 1.8; color: #636e72;">
-            You are responsible for:
-        </p>
-        <ul style="line-height: 1.8; color: #636e72; margin-left: 20px;">
+    <section class="mb-4">
+        <h2 class="mb-3">User Responsibilities</h2>
+        <p>You are responsible for:</p>
+        <ul class="ms-3">
             <li>Maintaining the security of your browser and device</li>
             <li>Backing up your data (stored locally in your browser)</li>
             <li>Using the service in compliance with applicable laws</li>
@@ -53,56 +96,56 @@
         </ul>
     </section>
 
-    <section style="margin-bottom: 40px;">
-        <h2 style="margin-bottom: 20px; color: #2d3436;">Data Storage</h2>
-        <p style="line-height: 1.8; color: #636e72;">
+    <section class="mb-4">
+        <h2 class="mb-3">Data Storage</h2>
+        <p>
             All data is stored locally in your browser. We are not responsible for data loss due to 
             browser cache clearing, device failure, or other technical issues. We recommend regularly 
             backing up important information.
         </p>
     </section>
 
-    <section style="margin-bottom: 40px;">
-        <h2 style="margin-bottom: 20px; color: #2d3436;">Intellectual Property</h2>
-        <p style="line-height: 1.8; color: #636e72;">
+    <section class="mb-4">
+        <h2 class="mb-3">Intellectual Property</h2>
+        <p>
             DayZen is an open-source project. The source code and design are available under the 
             project's license. Third-party libraries and resources are subject to their respective licenses.
         </p>
     </section>
 
-    <section style="margin-bottom: 40px;">
-        <h2 style="margin-bottom: 20px; color: #2d3436;">Limitation of Liability</h2>
-        <p style="line-height: 1.8; color: #636e72;">
+    <section class="mb-4">
+        <h2 class="mb-3">Limitation of Liability</h2>
+        <p>
             DayZen and its contributors shall not be liable for any direct, indirect, incidental, 
             special, or consequential damages resulting from the use or inability to use this service.
         </p>
     </section>
 
-    <section style="margin-bottom: 40px;">
-        <h2 style="margin-bottom: 20px; color: #2d3436;">Modifications to Terms</h2>
-        <p style="line-height: 1.8; color: #636e72;">
+    <section class="mb-4">
+        <h2 class="mb-3">Modifications to Terms</h2>
+        <p>
             We reserve the right to modify these terms at any time. Changes will be effective immediately 
             upon posting. Your continued use of the service constitutes acceptance of the modified terms.
         </p>
     </section>
 
-    <section style="margin-bottom: 40px;">
-        <h2 style="margin-bottom: 20px; color: #2d3436;">Open Source Contributions</h2>
-        <p style="line-height: 1.8; color: #636e72;">
+    <section class="mb-4">
+        <h2 class="mb-3">Open Source Contributions</h2>
+        <p>
             By contributing to DayZen, you agree that your contributions will be licensed under the 
             same license as the project. Please review the CONTRIBUTING.md file for contribution guidelines.
         </p>
     </section>
 
-    <section style="margin-bottom: 40px;">
-        <h2 style="margin-bottom: 20px; color: #2d3436;">Contact Information</h2>
-        <p style="line-height: 1.8; color: #636e72;">
+    <section class="mb-4">
+        <h2 class="mb-3">Contact Information</h2>
+        <p>
             For questions about these Terms of Service, please reach out through our 
-            <a href="../index.html#contact" style="color: #a8dadc; text-decoration: none;">contact form</a>.
+            <a href="communication.html" style="color: #38bdf8; text-decoration: none;">contact form</a>.
         </p>
     </section>
 
-    <p style="text-align: center; color: #636e72; margin-top: 60px; font-size: 0.9rem;">
+    <p class="text-center mt-5 small">
         Last updated: May 12, 2026
     </p>
 </main>
@@ -120,10 +163,12 @@
             <a href="privacy.html">Privacy</a>
             <a href="terms.html">Terms</a>
         </div>
-        <div class="security-subtle">🔒 Secure routines, elegant design.</div>
+        <div class="security-subtle mt-2">🔒 Secure routines, elegant design.</div>
     </div>
 </footer>
 
+<script src="../js/theme-toggle.js"></script>
 <script src="../js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

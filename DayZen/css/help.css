@@ -1,167 +1,276 @@
-/* --- Monet-Inspired Serene Theme --- */
+/* ===================================================
+   DayZen Help & Support Styling System
+   Theme: Emerald Green + Glassmorphism (Light/Dark Contrast)
+   =================================================== */
+
 :root {
-    --monet-pale-blue: #eef7f9;
-    --monet-soft-blue: #c5dbe9;
-    --monet-pastel-green: #eaf6f1;
-    --monet-sage-green: #b8d8c7;
-    --monet-lavender: #ece9f5;
-    --monet-pale-yellow: #fdfde3;
-    --text-color: #4a5d68;
-    --accent-color: #78909c;
-    --heading-font: 'Playfair Display', serif;
-    --body-font: 'Quicksand', sans-serif;
+  --emerald-primary: #10b981;
+  --emerald-hover: #059669;
+  --emerald-light: #d1fae5;
+  --emerald-glow: rgba(16, 185, 129, 0.25);
+  --text-dark: #0f172a;
+  --text-muted: #64748b;
+  --heading-font: 'Playfair Display', serif;
+  --body-font: 'Inter', sans-serif;
+  --transition-smooth: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 body.help-page {
-    background: linear-gradient(135deg, var(--monet-pale-blue) 0%, var(--monet-pastel-green) 100%);
-    color: var(--text-color);
-    font-family: var(--body-font);
-    min-height: 100vh;
-    font-weight: 400;
-    line-height: 1.6;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  color: var(--text-dark);
+  font-family: var(--body-font);
+  min-height: 100vh;
+  line-height: 1.7;
+  transition: var(--transition-smooth);
 }
 
-/* --- Navbar Styling --- */
-.help-page .navbar {
-    background-color: rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(8px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-    padding: 1.2rem 0;
+/* Dark Mode Body */
+body.dark-mode.help-page {
+  background: linear-gradient(135deg, #0f172a 0%, #020617 100%) !important;
+  color: #f8fafc !important;
 }
 
-.help-page .logo-text {
-    font-family: var(--heading-font);
-    font-weight: 700;
-    color: var(--accent-color);
-    letter-spacing: 2px;
-    font-size: 1.8rem;
+/* --- Content Container & Headings --- */
+.help-content {
+  padding-top: 130px !important;
+  max-width: 900px;
 }
 
-.help-page .brand-slogan {
-    color: var(--text-color);
-}
-
-.help-page .nav-link {
-    color: var(--text-color) !important;
-    font-weight: 600;
-    margin-left: 1.8rem;
-    transition: all 0.3s ease;
-    letter-spacing: 1px;
-    font-size: 0.95rem;
-}
-
-.help-page .nav-link:hover, 
-.help-page .nav-link.active {
-    color: var(--monet-sage-green) !important;
-    transform: translateY(-1px);
-}
-
-/* --- Content Styling --- */
 .help-page .page-title {
-    font-family: var(--heading-font);
-    color: var(--accent-color);
-    font-weight: 700;
-    margin-bottom: 0.8rem;
-    letter-spacing: -1px;
+  font-family: var(--heading-font);
+  color: var(--text-dark);
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+}
+
+body.dark-mode .help-page .page-title {
+  color: #f8fafc !important;
 }
 
 .help-page .subtitle {
-    font-family: var(--body-font);
-    color: #8da1ab;
-    font-weight: 400;
-    font-size: 1.25rem;
-    letter-spacing: 0.5px;
+  color: var(--text-muted);
+  font-size: 1.15rem;
 }
 
-/* --- FAQ Section --- */
+body.dark-mode .help-page .subtitle {
+  color: #94a3b8 !important;
+}
+
+/* --- FAQ Container --- */
 .help-page .faq-container {
-    max-width: 850px;
-    margin: 0 auto;
-    background: rgba(255, 255, 255, 0.6);
-    border-radius: 40px;
-    padding: 50px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.8);
+  max-width: 850px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+body.dark-mode .help-page .faq-container {
+  background: rgba(30, 41, 59, 0.75) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: #f8fafc !important;
 }
 
 .help-page .faq-title {
-    font-family: var(--heading-font);
-    color: var(--accent-color);
-    font-weight: 600;
-    text-align: center;
-    font-size: 2.2rem;
+  font-family: var(--heading-font);
+  color: var(--text-dark);
+  font-weight: 600;
+  text-align: center;
+  font-size: 2.2rem;
 }
 
+body.dark-mode .help-page .faq-title {
+  color: #f8fafc !important;
+}
+
+/* --- Accordion Items --- */
 .help-page .accordion-item {
-    background-color: rgba(255, 255, 255, 0.8) !important;
-    border: none !important;
-    margin-bottom: 1.2rem;
-    border-radius: 20px !important;
-    overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+  background-color: rgba(255, 255, 255, 0.85) !important;
+  border: 1px solid rgba(226, 232, 240, 0.8) !important;
+  margin-bottom: 1rem;
+  border-radius: 16px !important;
+  overflow: hidden;
+  transition: var(--transition-smooth);
+}
+
+body.dark-mode .help-page .accordion-item {
+  background-color: rgba(15, 23, 42, 0.8) !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
 }
 
 .help-page .accordion-item:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  transform: translateY(-2px);
+  border-color: var(--emerald-primary) !important;
+  box-shadow: 0 8px 20px rgba(16, 185, 129, 0.12);
 }
 
-.help-page .accordion-button {
-    background-color: transparent !important;
-    color: var(--text-color) !important;
-    font-weight: 600;
-    font-size: 1.1rem;
-    padding: 1.5rem;
-    box-shadow: none !important;
-    font-family: var(--body-font);
+/* ===================================================
+   ACCORDION BUTTONS - LIGHT MODE
+   =================================================== */
+
+.help-page .accordion-button,
+.help-page .accordion-button.collapsed,
+.help-page .accordion-button.collapsed:focus,
+.help-page .accordion-button.collapsed:active {
+  background-color: transparent !important;
+  color: #0f172a !important;
+  font-weight: 600;
+  font-size: 1.05rem;
+  padding: 1.25rem 1.5rem;
+  box-shadow: none !important;
+  font-family: var(--body-font);
+  transition: var(--transition-smooth);
 }
 
-.help-page .accordion-button:not(.collapsed) {
-    background-color: var(--monet-soft-blue) !important;
-    color: white !important;
+/* Light Mode Hover over Collapsed Question */
+.help-page .accordion-button.collapsed:hover {
+  color: #10b981 !important;
+  background-color: rgba(16, 185, 129, 0.08) !important;
 }
 
+/* Light Mode Expanded Question */
+.help-page .accordion-button:not(.collapsed),
+.help-page .accordion-button:not(.collapsed):focus,
+.help-page .accordion-button:not(.collapsed):hover,
+.help-page .accordion-button:not(.collapsed):active {
+  background-color: var(--emerald-primary) !important;
+  color: #ffffff !important;
+  font-weight: 600;
+  font-size: 1.05rem;
+  padding: 1.25rem 1.5rem;
+  box-shadow: none !important;
+  font-family: var(--body-font);
+}
+
+/* Accordion Body in Light Mode */
 .help-page .accordion-body {
-    background-color: rgba(255, 255, 255, 0.3);
-    color: var(--text-color);
-    line-height: 1.8;
-    font-size: 1rem;
-    padding: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  color: #1e293b !important;
+  line-height: 1.8;
+  font-size: 0.98rem;
+  padding: 1.5rem;
 }
 
-/* --- Footer --- */
-.help-page footer {
-    color: #9eabb3;
-    font-size: 0.95rem;
-    font-weight: 500;
-    letter-spacing: 0.5px;
+/* Arrow indicator in Light Mode */
+.help-page .accordion-button::after {
+  filter: brightness(0) !important;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.help-page .accordion-button.collapsed:hover::after {
+  filter: brightness(0) saturate(100%) invert(56%) sepia(68%) saturate(542%) hue-rotate(113deg) brightness(96%) contrast(89%) !important;
+}
+
+.help-page .accordion-button:not(.collapsed)::after {
+  filter: brightness(0) invert(1) !important;
+}
+
+/* ===================================================
+   ACCORDION BUTTONS - DARK MODE
+   =================================================== */
+
+/* Collapsed Question in Dark Mode (Default, Focus, Active) */
+body.dark-mode .help-page .accordion-button,
+body.dark-mode .help-page .accordion-button.collapsed,
+body.dark-mode .help-page .accordion-button.collapsed:focus,
+body.dark-mode .help-page .accordion-button.collapsed:active {
+  background-color: transparent !important;
+  color: #ffffff !important;
+  font-weight: 600;
+  font-size: 1.05rem;
+  padding: 1.25rem 1.5rem;
+  box-shadow: none !important;
+}
+
+/* Hover over Collapsed Question in Dark Mode - ALWAYS BRIGHT GREEN/WHITE! */
+body.dark-mode .help-page .accordion-button.collapsed:hover {
+  color: #34d399 !important;
+  background-color: rgba(16, 185, 129, 0.15) !important;
+}
+
+/* Expanded Question in Dark Mode */
+body.dark-mode .help-page .accordion-button:not(.collapsed),
+body.dark-mode .help-page .accordion-button:not(.collapsed):focus,
+body.dark-mode .help-page .accordion-button:not(.collapsed):hover,
+body.dark-mode .help-page .accordion-button:not(.collapsed):active {
+  background-color: #059669 !important;
+  color: #ffffff !important;
+  font-weight: 600;
+  font-size: 1.05rem;
+  padding: 1.25rem 1.5rem;
+  box-shadow: 0 4px 20px rgba(16, 185, 129, 0.3) !important;
+}
+
+/* Accordion Body in Dark Mode */
+body.dark-mode .help-page .accordion-body {
+  background-color: rgba(15, 23, 42, 0.95) !important;
+  color: #f1f5f9 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+  line-height: 1.8;
+  font-size: 0.98rem;
+  padding: 1.5rem;
+}
+
+/* Arrow indicator in Dark Mode */
+body.dark-mode .help-page .accordion-button::after,
+body.dark-mode .help-page .accordion-button:not(.collapsed)::after {
+  filter: brightness(0) invert(1) !important;
+}
+
+body.dark-mode .help-page .accordion-button.collapsed:hover::after {
+  filter: brightness(0) saturate(100%) invert(72%) sepia(45%) saturate(543%) hue-rotate(108deg) brightness(96%) contrast(92%) !important;
 }
 
 /* --- Floating Help Button --- */
 .help-btn {
-    position: fixed;
-    bottom: 40px;
-    right: 40px;
-    width: 65px;
-    height: 65px;
-    border-radius: 50%;
-    background-color: var(--monet-soft-blue);
-    color: white;
-    border: 4px solid white;
-    font-size: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    z-index: 1000;
-    font-family: var(--body-font);
-    font-weight: 700;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: var(--emerald-primary);
+  color: white;
+  border: none;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 8px 24px var(--emerald-glow);
+  transition: var(--transition-smooth);
+  z-index: 1000;
 }
 
 .help-btn:hover {
-    transform: scale(1.15) rotate(15deg);
-    background-color: var(--monet-sage-green);
+  transform: scale(1.1) rotate(10deg);
+  background-color: var(--emerald-hover);
+  box-shadow: 0 12px 30px var(--emerald-glow);
+}
+
+/* --- Footer --- */
+.help-page footer {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  color: var(--text-muted);
+  border-top: 1px solid rgba(229, 231, 235, 0.6);
+}
+
+body.dark-mode .help-page footer {
+  background: rgba(15, 23, 42, 0.95) !important;
+  color: #94a3b8 !important;
+  border-top-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+@media (max-width: 768px) {
+  .help-content {
+    padding-top: 110px !important;
+  }
+  .help-page .faq-container {
+    padding: 24px 16px;
+  }
 }

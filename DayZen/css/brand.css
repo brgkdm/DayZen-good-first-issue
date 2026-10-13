@@ -10,3 +10,13 @@
     letter-spacing: 0.5px;
     margin-top: 2px;
 }
+
+/* Dark mode logo inversion for 100% visibility */
+.logo-dark-mode,
+body.dark-mode .navbar-brand img,
+body.dark-mode .footer-logo img,
+body.dark-mode .footer-brand img,
+body.dark-mode .logo img {
+    filter: brightness(0) invert(1) drop-shadow(0 0 6px rgba(255, 255, 255, 0.4)) !important;
+    opacity: 1 !important;
+}
