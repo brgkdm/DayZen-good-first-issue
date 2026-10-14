@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
     } // If tourBtn doesn't exist return, dont crash the whole code
 
     function profileTour(){
-        const tour = introJs.tour();
+        const tour = introJs();
         tour.setOptions({
             showProgress : true, 
             steps: [
@@ -63,9 +63,10 @@ document.addEventListener('DOMContentLoaded', function() {
     tour.start();
     }// Function end point
 
-   profileTourBtn.addEventListener("click", ()=>{
-    profileTour();
-
-   });
+   if (profileTourBtn) {
+       profileTourBtn.addEventListener("click", () => {
+           profileTour();
+       });
+   }
 
 });
