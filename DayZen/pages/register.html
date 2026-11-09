@@ -12,6 +12,12 @@
     <link rel="stylesheet" href="../css/brand.css">
     <link rel="stylesheet" href="../css/theme.css">
     <link rel="stylesheet" href="../css/register-style.css">
+   
+    <script>
+        if (localStorage.getItem("isLoggedIn") === "true") {
+            window.location.replace("indexacc.html");
+        }
+    </script>
 </head>
 
 <body class="light-mode">
