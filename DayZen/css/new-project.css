@@ -259,37 +259,51 @@ h1, h2, h3 {
 .footer {
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(12px);
-  color: var(--text-dark);
-  padding: 70px 0 40px;
+  color: var(--text-dark, #1e293b);
+  padding: 60px 0 40px;
   border-top: 1px solid rgba(229, 231, 235, 0.5);
-  margin-top: auto;
+  margin-top: 60px;
+  text-align: center; /* Sob kichu majhkhane (center) anar jonno */
+}
+
+.footer-logo {
+  margin-bottom: 16px;
 }
 
 .footer-logo img {
   width: 42px;
   opacity: 0.85;
-  transition: transform 0.4s ease;
+  filter: invert(1); /* Light mode-e shada logo-ke kalo korar jonno */
+  transition: transform 0.4s ease, filter 0.3s ease;
+}
+
+.footer-logo img:hover {
+  transform: scale(1.1);
 }
 
 .footer p {
   margin-bottom: 20px;
   font-size: 0.95rem;
-  color: var(--text-muted);
+  color: var(--text-muted, #64748b);
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
 }
 
 .footer-links a {
-  color: var(--text-dark);
+  color: var(--text-dark, #1e293b);
   font-weight: 500;
   text-decoration: none;
-  margin: 0 14px;
   font-size: 0.95rem;
   transition: color 0.3s ease;
 }
 
 .footer-links a:hover {
-  color: var(--emerald-primary);
+  color: var(--emerald-primary, #10b981);
 }
-
 .security-badge {
   margin-top: 20px;
   font-size: 0.85rem;
@@ -376,6 +390,9 @@ body.dark-mode .footer-links a {
 
 body.dark-mode .footer-links a:hover {
   color: #34d399 !important;
+}
+body.dark-mode .footer-logo img {
+  filter: invert(0) !important;
 }
 
 body.dark-mode .security-badge {
