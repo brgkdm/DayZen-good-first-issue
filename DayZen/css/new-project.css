@@ -165,7 +165,7 @@ h1, h2, h3 {
   margin-top: 20px;
 }
 
-.type-card {
+.project-type-card {
   background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.8);
@@ -176,33 +176,33 @@ h1, h2, h3 {
   transition: var(--transition-smooth);
 }
 
-.type-card:hover {
+.project-type-card:hover {
   border-color: var(--emerald-primary);
   transform: translateY(-4px);
   box-shadow: 0 10px 25px rgba(16, 185, 129, 0.12);
 }
 
-.type-card.selected {
+.project-type-card.selected {
   background: rgba(209, 250, 229, 0.6);
   border-color: var(--emerald-primary);
   box-shadow: 0 12px 30px rgba(16, 185, 129, 0.2);
   transform: scale(1.02);
 }
 
-.type-card img {
+.project-type-card img {
   width: 60px;
   height: 60px;
   margin-bottom: 16px;
   transition: var(--transition-smooth);
 }
 
-.type-card h3 {
+.project-type-card h3 {
   font-size: 1.3rem;
   margin-bottom: 8px;
   color: var(--text-dark);
 }
 
-.type-card p {
+.project-type-card p {
   font-size: 0.95rem;
   color: var(--text-muted);
   margin: 0;
@@ -236,6 +236,23 @@ h1, h2, h3 {
   border-color: var(--emerald-primary);
   color: var(--emerald-primary);
   transform: translateY(-2px);
+}
+.btn-send {
+  padding: 12px 32px;
+  border-radius: 50px;
+  font-weight: 600;
+  border: none;
+  background: linear-gradient(135deg, var(--emerald-primary, #059669), #10b981) !important;
+  color: #ffffff !important;
+  min-width: 150px;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.3);
+  transition: var(--transition-smooth, all 0.3s ease);
+}
+
+.btn-send:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(16, 185, 129, 0.45);
 }
 
 /* Footer */
