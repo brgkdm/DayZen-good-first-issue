@@ -175,3 +175,37 @@ body.tour-active {
 .tour-overlay.active {
   display: flex !important;
 }
+
+
+/* Landing-page onboarding improvements */
+.tour-button {
+  cursor: pointer;
+  border: 1px solid rgba(16, 185, 129, 0.45);
+  border-radius: 999px;
+  padding: 0.55rem 1rem;
+  color: #059669;
+  background: rgba(16, 185, 129, 0.1);
+  font: inherit;
+  font-weight: 600;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.tour-button:hover,
+.tour-button:focus-visible {
+  color: #fff;
+  background: #059669;
+  transform: translateY(-1px);
+  outline: none;
+}
+
+.dayzen-onboarding-tooltip .introjs-tooltip-title {
+  font-weight: 700;
+}
+
+@media (max-width: 576px) {
+  #take-tour-btn,
+  .tour-button {
+    max-width: calc(100vw - 2rem);
+    white-space: normal;
+  }
+}

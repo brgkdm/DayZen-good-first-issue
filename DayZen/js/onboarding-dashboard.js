@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!tourButton) return; // If tourBtn doesn't exist return, dont crash the whole code
 
        function startTour(){
-       const tour =  introJs.tour();
+       const tour =  introJs();
        
        tour.setOptions({
             showProgress: true,
